@@ -1,0 +1,9 @@
+language: python
+python:
+  - { PATH: "{{replace(Python36, '\\', '\\\\')}}", VERSION: 3.6, DIST: std }
+virtualenv:
+  - path: {{ospathjoin(root_path, pickname("%NAME_JENKINS%", project_name + "_%VERSION%_%DIST%_%NAME%"), "_venv")}}
+install:
+  - pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs
+script:
+  - { CMD: "python git\\publish_lectures.py", NAME: "PUBLISH", TIMEOUT: 3600 }
