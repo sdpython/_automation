@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+Start a local pypi server
+=========================
+
+This Script launches a pipy server and leaves
+without waiting for the end.
+"""
+
+#########################################
+# import
+
+import os
+import sys
+try:
+    from pyquickhelper.loghelper import run_cmd
+except ImportError:
+    sys.path.append("../../pyquickhelper/src")
+    from pyquickhelper.loghelper import run_cmd
+
+#########################################
+# command line
+if sys.platform.startswith("win"):
+    cmd = r"{0}\Scripts\pypi-server.exe -v -u -p {1} --disable-fallback {2}"
+else:
+    cmd = r"{0}\Scripts\pypi-server.exe -v -u -p {1} --disable-fallback {2}"
+    
+#########################################
+# parameters
+port = "8067"
+paths = [r"D:\jenkins\local_pypi\local_pypi_server",
+         r"c:\temp"]
+path = list(filter(lambda p: os.path.exists(p), paths))
+
+#########################################
+# start pypi
+if any(path):
+    path = path[0]
+    cmd = cmd.format(os.path.dirname(sys.executable), port, path)
+
+    print("cmd", cmd)
+    run_cmd(cmd, wait=False, fLOG=print)
+else:
+    print("Unable to find any of\n{0}.".format("\n".join(paths)))
+    
