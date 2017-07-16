@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Publish documentation
-=====================
+Update Jenkins Jobs
+===================
 
 Update Jenkins jobs for GitHub repositories.
 """
@@ -12,6 +12,27 @@ Update Jenkins jobs for GitHub repositories.
 import sys
 import os
 import keyring
+
+#########################################
+# Cette section ajoute des chemins pour des modules que je développe
+# et que je n'installe jamais. Je pourrais me servir d'un environnement
+# virtuel mais en pratique, c'est toujours un peu compliqué
+# de mettre le mettre à jour en permanence.
+
+this = os.path.abspath(os.path.dirname(__file__))
+if "_automation" in this:
+    this = this.split("_automation")[0].rstrip("\\/")
+for module in ["jyquickhelper", "pyquickhelper", "pyensae",
+               "pyrsslocal", "pymmails", "pymyinstall",
+               "ensae_teaching_cs", "tkinterquickhelper",
+               "cpyquickhelper"]:
+    try:
+        exec("import %s" % module)
+    except ImportError:
+        p = os.path.join(this, module, "src")
+        print("add path", p)
+        sys.path.append(p)
+        exec("import %s" % module)
 
 #########################################
 # logging
