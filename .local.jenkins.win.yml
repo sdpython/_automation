@@ -4,7 +4,7 @@ python:
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("%NAME_JENKINS%", project_name + "_%VERSION%_%DIST%_%NAME%"), "_venv")}}
 before_script:
-    # regular expression for Jekins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*36.*.*((std)|(STD)).*)
+    # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*36.*.*((std)|(STD)).*)
   -  if [ "PYPI" not in ${NAME} ] then pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs fi
   -  if [ "PYPI" in ${NAME} ] then pip install pyquickhelper fi
 script:

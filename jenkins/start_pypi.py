@@ -19,11 +19,20 @@ except ImportError:
     from pyquickhelper.loghelper import run_cmd
 
 #########################################
+# pypi
+pypis = [r"{0}\Scripts\pypi-server.exe".format(os.path.dirname(sys.executable)),
+        r"c:\Python36_x64\Scripts\pypi-server.exe"]
+pypi = list(filter(lambda p: os.path.exists(p), pypis))
+if len(pypi) == 0:
+    raise FileNotFoundError("Unable to find any of\n'{0}'".format("\n".join(pypis)))
+pypi = pypi[0]
+
+#########################################
 # command line
 if sys.platform.startswith("win"):
-    cmd = r"{0}\Scripts\pypi-server.exe -v -u -p {1} --disable-fallback {2}"
+    cmd = r"{0} -v -u -p {1} --disable-fallback {2}"
 else:
-    cmd = r"{0}\Scripts\pypi-server.exe -v -u -p {1} --disable-fallback {2}"
+    cmd = r"pypi-server.exe -v -u -p {1} --disable-fallback {2}"
     
 #########################################
 # parameters
@@ -36,7 +45,7 @@ path = list(filter(lambda p: os.path.exists(p), paths))
 # start pypi
 if any(path):
     path = path[0]
-    cmd = cmd.format(os.path.dirname(sys.executable), port, path)
+    cmd = cmd.format(pypi, port, path)
 
     print("cmd", cmd)
     run_cmd(cmd, wait=False, fLOG=print)
