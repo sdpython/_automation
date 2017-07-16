@@ -7,5 +7,5 @@ install:
     # regular expression for Jekins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*36.*.*((std)|(STD)).*)
   - pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs
 script:
-  - { CMD: "python jenkins\\publish_lectures.py", NAME: "PUBLISH", TIMEOUT: 3600, SCHEDULER: "FIXED 0 4 * * *" }
+  - { CMD: "python jenkins\\publish_lectures.py", NAME: "PUBLISH", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *" }
   - { CMD: "python jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP" }
