@@ -9,4 +9,4 @@ before_script:
   -  if [ "PYPI" in ${NAME} ] then pip install pyquickhelper fi
 script:
   - { CMD: "python jenkins\\publish_lectures.py", NAME: "PUBLISH", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *" }
-  - { CMD: "python jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP" }
+  - { CMD: "python jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN:0 }
