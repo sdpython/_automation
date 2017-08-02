@@ -8,6 +8,6 @@ before_script:
   -  if [ "PYPI" not in ${NAME} ] then pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs tkinterquickhelper fi
   -  if [ "PYPI" in ${NAME} ] then pip install pyquickhelper fi
 script:
-  - { CMD: "python jenkins\\publish_lectures.py", NAME: "PUBLISH", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
+  - { CMD: "python jenkins\\copy_lectures.py", NAME: "COPYDOC", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
   - { CMD: "python jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
-  - { CMD: "python doc\\serve_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
+  - { CMD: "python doc\\server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
