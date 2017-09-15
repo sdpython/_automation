@@ -23,9 +23,7 @@ this = os.path.abspath(os.path.dirname(__file__))
 if "_automation" in this:
     this = this.split("_automation")[0].rstrip("\\/")
 for module in ["jyquickhelper", "pyquickhelper", "pyensae",
-               "pyrsslocal", "pymmails", "pymyinstall",
-               "ensae_teaching_cs", "tkinterquickhelper",
-               "cpyquickhelper"]:
+               "pymmails", "pymyinstall", "ensae_teaching_cs"]:
     try:
         exec("import %s" % module)
     except ImportError:
@@ -60,8 +58,9 @@ js = JenkinsExt('http://localhost:8080/', user, pwd,
 
 #########################################
 # mise à jour des jobs
+letter = "d" if os.path.exists("d:") else "c"
 setup_jenkins_server(js,
                      overwrite=True,
                      delete_first=False,
-                     location="d:\\jenkins\\pymy",
+                     location=letter + ":\\jenkins\\pymy",
                      disable_schedule=False)
