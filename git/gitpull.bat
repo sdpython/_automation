@@ -113,9 +113,11 @@ git pull
 cd ..
 
 :cpyquickhelper:
-if not exist cpyquickhelper goto teachpyx:
+if not exist cpyquickhelper goto end:
 @echo *** cpyquickhelper
 cd cpyquickhelper
 git pull
 cd ..
 cd %current%
+
+:end:
