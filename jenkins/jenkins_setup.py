@@ -54,10 +54,10 @@ pwd = keyring.get_password("jenkins", os.environ["COMPUTERNAME"] + "pwd")
 # instantiation d'une classe faisant l'interface avec le service
 letter = "d" if os.path.exists("d:") else "c"
 engines = engines_default()
-print("------------")
+fLOG("------------")
 for k, v in sorted(engines.items()):
-    print("    {0}='{1}'".format(k, v))
-print("------------")
+    fLOG("    {0}='{1}'".format(k, v))
+fLOG("------------")
 
 js = JenkinsExt('http://localhost:8080/', user, pwd,
                 fLOG=fLOG, engines=engines)
