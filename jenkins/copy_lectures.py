@@ -17,8 +17,9 @@ import os
 # paramètres
 # root est là où sont compilés les packages
 # dest est le répertoire destination
-root = "d:\\jenkins\\pymy"
-dest = "d:\\jenkins\\documentation"
+letter = "d" if os.path.exists("d:") else "c:"
+root = letter + ":\\jenkins\\pymy"
+dest = letter + ":\\jenkins\\documentation"
 
 #########################################
 # Cette section ajoute des chemins pour des modules que je développe

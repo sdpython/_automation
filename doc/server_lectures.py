@@ -35,6 +35,7 @@ def start_server(prefix='', port=8000, path='.'):
 
 
 if __name__ == '__main__':
-    path = "d:\\jenkins\\documentation"
+    letter = "d" if os.path.exists("d:") else "c:"
+    path = letter + ":\\jenkins\\documentation"
     print("Serving from", path)
     start_server("", 8886, path=path)
