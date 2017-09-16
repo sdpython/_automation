@@ -37,8 +37,14 @@ else:
 #########################################
 # parameters
 port = "8067"
-paths = [r"D:\jenkins\local_pypi\local_pypi_server",
-         r"c:\temp"]
+letter = "d" if os.path.exists("d:") else "c"
+paths = [letter + r":\jenkins\local_pypi\local_pypi_server",
+         letter + r":\jenkins\local_pypi_server",
+         letter + r":\jenkins\local_pypi",
+         letter + r":\local_pypi\local_pypi_server",
+         letter + r":\local_pypi",
+         letter + r":\local_pypi_server",
+         letter + r":\temp"]
 path = list(filter(lambda p: os.path.exists(p), paths))
 
 #########################################
