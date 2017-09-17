@@ -94,7 +94,7 @@ random.shuffle(modules)
 # valeurs par défaut
 
 # emplacement local de la documentation
-letter = "d" if os.path.exists("d:") else "c:"
+letter = "d" if os.path.exists("d:") else "c"
 location = letter + ":\\jenkins\\pymy\\%s\\%s%s\\dist\\%s"
 rootw = "/www/htdocs/app/%s/%s"                   # destination sur le site FTP
 # seconde destination pour le site lesenfantscodaient.fr
