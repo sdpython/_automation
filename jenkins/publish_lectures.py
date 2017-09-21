@@ -84,6 +84,7 @@ modules = [
     "pysqllike",
     "python3_module_template",
     "teachpyx",
+    "pandas_streaming",
     #
     "ensae_teaching_cs"
 ]

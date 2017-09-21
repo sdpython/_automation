@@ -113,9 +113,17 @@ git pull
 cd ..
 
 :cpyquickhelper:
-if not exist cpyquickhelper goto end:
+if not exist cpyquickhelper goto pandas_streaming:
 @echo *** cpyquickhelper
 cd cpyquickhelper
+git pull
+cd ..
+cd %current%
+
+:pandas_streaming:
+if not exist pandas_streaming goto end:
+@echo *** pandas_streaming
+cd pandas_streaming
 git pull
 cd ..
 cd %current%
