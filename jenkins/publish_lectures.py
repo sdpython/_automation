@@ -85,6 +85,7 @@ modules = [
     "python3_module_template",
     "teachpyx",
     "pandas_streaming",
+    "lightmlboard",
     #
     "ensae_teaching_cs"
 ]

@@ -121,9 +121,17 @@ cd ..
 cd %current%
 
 :pandas_streaming:
-if not exist pandas_streaming goto end:
+if not exist pandas_streaming goto lightmlboard:
 @echo *** pandas_streaming
 cd pandas_streaming
+git pull
+cd ..
+cd %current%
+
+:lightmlboard:
+if not exist lightmlboard goto end:
+@echo *** lightmlboard
+cd lightmlboard
 git pull
 cd ..
 cd %current%
