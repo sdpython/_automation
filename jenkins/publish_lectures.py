@@ -23,8 +23,11 @@ urchinTracker();
 
 import sys
 import os
-import keyring
 import random
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter('ignore', DeprecationWarning)
+    import keyring
 
 #########################################
 # logging

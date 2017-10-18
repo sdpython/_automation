@@ -11,7 +11,10 @@ Update Jenkins jobs for GitHub repositories.
 
 import sys
 import os
-import keyring
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter('ignore', DeprecationWarning)
+    import keyring
 
 #########################################
 # Cette section ajoute des chemins pour des modules que je développe
