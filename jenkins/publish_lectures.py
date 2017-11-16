@@ -89,6 +89,7 @@ modules = [
     "teachpyx",
     "pandas_streaming",
     "lightmlboard",
+    "lightmlrestapi",
     #
     "ensae_teaching_cs"
 ]

@@ -129,9 +129,17 @@ cd ..
 cd %current%
 
 :lightmlboard:
-if not exist lightmlboard goto end:
+if not exist lightmlboard goto lightmlrestapi:
 @echo *** lightmlboard
 cd lightmlboard
+git pull
+cd ..
+cd %current%
+
+:lightmlrestapi:
+if not exist lightmlrestapi goto end:
+@echo *** lightmlrestapi
+cd lightmlrestapi
 git pull
 cd ..
 cd %current%
