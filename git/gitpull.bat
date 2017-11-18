@@ -137,9 +137,17 @@ cd ..
 cd %current%
 
 :lightmlrestapi:
-if not exist lightmlrestapi goto end:
+if not exist lightmlrestapi goto mlinsights:
 @echo *** lightmlrestapi
 cd lightmlrestapi
+git pull
+cd ..
+cd %current%
+
+:mlinsights:
+if not exist mlinsights goto end:
+@echo *** mlinsights
+cd mlinsights
 git pull
 cd ..
 cd %current%

@@ -90,6 +90,7 @@ modules = [
     "pandas_streaming",
     "lightmlboard",
     "lightmlrestapi",
+    "mlinsights",
     #
     "ensae_teaching_cs"
 ]
