@@ -91,6 +91,7 @@ modules = [
     "lightmlboard",
     "lightmlrestapi",
     "mlinsights",
+    "pyenbc",
     #
     "ensae_teaching_cs"
 ]

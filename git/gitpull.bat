@@ -145,9 +145,17 @@ cd ..
 cd %current%
 
 :mlinsights:
-if not exist mlinsights goto end:
+if not exist mlinsights goto pyenbc:
 @echo *** mlinsights
 cd mlinsights
+git pull
+cd ..
+cd %current%
+
+:pyenbc:
+if not exist pyenbc goto end:
+@echo *** pyenbc
+cd pyenbc
 git pull
 cd ..
 cd %current%
