@@ -8,7 +8,8 @@ goto nextn:
 
 :default_value:
 @echo ~LABEL default_value
-set pythonexe=c:\Python36_x64
+set pythonexe=c:\Python363_x64
+if not exist %pythonexe% set pythonexe="c:\Python36_x64\python"
 @echo ~SET pythonexe=c:\Python36_x64
 
 :nextn:

@@ -14,6 +14,7 @@ set local_python="%2"
 goto custom_python:
 :default_value_python:
 set local_python=c:\Python36_x64
+if not exist %local_python% set local_python="c:\Python36_x64\python"
 :custom_python:
 
 set CURRENT=%~dp0
