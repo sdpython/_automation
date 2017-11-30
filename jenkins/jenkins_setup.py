@@ -25,7 +25,7 @@ with warnings.catch_warnings():
 this = os.path.abspath(os.path.dirname(__file__))
 if "_automation" in this:
     this = this.split("_automation")[0].rstrip("\\/")
-for module in ["jyquickhelper", "pyquickhelper", "pyensae",
+for module in ["jyquickhelper", "pyquickhelper", "pyensae", "tkinterhelper",
                "pymmails", "pymyinstall", "ensae_teaching_cs"]:
     try:
         exec("import %s" % module)

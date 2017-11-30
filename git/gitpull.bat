@@ -153,9 +153,17 @@ cd ..
 cd %current%
 
 :pyenbc:
-if not exist pyenbc goto end:
+if not exist pyenbc goto mlprodict:
 @echo *** pyenbc
 cd pyenbc
+git pull
+cd ..
+cd %current%
+
+:mlprodict:
+if not exist mlprodict goto end:
+@echo *** mlprodict
+cd mlprodict
 git pull
 cd ..
 cd %current%
