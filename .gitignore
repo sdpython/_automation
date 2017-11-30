@@ -1,3 +1,7 @@
 hackathon/*.csv
 hackathon/sub
 hackathon/perfhack.xlsx
+_notebooks/images.7z
+_notebooks/images.csv
+jenkins/jenkins_setup.py
+_notebooks/.ipynb_checkpoints/download_images-checkpoint.ipynb
