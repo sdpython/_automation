@@ -92,6 +92,7 @@ modules = [
     "lightmlrestapi",
     "mlinsights",
     "pyenbc",
+    "mlprodict",
     #
     "ensae_teaching_cs"
 ]
