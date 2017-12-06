@@ -13,7 +13,8 @@ if "%2"=="" goto default_value_python:
 set local_python="%2"
 goto custom_python:
 :default_value_python:
-set local_python=c:\Python36_x64
+set local_python=c:\Python363_x64
+if not exist %local_python% set local_python=c:\Python36_x64
 :custom_python:
 
 set CURRENT=%~dp0
