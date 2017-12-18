@@ -118,7 +118,6 @@ if not exist cpyquickhelper goto pandas_streaming:
 cd cpyquickhelper
 git pull
 cd ..
-cd %current%
 
 :pandas_streaming:
 if not exist pandas_streaming goto lightmlboard:
@@ -126,7 +125,6 @@ if not exist pandas_streaming goto lightmlboard:
 cd pandas_streaming
 git pull
 cd ..
-cd %current%
 
 :lightmlboard:
 if not exist lightmlboard goto lightmlrestapi:
@@ -134,7 +132,6 @@ if not exist lightmlboard goto lightmlrestapi:
 cd lightmlboard
 git pull
 cd ..
-cd %current%
 
 :lightmlrestapi:
 if not exist lightmlrestapi goto mlinsights:
@@ -142,7 +139,6 @@ if not exist lightmlrestapi goto mlinsights:
 cd lightmlrestapi
 git pull
 cd ..
-cd %current%
 
 :mlinsights:
 if not exist mlinsights goto pyenbc:
@@ -150,7 +146,6 @@ if not exist mlinsights goto pyenbc:
 cd mlinsights
 git pull
 cd ..
-cd %current%
 
 :pyenbc:
 if not exist pyenbc goto mlprodict:
@@ -158,14 +153,19 @@ if not exist pyenbc goto mlprodict:
 cd pyenbc
 git pull
 cd ..
-cd %current%
 
 :mlprodict:
-if not exist mlprodict goto end:
+if not exist mlprodict goto xgboost:
 @echo *** mlprodict
 cd mlprodict
 git pull
 cd ..
-cd %current%
+
+:xgboost:
+if not exist xgboost goto end:
+@echo *** xgboost
+cd xgboost
+git pull
+cd ..
 
 :end:
