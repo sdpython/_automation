@@ -21,6 +21,7 @@ except ImportError:
 #########################################
 # pypi
 pypis = [r"{0}\Scripts\pypi-server.exe".format(os.path.dirname(sys.executable)),
+        r"c:\Python364_x64\Scripts\pypi-server.exe",
         r"c:\Python363_x64\Scripts\pypi-server.exe"]
 pypi = list(filter(lambda p: os.path.exists(p), pypis))
 if len(pypi) == 0:
