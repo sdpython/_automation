@@ -93,6 +93,7 @@ modules = [
     "mlinsights",
     "pyenbc",
     "mlprodict",
+    "papierstat",
     #
     "ensae_teaching_cs"
 ]
