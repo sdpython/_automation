@@ -155,9 +155,16 @@ git pull
 cd ..
 
 :mlprodict:
-if not exist mlprodict goto xgboost:
+if not exist mlprodict goto sparkouille:
 @echo *** mlprodict
 cd mlprodict
+git pull
+cd ..
+
+:sparkouille:
+if not exist sparkouille goto xgboost:
+@echo *** sparkouille
+cd sparkouille
 git pull
 cd ..
 

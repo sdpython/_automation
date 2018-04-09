@@ -94,6 +94,7 @@ modules = [
     "pyenbc",
     "mlprodict",
     "papierstat",
+    "sparkouille",
     #
     "ensae_teaching_cs"
 ]
