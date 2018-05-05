@@ -169,9 +169,16 @@ git pull
 cd ..
 
 :xgboost:
-if not exist xgboost goto end:
+if not exist xgboost goto manydataapi:
 @echo *** xgboost
 cd xgboost
+git pull
+cd ..
+
+:manydataapi:
+if not exist manydataapi goto end:
+@echo *** manydataapi
+cd manydataapi
 git pull
 cd ..
 

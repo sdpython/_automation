@@ -95,6 +95,7 @@ modules = [
     "mlprodict",
     "papierstat",
     "sparkouille",
+    "manydataapi",
     #
     "ensae_teaching_cs"
 ]
