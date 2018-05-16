@@ -176,9 +176,16 @@ git pull
 cd ..
 
 :manydataapi:
-if not exist manydataapi goto end:
+if not exist manydataapi goto csharpy:
 @echo *** manydataapi
 cd manydataapi
+git pull
+cd ..
+
+:csharpy:
+if not exist csharpy goto end:
+@echo *** csharpy
+cd csharpy
 git pull
 cd ..
 

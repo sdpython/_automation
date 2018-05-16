@@ -9,18 +9,12 @@ without waiting for the end.
 
 #########################################
 # import
-
-import os
-import sys
-try:
-    from pyquickhelper.loghelper import run_cmd
-except ImportError:
-    sys.path.append("../../pyquickhelper/src")
-    from pyquickhelper.loghelper import run_cmd
+from pyquickhelper.loghelper import run_cmd
 
 #########################################
 # pypi
 pypis = [r"{0}\Scripts\pypi-server.exe".format(os.path.dirname(sys.executable)),
+        r"c:\Python365_x64\Scripts\pypi-server.exe",
         r"c:\Python364_x64\Scripts\pypi-server.exe",
         r"c:\Python363_x64\Scripts\pypi-server.exe"]
 pypi = list(filter(lambda p: os.path.exists(p), pypis))

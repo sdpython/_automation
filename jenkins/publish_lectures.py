@@ -96,6 +96,7 @@ modules = [
     "papierstat",
     "sparkouille",
     "manydataapi",
+    "csharpy",
     #
     "ensae_teaching_cs"
 ]
