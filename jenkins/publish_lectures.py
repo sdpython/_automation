@@ -97,6 +97,7 @@ modules = [
     "sparkouille",
     "manydataapi",
     "csharpy",
+    "csharpyml",
     #
     "ensae_teaching_cs"
 ]

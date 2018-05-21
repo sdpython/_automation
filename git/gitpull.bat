@@ -183,9 +183,16 @@ git pull
 cd ..
 
 :csharpy:
-if not exist csharpy goto end:
+if not exist csharpy goto csharpyml:
 @echo *** csharpy
 cd csharpy
+git pull
+cd ..
+
+:csharpyml:
+if not exist csharpyml goto end:
+@echo *** csharpyml
+cd csharpyml
 git pull
 cd ..
 
