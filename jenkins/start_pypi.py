@@ -9,6 +9,8 @@ without waiting for the end.
 
 #########################################
 # import
+import os
+import sys
 from pyquickhelper.loghelper import run_cmd
 
 #########################################
