@@ -190,9 +190,16 @@ git pull
 cd ..
 
 :csharpyml:
-if not exist csharpyml goto end:
+if not exist csharpyml goto ensae_teaching_dl:
 @echo *** csharpyml
 cd csharpyml
+git pull
+cd ..
+
+:ensae_teaching_dl:
+if not exist ensae_teaching_dl goto end:
+@echo *** ensae_teaching_dl
+cd ensae_teaching_dl
 git pull
 cd ..
 
