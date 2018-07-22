@@ -197,9 +197,16 @@ git pull
 cd ..
 
 :ensae_teaching_dl:
-if not exist ensae_teaching_dl goto end:
+if not exist ensae_teaching_dl goto sqllike:
 @echo *** ensae_teaching_dl
 cd ensae_teaching_dl
+git pull
+cd ..
+
+:sqllike:
+if not exist sqllike goto end:
+@echo *** sqllike
+cd sqllike
 git pull
 cd ..
 
