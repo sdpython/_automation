@@ -16,6 +16,8 @@ from pyquickhelper.loghelper import run_cmd
 #########################################
 # pypi
 pypis = [r"{0}\Scripts\pypi-server.exe".format(os.path.dirname(sys.executable)),
+        r"c:\Python370_x64\Scripts\pypi-server.exe",
+        r"c:\Python366_x64\Scripts\pypi-server.exe",
         r"c:\Python365_x64\Scripts\pypi-server.exe",
         r"c:\Python364_x64\Scripts\pypi-server.exe",
         r"c:\Python363_x64\Scripts\pypi-server.exe"]

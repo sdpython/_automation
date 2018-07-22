@@ -98,7 +98,8 @@ modules = [
     "manydataapi",
     "csharpy",
     "csharpyml",
-    "ensae_teaching_cs"
+    "ensae_teaching_dl",
+    "ensae_teaching_cs",
 ]
 
 random.shuffle(modules)
