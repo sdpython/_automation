@@ -15,12 +15,12 @@ from pyquickhelper.loghelper import run_cmd
 
 #########################################
 # pypi
-pypis = [r"{0}\Scripts\pypi-server.exe".format(os.path.dirname(sys.executable)),
-        r"c:\Python370_x64\Scripts\pypi-server.exe",
-        r"c:\Python366_x64\Scripts\pypi-server.exe",
-        r"c:\Python365_x64\Scripts\pypi-server.exe",
-        r"c:\Python364_x64\Scripts\pypi-server.exe",
-        r"c:\Python363_x64\Scripts\pypi-server.exe"]
+pypis = [sys.executable.replace("pythonw", "python"),
+        r"c:\Python370_x64\python.exe",
+        r"c:\Python366_x64\python.exe",
+        r"c:\Python365_x64\python.exe",
+        r"c:\Python364_x64\python.exe",
+        r"c:\Python363_x64\python.exe"]
 pypi = list(filter(lambda p: os.path.exists(p), pypis))
 if len(pypi) == 0:
     raise FileNotFoundError("Unable to find any of\n'{0}'".format("\n".join(pypis)))
@@ -29,9 +29,9 @@ pypi = pypi[0]
 #########################################
 # command line
 if sys.platform.startswith("win"):
-    cmd = r"{0} -v -u -p {1} --disable-fallback {2}"
+    cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'-v -u -p {1} --disable-fallback {2}\'.split())"'
 else:
-    cmd = r"pypi-server.exe -v -u -p {1} --disable-fallback {2}"
+    cmd = "pypi-server -v -u -p {1} --disable-fallback {2}"
     
 #########################################
 # parameters
