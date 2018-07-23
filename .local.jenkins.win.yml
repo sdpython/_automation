@@ -6,9 +6,9 @@ virtualenv:
 before_script:
     # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
   -  if [ "PYPI" not in ${NAME} ] then pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs tkinterquickhelper fi
-  -  if [ "PYPI" in ${NAME} ] then pip install pyquickhelper fi
+  -  if [ "PYPI" in ${NAME} ] then pip install pyquickhelper pypi-server fi
 script:
-  - { CMD: "python jenkins\\copy_lectures.py", NAME: "COPYDOC", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
-  - { CMD: "python jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
-  - { CMD: "python doc\\server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
-  - { CMD: "python jenkins\\publish_lectures.py", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
+  - { CMD: "python -u jenkins\\copy_lectures.py", NAME: "COPYDOC", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
+  - { CMD: "python -u jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
+  - { CMD: "python -u doc\\server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
+  - { CMD: "python -u jenkins\\publish_lectures.py", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
