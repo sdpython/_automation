@@ -37,7 +37,8 @@ else:
 # parameters
 port = "8067"
 letter = "d" if os.path.exists("d:") else "c"
-paths = [letter + r":\jenkins\local_pypi\local_pypi_server",
+paths = ["/var/lib/jenkins/workspace/local_pypi/local_pypi_server/",
+         letter + r":\jenkins\local_pypi\local_pypi_server",
          letter + r":\jenkins\local_pypi_server",
          letter + r":\jenkins\local_pypi",
          letter + r":\local_pypi\local_pypi_server",
