@@ -1,4 +1,5 @@
-export PYTHONPATH=/home/ensaegithubxd/github/actuariat_python/src
+export PYTHONPATH=/home/ensaegithubxd/github/pyquickhelper/src
+export PYTHONPATH=/home/ensaegithubxd/github/actuariat_python/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/code_beatrix/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/cpyquickhelper/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/csharpy/src:$PYTHONPATH
@@ -20,7 +21,6 @@ export PYTHONPATH=/home/ensaegithubxd/github/pyenbc/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/pyensae/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/pymmails/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/pymyinstall/src:$PYTHONPATH
-export PYTHONPATH=/home/ensaegithubxd/github/pyquickhelper/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/pyrsslocal/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/pysqllike/src:$PYTHONPATH
 export PYTHONPATH=/home/ensaegithubxd/github/python3_module_template/src:$PYTHONPATH
