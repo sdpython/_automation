@@ -30,8 +30,8 @@ from ensae_teaching_cs.automation.jenkins_helper import setup_jenkins_server, en
 #########################################
 # récupération des identifiants Jenkins
 
-user = keyring.get_password("jenkins", os.environ["COMPUTERNAME"] + "user")
-pwd = keyring.get_password("jenkins", os.environ["COMPUTERNAME"] + "pwd")
+user = keyring.get_password("jenkins", "_automation,user")
+pwd = keyring.get_password("jenkins", "_automation,pwd")
 
 #########################################
 # instantiation d'une classe faisant l'interface avec le service
