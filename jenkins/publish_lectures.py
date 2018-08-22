@@ -107,7 +107,7 @@ random.shuffle(modules)
 # valeurs par défaut
 
 # emplacement local de la documentation
-if platform.startswith("win"):
+if sys.platform.startswith("win"):
     letter = "d" if os.path.exists("d:") else "c"
     location = letter + ":\\jenkins\\pymy\\%s\\%s%s\\dist\\%s"
 else:
