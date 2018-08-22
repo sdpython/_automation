@@ -1,0 +1,19 @@
+
+language: python
+
+python:
+  - { PATH: "{{Python37}}", VERSION: 3.7, DIST: std, PYINT: python3.7 }
+  
+virtualenv:
+  - path: {{ospathjoin(root_path, pickname("$NAME_JENKINS", project_name + "_$VERSION_$DIST_$NAME"), "_venv")}}
+  
+before_script:
+    # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
+  -  if [ "PYPI" not in ${NAME} ] then $PYINT -c "from pip._internal import main;main(\"install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs tkinterquickhelper --extra-index-url=https://pypi.python.org/simple/\".split())" fi
+  -  if [ "PYPI" in ${NAME} ] then $PYINT -c "from pip._internal import main;main(\"install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pypi-server --extra-index-url=https://pypi.python.org/simple/\".split())" fi
+
+script:
+  - { CMD: "$PYINT -u jenkins/copy_lectures.py", NAME: "COPYDOC", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
+  - { CMD: "$PYINT -u jenkins/start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
+  - { CMD: "$PYINT -u doc/server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
+  - { CMD: "$PYINT -u jenkins/publish_lectures.py", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
