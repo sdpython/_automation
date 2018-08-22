@@ -35,20 +35,26 @@ pwd = keyring.get_password("jenkins", "_automation,pwd")
 
 #########################################
 # instantiation d'une classe faisant l'interface avec le service
-letter = "d" if os.path.exists("d:") else "c"
-engines = engines_default()
+platform = "linux"
+if platform.startswith("win"):
+    letter = "d" if os.path.exists("d:") else "c"
+    location = letter + ":\\jenkins\\pymy"
+else:
+    location = "/var/lib/jenkins/workspace"
+
+engines = engines_default(platform=platform)
 fLOG("------------")
 for k, v in sorted(engines.items()):
     fLOG("    {0}='{1}'".format(k, v))
 fLOG("------------")
 
-js = JenkinsExt('http://localhost:8080/', user, pwd,
-                fLOG=fLOG, engines=engines)
+host = "163.172.81.244"
+js = JenkinsExt('http://{0}:8080/'.format(host), user, pwd,
+                fLOG=fLOG, engines=engines, platform=platform)
 
 #########################################
 # mise à jour des jobs
-setup_jenkins_server(js,
-                     overwrite=True,
+setup_jenkins_server(js, overwrite=True,
                      delete_first=False,
-                     location=letter + ":\\jenkins\\pymy",
+                     location=location,
                      disable_schedule=False)
