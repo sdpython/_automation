@@ -46,21 +46,20 @@ from ensae_teaching_cs.automation.ftp_publish_helper import publish_teachings_to
 
 # on utilise keyring pour stocker les identifiants
 # à commenter ou décommenter au besoin
-user = keyring.get_password("web", os.environ["COMPUTERNAME"] + "user")
-pwd = keyring.get_password("web", os.environ["COMPUTERNAME"] + "pwd")
-ftpsite = keyring.get_password("web", os.environ["COMPUTERNAME"] + "ftp")
-code_google = keyring.get_password(
-    "web", os.environ["COMPUTERNAME"] + "google")
+user = keyring.get_password("web", "_automation,user")
+pwd = keyring.get_password("web", "_automation,pwd")
+ftpsite = keyring.get_password("web", "_automation,ftp")
+code_google = keyring.get_password("web", "_automation,google")
 if pwd is None or user is None or ftpsite is None or code_google is None:
     print("ERROR: password or user or ftpsite is empty, you should execute:")
     print(
-        '    keyring.set_password("web", os.environ["COMPUTERNAME"] + "user", "..")')
+        '    keyring.set_password("web", "_automation,user", "..")')
     print(
-        '    keyring.set_password("web", os.environ["COMPUTERNAME"] + "pwd", "..")')
+        '    keyring.set_password("web", "_automation,pwd", "..")')
     print(
-        '    keyring.set_password("web", os.environ["COMPUTERNAME"] + "ftp", "..")')
+        '    keyring.set_password("web", "_automation,ftp", "..")')
     print(
-        '    keyring.set_password("web", os.environ["COMPUTERNAME"] + "google", "..")')
+        '    keyring.set_password("web", "_automation,google", "..")')
     print("Exit")
     sys.exit(0)
 if code_google is None:
@@ -108,8 +107,12 @@ random.shuffle(modules)
 # valeurs par défaut
 
 # emplacement local de la documentation
-letter = "d" if os.path.exists("d:") else "c"
-location = letter + ":\\jenkins\\pymy\\%s\\%s%s\\dist\\%s"
+if platform.startswith("win"):
+    letter = "d" if os.path.exists("d:") else "c"
+    location = letter + ":\\jenkins\\pymy\\%s\\%s%s\\dist\\%s"
+else:
+    location = "/var/lib/jenkins/workspace/%s/%s%s/dist/%s"
+
 rootw = "/www/htdocs/app/%s/%s"                   # destination sur le site FTP
 # seconde destination pour le site lesenfantscodaient.fr
 rootw2 = "/lesenfantscodaient.fr"

@@ -32,6 +32,7 @@ from ensae_teaching_cs.automation.jenkins_helper import setup_jenkins_server, en
 
 user = keyring.get_password("jenkins", "_automation,user")
 pwd = keyring.get_password("jenkins", "_automation,pwd")
+host = keyring.get_password("jenkins", "_automation,host")
 
 #########################################
 # instantiation d'une classe faisant l'interface avec le service
@@ -48,7 +49,6 @@ for k, v in sorted(engines.items()):
     fLOG("    {0}='{1}'".format(k, v))
 fLOG("------------")
 
-host = "163.172.81.244"
 js = JenkinsExt('http://{0}:8080/'.format(host), user, pwd,
                 fLOG=fLOG, engines=engines, platform=platform)
 
