@@ -214,3 +214,10 @@ if [ -d sqllike ]; then
     cd ..
 fi
 
+if [ -d machinelearningext ]; then
+    echo *** machinelearningext
+    cd machinelearningext
+    git pull
+    cd ..
+fi
+

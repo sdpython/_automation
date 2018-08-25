@@ -15,12 +15,7 @@ from pyquickhelper.loghelper import run_cmd
 
 #########################################
 # pypi
-pypis = [sys.executable.replace("pythonw", "python"),
-        r"c:\Python370_x64\python.exe",
-        r"c:\Python366_x64\python.exe",
-        r"c:\Python365_x64\python.exe",
-        r"c:\Python364_x64\python.exe",
-        r"c:\Python363_x64\python.exe"]
+pypis = [sys.executable.replace("pythonw", "python")]
 pypi = list(filter(lambda p: os.path.exists(p), pypis))
 if len(pypi) == 0:
     raise FileNotFoundError("Unable to find any of\n'{0}'".format("\n".join(pypis)))

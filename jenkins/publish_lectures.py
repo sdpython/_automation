@@ -40,6 +40,7 @@ fLOG(OutputPrint=True)
 
 from pyquickhelper.filehelper import TransferFTP, FileTreeNode, FolderTransferFTP
 from ensae_teaching_cs.automation.ftp_publish_helper import publish_teachings_to_web
+from ensae_teaching_cs.automation.teaching_modules import get_teaching_modules
 
 ##################
 # accès au site web
@@ -69,37 +70,7 @@ if code_google is None:
 ##################
 # liste des modules à mettre à jouer
 # commenter ou décommenter les modules
-modules = [
-    "actuariat_python",
-    "code_beatrix",
-    "cpyquickhelper",
-    "ensae_projects",
-    "jupytalk",
-    "jyquickhelper",
-    "mlstatpy",
-    "pyensae",
-    "pymmails",
-    "pymyinstall",
-    "pyquickhelper",
-    "tkinterquickhelper",
-    "pyrsslocal",
-    "pysqllike",
-    "python3_module_template",
-    "teachpyx",
-    "pandas_streaming",
-    "lightmlboard",
-    "lightmlrestapi",
-    "mlinsights",
-    "pyenbc",
-    "mlprodict",
-    "papierstat",
-    "sparkouille",
-    "manydataapi",
-    "csharpy",
-    "csharpyml",
-    "ensae_teaching_dl",
-    "ensae_teaching_cs",
-]
+modules = get_teaching_modules()
 
 random.shuffle(modules)
 

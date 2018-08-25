@@ -17,9 +17,13 @@ import os
 # paramètres
 # root est là où sont compilés les packages
 # dest est le répertoire destination
-letter = "d" if os.path.exists("d:") else "c:"
-root = letter + ":\\jenkins\\pymy"
-dest = letter + ":\\jenkins\\documentation"
+if sys.platform.startswith("win"):
+    letter = "d:" if os.path.exists("d:") else "c:"
+    root = letter + "\\jenkins\\pymy"
+    dest = letter + "\\jenkins\\documentation"
+else:
+    root = "/var/lib/jenkins/workspace"
+    dest = "/var/lib/jenkins/workspace/documentation"
 
 #########################################
 # logging

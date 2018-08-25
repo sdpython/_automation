@@ -204,9 +204,16 @@ git pull
 cd ..
 
 :sqllike:
-if not exist sqllike goto end:
+if not exist sqllike goto machinelearningext:
 @echo *** sqllike
 cd sqllike
+git pull
+cd ..
+
+:machinelearningext:
+if not exist machinelearningext goto end:
+@echo *** machinelearningext
+cd machinelearningext
 git pull
 cd ..
 
