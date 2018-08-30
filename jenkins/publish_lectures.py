@@ -90,13 +90,8 @@ rootw2 = "/lesenfantscodaient.fr"
 google_id = code_google                         # identifiant google analytics
 suffix = ("_UT_%d%d_std" % sys.version_info[:2],)
 
-modules0 = modules
-modules = [_ for _ in modules if os.path.exists(
-    location % (_, _, suffix[0], "html"))]
 if len(modules) == 0:
-    _ = modules0[0]
-    one = location % (_, _, suffix[0], "html")
-    raise ValueError("No module can be updated, for example '{0}'".format(one))
+    raise ValueError("Module list is empty.")
 print("List of modules to publish:")
 for i, mod in enumerate(sorted(modules)):
     print("  {0}/{1}: {2}".format(i + 1, len(modules), mod))

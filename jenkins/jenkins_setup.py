@@ -33,10 +33,10 @@ from ensae_teaching_cs.automation.jenkins_helper import setup_jenkins_server, en
 user = keyring.get_password("jenkins", "_automation,user")
 pwd = keyring.get_password("jenkins", "_automation,pwd")
 host = keyring.get_password("jenkins", "_automation,host")
+platform = "linux"
 
 #########################################
 # instantiation d'une classe faisant l'interface avec le service
-platform = "linux"
 if platform.startswith("win"):
     letter = "d" if os.path.exists("d:") else "c"
     location = letter + ":\\jenkins\\pymy"
