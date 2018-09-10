@@ -101,4 +101,4 @@ for i, mod in enumerate(sorted(modules)):
 publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
                          location=location, rootw=rootw, rootw2=rootw2,
                          modules=modules, password=pwd, suffix=suffix,
-                         force_allow=["xavierdupre"])
+                         force_allow=["xavierdupre"], exc=False)
