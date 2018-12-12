@@ -211,9 +211,16 @@ git pull
 cd ..
 
 :machinelearningext:
-if not exist machinelearningext goto end:
+if not exist machinelearningext goto mathenjeu:
 @echo *** machinelearningext
 cd machinelearningext
+git pull
+cd ..
+
+:mathenjeu:
+if not exist mathenjeu goto end:
+@echo *** mathenjeu
+cd mathenjeu
 git pull
 cd ..
 

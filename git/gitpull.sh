@@ -221,3 +221,10 @@ if [ -d machinelearningext ]; then
     cd ..
 fi
 
+if [ -d mathenjeu ]; then
+    echo *** mathenjeu
+    cd mathenjeu
+    git pull
+    cd ..
+fi
+
