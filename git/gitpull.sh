@@ -228,3 +228,10 @@ if [ -d mathenjeu ]; then
     cd ..
 fi
 
+if [ -d lecture_citation ]; then
+    echo *** lecture_citation
+    cd lecture_citation
+    git pull
+    cd ..
+fi
+

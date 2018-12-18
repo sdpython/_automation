@@ -218,9 +218,16 @@ git pull
 cd ..
 
 :mathenjeu:
-if not exist mathenjeu goto end:
+if not exist mathenjeu goto lecture_citation:
 @echo *** mathenjeu
 cd mathenjeu
+git pull
+cd ..
+
+:lecture_citation:
+if not exist lecture_citation goto end:
+@echo *** lecture_citation
+cd lecture_citation
 git pull
 cd ..
 
