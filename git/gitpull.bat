@@ -225,9 +225,16 @@ git pull
 cd ..
 
 :lecture_citation:
-if not exist lecture_citation goto end:
+if not exist lecture_citation goto botadi:
 @echo *** lecture_citation
 cd lecture_citation
+git pull
+cd ..
+
+:botadi:
+if not exist botadi goto end:
+@echo *** botadi
+cd botadi
 git pull
 cd ..
 

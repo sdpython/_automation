@@ -24,9 +24,9 @@ pypi = pypi[0]
 #########################################
 # command line
 if sys.platform.startswith("win"):
-    cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'-v -u -p {1} --disable-fallback {2}\'.split())"'
+    cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'--port={1} --storage={2}\'.split())"'
 else:
-    cmd = "pypi-server -v -u -p {1} --disable-fallback {2}"
+    cmd = "pypi-server --port={1} --storage={2}"
     
 #########################################
 # parameters

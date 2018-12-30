@@ -235,3 +235,10 @@ if [ -d lecture_citation ]; then
     cd ..
 fi
 
+if [ -d botadi ]; then
+    echo *** botadi
+    cd botadi
+    git pull
+    cd ..
+fi
+

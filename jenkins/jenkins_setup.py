@@ -4,6 +4,20 @@ Update Jenkins Jobs
 ===================
 
 Update Jenkins jobs for GitHub repositories.
+To set password:
+
+::
+
+    import keyring
+    keyring.set_password("jenkins", "_automation,user", "...")
+    keyring.set_password("jenkins", "_automation,pwd", "...")
+    keyring.set_password("jenkins", "_automation,host", "...")
+
+Use then ``addpath.sh`` and:
+
+::
+
+    python3.7 -u jenkins_setup.py
 """
 
 #########################################
