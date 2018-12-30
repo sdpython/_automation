@@ -27,3 +27,5 @@ export PYTHONPATH=/home/dupre/github/python3_module_template/src:$PYTHONPATH
 export PYTHONPATH=/home/dupre/github/sparkouille/src:$PYTHONPATH
 export PYTHONPATH=/home/dupre/github/teachpyx/src:$PYTHONPATH
 export PYTHONPATH=/home/dupre/github/tkinterquickhelper/src:$PYTHONPATH
+export PYTHONPATH=/home/dupre/github/lecture_citation/src:$PYTHONPATH
+export PYTHONPATH=/home/dupre/github/mokadi/src:$PYTHONPATH

@@ -4,7 +4,12 @@ Start a local pypi server
 =========================
 
 This Script launches a pipy server and leaves
-without waiting for the end.
+without waiting for the end. It runs the scripts:
+
+::
+
+    pypi-server --port=8067 --storage=/var/lib/jenkins/workspace/
+    nohup pypi-server --port=8067 --storage=/var/lib/jenkins/workspace/ > /var/lib/jenkins/workspace/pypi.txt 2>&1 &
 """
 
 #########################################
