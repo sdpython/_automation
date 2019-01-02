@@ -8,8 +8,8 @@ without waiting for the end. It runs the scripts:
 
 ::
 
-    pypi-server --port=8067 --storage=/var/lib/jenkins/workspace/
-    nohup pypi-server --port=8067 --storage=/var/lib/jenkins/workspace/ > /var/lib/jenkins/workspace/pypi.txt 2>&1 &
+    pypi-server --port=8067 --root=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/
+    nohup pypi-server --port=root --storage=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/ > /var/lib/jenkins/workspace/local_pypi/pypi.txt 2>&1 &
 """
 
 #########################################
@@ -29,9 +29,9 @@ pypi = pypi[0]
 #########################################
 # command line
 if sys.platform.startswith("win"):
-    cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'--port={1} --storage={2}\'.split())"'
+    cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'--port={1} --root={2} > {3}\'.split())"'
 else:
-    cmd = "pypi-server --port={1} --storage={2}"
+    cmd = "pypi-server --port={1} --root={2} > {3}"
     
 #########################################
 # parameters
@@ -51,7 +51,8 @@ path = list(filter(lambda p: os.path.exists(p), paths))
 # start pypi
 if any(path):
     path = path[0]
-    cmd = cmd.format(pypi, port, path)
+    dest = os.path.normpath(os.path.join(path, "..", "pypi.log.txt"))
+    cmd = cmd.format(pypi, port, path, dest)
 
     print("cmd", cmd)
     run_cmd(cmd, wait=False, fLOG=print)
