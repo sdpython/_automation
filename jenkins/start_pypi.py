@@ -3,13 +3,13 @@
 Start a local pypi server
 =========================
 
-This Script launches a pipy server and leaves
+This Script launches a :epkg:`pipy` server and leaves
 without waiting for the end. It runs the scripts:
 
 ::
 
     pypi-server --port=8067 --root=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/
-    nohup pypi-server --port=root --storage=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/ > /var/lib/jenkins/workspace/local_pypi/pypi.txt 2>&1 &
+    nohup pypi-server --port=root --storage=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/ &> /var/lib/jenkins/workspace/local_pypi/pypi.txt &
 """
 
 #########################################
@@ -31,7 +31,7 @@ pypi = pypi[0]
 if sys.platform.startswith("win"):
     cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'--port={1} --root={2} > {3}\'.split())"'
 else:
-    cmd = "pypi-server --port={1} --root={2} > {3}"
+    cmd = "pypi-server --port={1} --root={2} &> {3}"
     
 #########################################
 # parameters
@@ -54,7 +54,7 @@ if any(path):
     dest = os.path.normpath(os.path.join(path, "..", "pypi.log.txt"))
     cmd = cmd.format(pypi, port, path, dest)
 
-    print("cmd", cmd)
+    print("cmd '{0}'".format(cmd))
     run_cmd(cmd, wait=False, fLOG=print)
 else:
     print("Unable to find any of\n{0}.".format("\n".join(paths)))
