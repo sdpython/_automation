@@ -9,7 +9,7 @@ without waiting for the end. It runs the scripts:
 ::
 
     pypi-server --port=8067 --root=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/
-    nohup pypi-server --port=root --storage=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/ &> /var/lib/jenkins/workspace/local_pypi/pypi.txt &
+    nohup pypi-server --port=8067 --root=/var/lib/jenkins/workspace/local_pypi/local_pypi_server/ > /var/lib/jenkins/workspace/local_pypi/pypi.txt &
 """
 
 #########################################
