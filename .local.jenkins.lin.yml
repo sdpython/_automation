@@ -17,3 +17,4 @@ script:
   - { CMD: "$PYINT -u jenkins/start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
   - { CMD: "$PYINT -u doc/server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
   - { CMD: "$PYINT -u jenkins/publish_lectures.py", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
+  - { CMD: "bash fork/machinelearning.sh", NAME: "FORK_machinelearning", CLEAN: "0" }
