@@ -9,9 +9,9 @@ echo --BUILD--DEBUG--
 bash build.sh -debug || exit 1
 
 echo --UNITTEST--RELEASE--
-bash build.sh -runTests -Release || exit 1
+dotnet test Microsoft.sln -c Release || exit 1
 echo --UNITTEST--DEBUG--
-bash build.sh -runTests -Debug || exit 1
+dotnet test Microsoft.sln -c Debug || exit 1
 
 echo --END--
 cd ..
