@@ -19,7 +19,7 @@ dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.M
 dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.EntryPoints" || exit 1
 dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.InteralCodeAnalyzer" || exit 1
 dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.RunTests" || exit 1
-dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.Scenarios" || exit 1
+# dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.Scenarios" || exit 1
 dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.StaticPipelineTesting" || exit 1
 dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.Sweeper" || exit 1
 dotnet test Microsoft.ML.sln -c Release --filter "FullyQualifiedName~Microsoft.ML.Tests" || exit 1
