@@ -2,6 +2,8 @@
 echo --CLONE--
 git clone -b ext --single-branch https://github.com/sdpython/machinelearning.git --recursive
 cd machinelearning
+git pull
+git submodule update --init --recursive
 
 echo --BUILD--RELEASE--
 bash build.sh -release || exit 1
