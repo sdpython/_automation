@@ -36,8 +36,22 @@ echo --TEST--Microsoft.ML.StaticPipelineTesting
 dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.StaticPipelineTesting" || exit 1
 echo --TEST--Microsoft.ML.Sweeper
 dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Sweeper" || exit 1
-echo --TEST--Microsoft.ML.Tests
-dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests" || exit 1
+echo --TEST--Microsoft.ML.Tests.FeatureContributionTests
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.FeatureContributionTests" || exit 1
+# echo --TEST--Microsoft.ML.Tests.ImageTests
+# dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.ImageTests" || exit 1
+echo --TEST--Microsoft.ML.Tests.OnnxConversionTest
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.OnnxConversionTest" || exit 1
+echo --TEST--Microsoft.ML.Tests.PartitionedFileLoaderTests
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.PartitionedFileLoaderTests" || exit 1
+echo --TEST--Microsoft.ML.Tests.Scenarios
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.Scenarios" || exit 1
+echo --TEST--Microsoft.ML.Tests.PermutationFeatureImportanceTests
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.PermutationFeatureImportanceTests" || exit 1
+echo --TEST--Microsoft.ML.Tests.TermEstimatorTests
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.TermEstimatorTests" || exit 1
+echo --TEST--Microsoft.ML.Tests.Transformers
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.Transformers" || exit 1
 echo --TEST--Microsoft.ML.TimeSeries
 dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.TimeSeries" || exit 1
 
