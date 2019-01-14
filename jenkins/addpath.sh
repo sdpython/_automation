@@ -13,6 +13,7 @@ export PYTHONPATH=/home/dupre/github/jupytalk/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/lightmlboard/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/lightmlrestapi/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/manydataapi/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/mathenjeu/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/mlinsights/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/mlprodict/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/mlstatpy/src:${PYTHONPATH}
