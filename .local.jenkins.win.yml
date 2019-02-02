@@ -12,3 +12,4 @@ script:
   - { CMD: "python -u jenkins\\start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
   - { CMD: "python -u doc\\server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
   - { CMD: "python -u jenkins\\publish_lectures.py", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
+  - { CMD: "python -m pip list --outdated", NAME: "LIST"}

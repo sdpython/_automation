@@ -17,6 +17,7 @@ script:
   - { CMD: "$PYINT -u jenkins/start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
   - { CMD: "$PYINT -u doc/server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
   - { CMD: "$PYINT -u jenkins/publish_lectures.py", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
+  - { CMD: "$PYINT -m pip list --outdated", NAME: "LIST"}
   # jenkins does does have enough permissions by default.
   # It must be manually built and the job can started again.
   # After the first execution, chmod -R 755 * must be run.
