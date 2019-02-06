@@ -35,7 +35,7 @@ dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.
 echo --TEST--Microsoft.ML.StaticPipelineTesting
 dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.StaticPipelineTesting" || exit 1
 echo --TEST--Microsoft.ML.Sweeper
-dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Sweeper" || exit 1
+dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Sweeper.Tests" || exit 1
 echo --TEST--Microsoft.ML.Tests.FeatureContributionTests
 dotnet test Microsoft.ML.sln -c Debug --filter "FullyQualifiedName~Microsoft.ML.Tests.FeatureContributionTests" || exit 1
 # echo --TEST--Microsoft.ML.Tests.ImageTests
