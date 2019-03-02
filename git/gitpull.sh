@@ -242,3 +242,10 @@ if [ -d botadi ]; then
     cd ..
 fi
 
+if [ -d _benchmarks ]; then
+    echo *** _benchmarks
+    cd _benchmarks
+    git pull
+    cd ..
+fi
+

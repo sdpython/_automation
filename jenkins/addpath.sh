@@ -29,4 +29,5 @@ export PYTHONPATH=/home/dupre/github/sparkouille/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/teachpyx/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/tkinterquickhelper/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/lecture_citation/src:${PYTHONPATH}
-export PYTHONPATH=/home/dupre/github/mokadi/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/botadi/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/_benchmarks/src:${PYTHONPATH}

@@ -232,9 +232,16 @@ git pull
 cd ..
 
 :botadi:
-if not exist botadi goto end:
+if not exist botadi goto _benchmarks:
 @echo *** botadi
 cd botadi
+git pull
+cd ..
+
+:_benchmarks:
+if not exist botadi goto end:
+@echo *** _benchmarks
+cd _benchmarks
 git pull
 cd ..
 
