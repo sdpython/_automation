@@ -51,8 +51,8 @@ path = list(filter(lambda p: os.path.exists(p), paths))
 # start pypi
 if any(path):
     path = path[0]
-    # dest = os.path.normpath(os.path.join(path, "..", "pypi.log.txt"))
-    # cmd = cmd.format(pypi, port, path, dest)
+    dest = os.path.normpath(os.path.join(path, "..", "pypi.log.txt"))
+    cmd = cmd.format(pypi, port, path, dest)
     print("cmd '{0}'".format(cmd))
     run_cmd(cmd, wait=False, fLOG=print)
 else:
