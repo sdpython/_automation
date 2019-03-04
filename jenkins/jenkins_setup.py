@@ -62,6 +62,8 @@ fLOG("------------")
 for k, v in sorted(engines.items()):
     fLOG("    {0}='{1}'".format(k, v))
 fLOG("------------")
+fLOG("check:", [user, host])
+fLOG("------------")
 
 js = JenkinsExt('http://{0}:8080/'.format(host), user, pwd,
                 fLOG=fLOG, engines=engines, platform=platform)
