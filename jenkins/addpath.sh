@@ -31,3 +31,4 @@ export PYTHONPATH=/home/dupre/github/tkinterquickhelper/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/lecture_citation/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/botadi/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/_benchmarks/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/pymlbenchmark/src:${PYTHONPATH}

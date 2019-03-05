@@ -239,9 +239,16 @@ git pull
 cd ..
 
 :_benchmarks:
-if not exist botadi goto end:
+if not exist botadi goto pymlbenchmark:
 @echo *** _benchmarks
 cd _benchmarks
+git pull
+cd ..
+
+:pymlbenchmark:
+if not exist botadi goto end:
+@echo *** pymlbenchmark
+cd pymlbenchmark
 git pull
 cd ..
 

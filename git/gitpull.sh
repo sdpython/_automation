@@ -249,3 +249,10 @@ if [ -d _benchmarks ]; then
     cd ..
 fi
 
+if [ -d pymlbenchmark ]; then
+    echo *** pymlbenchmark
+    cd pymlbenchmark
+    git pull
+    cd ..
+fi
+
