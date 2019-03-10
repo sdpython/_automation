@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b ext --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
+git clone -b master --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
 cd sklearn-onnx
 
 echo --TEST--
