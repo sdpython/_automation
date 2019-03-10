@@ -3,16 +3,13 @@ git clone -b master --single-branch https://github.com/xadupre/sklearn-onnx.git 
 cd sklearn-onnx
 
 echo --TEST--
-python3.7 -m pytest tests
-if [ $? -ne 0 ]; then exit $?; fi
+python3.7 -m pytest tests || exit 1
 
 echo --DOCUMENTATION--
-python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-T','-b','html','-d','build/doctrees','docs','dist/html'])"
-if [ $? -ne 0 ]; then exit $?; fi
+python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-T','-b','html','-d','build/doctrees','docs','dist/html'])" || exit 1
 
 echo --COVERAGE--
-python3.7 -m coverage run --include=skl2onnx/** tests/benchmark.py
-if [ $? -ne 0 ]; then exit $?; fi
+python3.7 -m coverage run --include=skl2onnx/** tests/benchmark.py || exit 1
 
 echo --END--
 cd ..
