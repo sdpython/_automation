@@ -1,6 +1,6 @@
 echo --CLONE--
 git clone -b master --single-branch https://github.com/xadupre/keras-onnx.git --recursive
-cd sklearn-onnx
+cd keras-onnx
 
 echo --TEST--
 python3.7 -m pytest tests || exit 1

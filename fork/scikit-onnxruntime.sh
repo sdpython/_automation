@@ -1,6 +1,6 @@
 echo --CLONE--
 git clone -b master --single-branch https://github.com/xadupre/scikit-onnxruntime.git --recursive
-cd sklearn-onnx
+cd scikit-onnxruntime
 
 echo --TEST--
 python3.7 -m pytest tests || exit 1
