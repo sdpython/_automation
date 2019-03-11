@@ -104,7 +104,8 @@ for name in ['scikit-onnxruntime', 'sklearn-onnx']:
     folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{0}_37_std/{0}".format(name)
     root_web = "/www/htdocs/app/%s/helpsphinx" % name
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
-                               root_local=folder, root_web=root_web))
+                               local="sklearn-onnx", root_web=root_web,
+                               root_local=os.path.dirname(folder)))
     
 publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
                          location=location, rootw=rootw, rootw2=rootw2,
