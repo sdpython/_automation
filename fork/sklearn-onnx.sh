@@ -14,7 +14,8 @@ cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
 echo --COVERAGE--
 cd tests
 python3.7 -m coverage run benchmark.py || exit 1
-python3.7 -m coverage html -d ../dist/html/coverage_html || exit 1
+sed 's+/var/lib/jenkins/workspace/_automation/_automation_FORK_sklearn-onnx_37_std/++g' .coverage > .coverage
+python3.7 -m coverage html -d ../dist/html/coverage_html --include **/skl2onnx/** || exit 1
 cd ..
 
 echo --DOCUMENTATION--
