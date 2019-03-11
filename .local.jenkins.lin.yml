@@ -31,3 +31,4 @@ script:
   - { CMD: "bash fork/sklearn-onnx.sh", NAME: "FORK_sklearn-onnx" }
   - { CMD: "bash fork/keras-onnx.sh", NAME: "FORK_keras-onnx" }
   - { CMD: "bash fork/scikit-onnxruntime.sh", NAME: "FORK_scikit-onnxruntime" }
+  - { CMD: "bash fork/onnxmltools.sh", NAME: "FORK_onnxmltools" }
