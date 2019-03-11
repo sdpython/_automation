@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b voting2 --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
+git clone -b jenkins --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
 cd sklearn-onnx
 
 echo --TEST--
