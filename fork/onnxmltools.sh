@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b voting2 --single-branch https://github.com/xadupre/onnxmltools.git --recursive
+git clone -b master --single-branch https://github.com/xadupre/onnxmltools.git --recursive
 cd onnxmltools
 
 echo --WHEEL--
