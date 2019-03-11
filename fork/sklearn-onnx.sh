@@ -21,6 +21,7 @@ cd ..
 echo --DOCUMENTATION--
 mkdir docs/coverage_html || exit 1
 cp -r dist/html/coverage_html docs/coverage_html || exit 1
+python3.7 -m pip install onnxmltools
 python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-T','-b','html','-d','build/doctrees','docs','dist/html'])" || exit 1
 
 echo --END--
