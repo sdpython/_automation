@@ -2,6 +2,9 @@ echo --CLONE--
 git clone -b master --single-branch https://github.com/xadupre/keras-onnx.git --recursive
 cd keras-onnx
 
+echo --INSTALL--
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx || exit 1
+
 echo --TEST--
 python3.7 -m pytest tests || exit 1
 
