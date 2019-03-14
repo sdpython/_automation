@@ -3,7 +3,7 @@ git clone -b submodule --single-branch https://github.com/sdpython/pyre2.git --r
 cd pyre2
 
 echo --RE2-CLONE--
-git clone -b master --single-branch https://github.com/sdpython/pyre2.git --recursive
+git clone -b master --single-branch https://github.com/google/re2.git --recursive
 
 echo --RE2-MAKE--
 cd re2
