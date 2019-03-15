@@ -102,6 +102,8 @@ for i, mod in enumerate(sorted(modules)):
 other_projects = []
 for name in ['scikit-onnxruntime', 'sklearn-onnx', 'onnxruntime']:
     folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{0}_37_std/{0}/dist/html".format(name)
+    if not os.path.exists(folder):
+        continue
     root_web = "/www/htdocs/app/%s/helpsphinx" % name
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local="sklearn-onnx", root_web=root_web,
