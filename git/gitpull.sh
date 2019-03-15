@@ -256,3 +256,10 @@ if [ -d pymlbenchmark ]; then
     cd ..
 fi
 
+if [ -d wrapclib ]; then
+    echo *** wrapclib
+    cd wrapclib
+    git pull
+    cd ..
+fi
+
