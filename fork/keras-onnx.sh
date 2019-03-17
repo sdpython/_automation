@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/xadupre/keras-onnx.git --recursive
+git clone -b jenkins --single-branch https://github.com/xadupre/keras-onnx.git --recursive
 cd keras-onnx
 
 echo --INSTALL--
