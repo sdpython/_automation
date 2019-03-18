@@ -33,3 +33,4 @@ script:
   - { CMD: "bash fork/onnxmltools.sh", NAME: "FORK_onnxmltools" }
   - { CMD: "bash fork/onnx.sh", NAME: "FORK_onnx", CLEAN: "0" }
   - { CMD: "bash fork/onnxruntime.sh", NAME: "FORK_onnxruntime", CLEAN: "0" }
+  - { CMD: "bash fork/scikit-learn.sh", NAME: "FORK_scikit-learn", CLEAN: "0" }
