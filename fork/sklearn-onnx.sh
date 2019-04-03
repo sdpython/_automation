@@ -20,6 +20,9 @@ python3.7 -m coverage run benchmark.py || exit 1
 python3.7 -m coverage html -d ../dist/html/coverage_html --include **/skl2onnx/** || exit 1
 cd ..
 
+echo --INSTALL--
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-onnxruntime || exit 1
+
 echo --DOCUMENTATION--
 mkdir docs/coverage_html || exit 1
 cp tests/TESTDUMP/*.xlsx docs || exit 1

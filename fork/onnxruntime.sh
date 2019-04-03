@@ -13,7 +13,7 @@ echo --COPY--
 cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx scikit-onnxruntime || exit 1
 
 echo --DOCUMENTATION--
 python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v', '-T','-b','html','-d','build/debian/_doctrees','docs/python','dist/html'])" || exit 1
