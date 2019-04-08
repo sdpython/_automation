@@ -1,6 +1,6 @@
 echo --CLONE--
 git clone -b xadupre/b37 --single-branch https://github.com/microsoft/nimbusml.git --recursive
-cd NimbusML
+cd nimbusml
 
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
