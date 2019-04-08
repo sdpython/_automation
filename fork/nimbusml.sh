@@ -7,7 +7,7 @@ pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ on
 
 echo --BUILD--
 export LD_LIBRARY_PATH=/usr/local/Python-3.7.2
-build.sh || exit 1
+build.sh --configuration RlsLinPy3.7 || exit 1
 
 echo --COPY--
 cp target/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
