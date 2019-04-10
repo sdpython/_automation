@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b xadupre/b37b --single-branch https://github.com/microsoft/nimbusml.git --recursive
+git clone -b xadupre/b37 --single-branch https://github.com/microsoft/nimbusml.git --recursive
 cd nimbusml
 
 echo --INSTALL--
