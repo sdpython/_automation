@@ -16,7 +16,11 @@ echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx scikit-onnxruntime || exit 1
 
 echo --DOCUMENTATION--
-python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v', '-T','-b','html','-d','build/debian/_doctrees','docs/python','dist/html'])" || exit 1
+cd build/debian/Release 
+python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v', '-T','-b','html','-d','../../../dist/_doctrees','../../../docs/python','../../../dist/html'])" || exit 1
+cd ..
+cd ..
+cd ..
 
 echo --END--
 cd ..
