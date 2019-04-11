@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b xadupre/b37 --single-branch https://github.com/microsoft/nimbusml.git --recursive
+git clone -b py37_11 --single-branch https://github.com/microsoft/nimbusml.git --recursive
 cd nimbusml
 
 echo --INSTALL--
@@ -7,7 +7,7 @@ pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ on
 
 echo --BUILD--
 export LD_LIBRARY_PATH=/usr/local/Python-3.7.2
-./build.sh --configuration RlsLinPy3.7 || exit 1
+./build.sh --configuration RlsLinPy3.7 --runTests || exit 1
 
 echo --COPY--
 cp target/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
