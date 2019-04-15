@@ -3,7 +3,7 @@ git clone -b jenkins --single-branch https://github.com/xadupre/keras-onnx.git -
 cd keras-onnx
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxruntime || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxruntime onnxconverter-common || exit 1
 
 echo --TEST--
 python3.7 -m pytest tests || exit 1

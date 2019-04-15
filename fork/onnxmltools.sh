@@ -3,7 +3,7 @@ git clone -b master --single-branch https://github.com/xadupre/onnxmltools.git -
 cd onnxmltools
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnxruntime onnx onnxtk || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnxruntime onnx onnxconverter-common || exit 1
 
 echo --INSTALL-KERAS--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ keras2onnx || exit 1

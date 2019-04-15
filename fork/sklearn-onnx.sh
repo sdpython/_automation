@@ -3,7 +3,7 @@ git clone -b jenkins --single-branch https://github.com/xadupre/sklearn-onnx.git
 cd sklearn-onnx
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx onnxconverter-common || exit 1
 
 echo --TEST--
 python3.7 -m pytest tests || exit 1
