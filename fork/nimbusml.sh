@@ -1,6 +1,5 @@
 echo --CLONE--
-# py37_11
-git clone -b master --single-branch https://github.com/microsoft/nimbusml.git --recursive
+git clone -b py37_11 --single-branch https://github.com/microsoft/nimbusml.git --recursive
 cd nimbusml
 
 echo --INSTALL--
