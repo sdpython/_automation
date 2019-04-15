@@ -19,7 +19,7 @@ echo --COPY--
 cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx scikit-onnxruntime || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx scikit-onnxruntime onnxconverter-common || exit 1
 
 echo --DOCUMENTATION--
 cd build/debian/Release 
