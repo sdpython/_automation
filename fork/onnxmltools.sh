@@ -13,6 +13,8 @@ git clone --recursive https://github.com/cjlin1/libsvm libsvm
 cd libsvm
 make lib
 cd ..
+export PYTHONPATH=$PYTHONPATH:libsvm/python
+python3.7 -c "import svmutil"
 
 echo --TEST--
 python3.7 -m pytest tests || exit 1
