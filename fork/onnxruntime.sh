@@ -5,6 +5,9 @@ cd onnxruntime
 echo --UPDATE--
 git pull
 
+echo --UPDATE-SUBMODULE--
+git submodule update --init --recursive
+
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
 
