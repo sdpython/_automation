@@ -2,6 +2,9 @@ echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/xadupre/onnxruntime.git --recursive
 cd onnxruntime
 
+echo --UPDATE--
+git pull
+
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
 
