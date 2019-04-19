@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/xadupre/onnxmltools.git --recursive
+git clone -b jenkins --single-branch https://github.com/xadupre/onnxmltools.git --recursive
 cd onnxmltools
 
 echo --INSTALL--
