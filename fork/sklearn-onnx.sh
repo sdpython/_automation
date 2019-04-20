@@ -16,8 +16,10 @@ cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
 
 echo --COVERAGE--
 cd tests
+export PYTHONPATH=..
 python3.7 -m coverage run benchmark.py || exit 1
 python3.7 -m coverage html -d ../dist/html/coverage_html --include **/skl2onnx/** || exit 1
+export PYTHONPATH=
 cd ..
 
 echo --INSTALL--
