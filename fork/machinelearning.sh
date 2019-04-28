@@ -3,6 +3,7 @@
 # It must be manually built and the job can started again.
 # After the first execution, chmod -R 755 * must be run.
 echo --CLONE--
+export
 git clone -b master --single-branch https://github.com/sdpython/machinelearning.git --recursive
 cd machinelearning
 git pull
