@@ -36,3 +36,4 @@ script:
   - { CMD: "bash fork/onnxruntime.sh", NAME: "FORK_onnxruntime" }
   - { CMD: "bash fork/scikit-learn.sh", NAME: "FORK_scikit-learn" }
   - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml" }
+  - { CMD: "bash fork/pythonnet.sh", NAME: "FORK_pythonnet" }
