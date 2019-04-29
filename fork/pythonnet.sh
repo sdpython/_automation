@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b nomo --single-branch https://github.com/xadupre/pythonnet.git --recursive
+git clone -b nomo --single-branch https://github.com/sdpython/pythonnet.git --recursive
 cd pythonnet
 
 echo --UPDATE--
