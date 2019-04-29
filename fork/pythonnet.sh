@@ -18,6 +18,7 @@ echo --TEST--
 dotnet test pythonnet.15.sln
 
 echo --TESTPY--
+cp src/testing/bin/netstandard2.0/*.dll .
 python3.7 -m pytest
 
 echo --COPY--
