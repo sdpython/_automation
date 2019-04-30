@@ -8,9 +8,6 @@ git pull
 echo --UPDATE-SUBMODULE--
 git submodule update --init --recursive
 
-echo --BUILD--
-python3.7 -u setup.py build_ext --inplace
-
 echo --WHEEL--
 python3.7 -u setup.py bdist_wheel
 
