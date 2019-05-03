@@ -26,6 +26,7 @@ script:
   # It must be manually built and the job can started again.
   # After the first execution, chmod -R 755 * must be run.
   - { CMD: "bash fork/machinelearning.sh", NAME: "FORK_machinelearning", CLEAN: "0" }
+  - { CMD: "bash fork/machinelearning_ext.sh", NAME: "FORK_machinelearning_ext", CLEAN: "0" }
   # microsoft
   - { CMD: "bash fork/sklearn-onnx.sh", NAME: "FORK_sklearn-onnx" }
   - { CMD: "bash fork/keras-onnx.sh", NAME: "FORK_keras-onnx" }
