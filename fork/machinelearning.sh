@@ -4,6 +4,7 @@
 # After the first execution, chmod -R 755 * must be run.
 echo --CLONE--
 export
+rm -r -f machinelearning
 git clone -b master --single-branch https://github.com/dotnet/machinelearning.git --recursive
 cd machinelearning
 git pull

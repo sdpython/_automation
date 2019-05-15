@@ -4,6 +4,7 @@
 # After the first execution, chmod -R 755 * must be run.
 echo --CLONE--
 export
+rm -r -f machinelearning
 git clone -b ext --single-branch https://github.com/sdpython/machinelearning.git --recursive
 cd machinelearning
 git pull
