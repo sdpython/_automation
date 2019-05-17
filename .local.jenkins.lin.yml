@@ -13,7 +13,7 @@ virtualenv:
   
 before_script:
     # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
-  -  if [ "PYPI" not in ${NAME} ] then $PYINT -c "from pip._internal import main;main(\"install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs>=0.8.2648 tkinterquickhelper --extra-index-url=https://pypi.python.org/simple/\".split())" fi
+  -  if [ "PYPI" not in ${NAME} ] then $PYINT -c "from pip._internal import main;main(\"install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs>=0.8.2648 tkinterquickhelper pymlbenchmark --extra-index-url=https://pypi.python.org/simple/\".split())" fi
   -  if [ "PYPI" in ${NAME} ] then $PYINT -c "from pip._internal import main;main(\"install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pypi-server --extra-index-url=https://pypi.python.org/simple/\".split())" fi
 
 script:
