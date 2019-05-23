@@ -18,7 +18,7 @@ export PYTHONPATH=$PYTHONPATH:libsvm/python
 python3.7 -c "import svmutil"
 
 echo --TEST--
-python3.7 -m pytest tests --cov=skl2onnx || exit 1
+python3.7 -m pytest tests || exit 1
 
 echo --COVERAGE--
 cd tests
