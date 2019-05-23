@@ -17,7 +17,15 @@ export PYTHONPATH=$PYTHONPATH:libsvm/python
 python3.7 -c "import svmutil"
 
 echo --TEST--
-python3.7 -m pytest tests || exit 1
+python3.7 -m pytest tests --cov=skl2onnx || exit 1
+
+echo --COVERAGE--
+cd tests
+export PYTHONPATH=..
+python3.7 -m coverage run main.py || exit 1
+python3.7 -m coverage html -d ../dist/html/coverage_html --include **/onnxmltools/** || exit 1
+export PYTHONPATH=
+cd ..
 
 echo --WHEEL--
 python3.7 -u setup.py bdist_wheel || exit 1
