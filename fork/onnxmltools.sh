@@ -24,7 +24,7 @@ echo --COVERAGE--
 cd tests
 export PYTHONPATH=..
 python3.7 -m coverage run main.py || exit 1
-python3.7 -m coverage html -d ../dist/html/coverage_html --include **/onnxmltools/** || exit 1
+python3.7 -m coverage html -d ../dist/html/coverage_html --include **/onnxmltools/onnxmltools/** || exit 1
 export PYTHONPATH=
 cd ..
 
