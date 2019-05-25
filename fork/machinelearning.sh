@@ -9,6 +9,9 @@ cd machinelearning
 git pull
 git submodule update --init --recursive
 
+echo --LS--
+ls
+
 echo --BUILD--RELEASE--
 bash build.sh -release || exit 1
 echo --BUILD--DEBUG--
