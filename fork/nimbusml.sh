@@ -14,6 +14,7 @@ cp target/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 
 
 echo --DOCUMENTATION--
 python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v', '-T','-b','html','-d','target/_doctrees','src/python/docs/sphinx','target/html'])" || exit 1
+if [ $? -ne 0 ]; then exit $?; fi
 
 echo --END--
 cd ..
