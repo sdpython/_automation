@@ -30,7 +30,7 @@ mkdir docs/coverage_html || exit 1
 cp tests/TESTDUMP/*.xlsx docs || exit 1
 cp -r dist/html/coverage_html docs/coverage_html || exit 1
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxmltools || exit 1
-python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-T','-b','html','-d','build/doctrees','docs','dist/html'])" || exit 1
+python3.7 -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-v','-v','-T','-b','html','-d','build/doctrees','docs','dist/html'])" || exit 1
 if [ $? -ne 0 ]; then exit $?; fi
 
 echo --END--
