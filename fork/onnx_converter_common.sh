@@ -1,6 +1,6 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/xadupre/onnxmltools.git --recursive
-cd onnxmltools/onnxutils
+git clone -b jenkins --single-branch https://github.com/xadupre/onnxconverter-common.git --recursive
+cd onnxconverter-common
 
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx || exit 1
@@ -15,4 +15,4 @@ echo --COPY--
 cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
 
 echo --END--
-cd ../..
+cd ..
