@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/xadupre/onnxruntime.git --recursive
+git clone -b master --single-branch https://github.com/microsoft/onnxruntime.git --recursive
 cd onnxruntime
 
 echo --UPDATE--
