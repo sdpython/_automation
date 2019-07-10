@@ -40,3 +40,4 @@ script:
   # benchmark
   - { CMD: "bash fork/sklearn-onnx_version_ort_040.sh", NAME: "FORK_sklearn-onnx-ort-040" }
   - { CMD: "bash fork/sklearn-onnx_version_ort_dev.sh", NAME: "FORK_sklearn-onnx-ort-dev" }
+  - { CMD: "bash fork/sklearn-onnx_version_ort_tpypi.sh", NAME: "FORK_sklearn-onnx-ort-tpypi" }
