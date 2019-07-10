@@ -1,8 +1,8 @@
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps onnx || exit 1
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxconverter-common  || exit 1
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ sklearn-onnx || exit 1
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ mlprodict || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx || exit 1
+pip3.7 install --no-cache-dir --index http://localhost:8067/simple/ mlprodict || exit 1
 pip3.7 install --no-cache-dir --no-deps onnxruntime==0.4.0 || exit 1
 
 echo --TEST-DEV--
