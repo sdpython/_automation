@@ -37,3 +37,6 @@ script:
   - { CMD: "bash fork/scikit-learn.sh", NAME: "FORK_scikit-learn" }
   - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml" }
   - { CMD: "bash fork/pythonnet.sh", NAME: "FORK_pythonnet" }
+  # benchmark
+  - { CMD: "bash fork/sklearn-onnx_version_ort_040.sh", NAME: "FORK_sklearn-onnx-ort-040" }
+  - { CMD: "bash fork/sklearn-onnx_version_ort_dev.sh", NAME: "FORK_sklearn-onnx-ort-dev" }
