@@ -6,7 +6,7 @@ pip3.7 install --no-cache-dir --index http://localhost:8067/simple/ mlprodict ||
 pip3.7 install --no-cache-dir --no-deps --index https://test.pypi.org/simple/ onnxruntime || exit 1
 
 echo --TEST-DEV--
-python3.7 -m mlprodict validate_runtime -v 1 -o 7 -c 1 -r onnxruntime1 -out bench_raw_onnxruntime.xlsx -out bench_onnxruntime.xlsx -b 1 -ve 1 || exit 1
+python3.7 -m mlprodict validate_runtime -v 1 -o 7 -c 1 -r onnxruntime1 -out bench_raw_onnxruntime.xlsx -out bench_onnxruntime.xlsx -b 1 -ve 1 -s BernoulliNB || exit 1
 
 echo --END--
 cd ..
