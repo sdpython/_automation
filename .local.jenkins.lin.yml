@@ -34,6 +34,7 @@ script:
   - { CMD: "bash fork/onnx_converter_common.sh", NAME: "FORK_onnx_converter_common" }
   - { CMD: "bash fork/onnx.sh", NAME: "FORK_onnx" }
   - { CMD: "bash fork/onnxruntime.sh", NAME: "FORK_onnxruntime" }
+  - { CMD: "bash fork/onnxruntime_doc.sh", NAME: "FORK_onnxruntime_doc" }
   - { CMD: "bash fork/onnxruntime_master.sh", NAME: "FORK_onnxruntime_master" }
   - { CMD: "bash fork/onnxruntime_master_pytest.sh", NAME: "FORK_onnxruntime_master_pytest" }
   - { CMD: "bash fork/scikit-learn.sh", NAME: "FORK_scikit-learn" }
