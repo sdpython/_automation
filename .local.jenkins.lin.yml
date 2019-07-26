@@ -28,6 +28,7 @@ script:
   - { CMD: "bash fork/machinelearning.sh", NAME: "FORK_machinelearning", CLEAN: "0" }
   # microsoft
   - { CMD: "bash fork/sklearn-onnx.sh", NAME: "FORK_sklearn-onnx" }
+  - { CMD: "bash fork/sklearn-onnx-master-nightly.sh", NAME: "FORK_sklearn-onnx-master-nightly" }
   - { CMD: "bash fork/sklearn-onnx-nightly.sh", NAME: "FORK_sklearn-onnx-nightly" }
   - { CMD: "bash fork/keras-onnx.sh", NAME: "FORK_keras-onnx" }
   - { CMD: "bash fork/onnxmltools.sh", NAME: "FORK_onnxmltools" }
