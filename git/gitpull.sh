@@ -263,3 +263,10 @@ if [ -d wrapclib ]; then
     cd ..
 fi
 
+if [ -d scikit-learn_benchmarks ]; then
+    echo *** scikit-learn_benchmarks
+    cd scikit-learn_benchmarks
+    git pull
+    cd ..
+fi
+

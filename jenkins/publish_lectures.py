@@ -100,14 +100,23 @@ for i, mod in enumerate(sorted(modules)):
 # La fonction :func:`publish_teachings_to_web cache` cache beaucoup de choses.
 
 other_projects = []
-for name in ['scikit-onnxruntime', 'sklearn-onnx', 'onnxruntime', 'onnxmltools']:
+for name in ['sklearn-onnx', 'onnxruntime', 'onnxmltools']:
     folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{0}_37_std/{0}/dist/html".format(name)
     if not os.path.exists(folder):
         continue
     root_web = "/www/htdocs/app/%s/helpsphinx" % name
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
-                               local="sklearn-onnx", root_web=root_web,
+                               local="name", root_web=root_web,
                                root_local=folder))
+
+# benchmark scikit-learn
+folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/scikit-learn_benchmarks/dist/html"
+if not os.path.exists(folder):
+    continue
+root_web = "/www/htdocs/app/_benchmarks/helpsphinx/" % name
+other_projects.append(dict(status_file="status_projects_%s.txt" % name,
+                           local="scikit-learn_benchmarks", root_web=root_web,
+                           root_local=folder))
     
 publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
                          location=location, rootw=rootw, rootw2=rootw2,
