@@ -98,10 +98,16 @@ for i, mod in enumerate(sorted(modules)):
 
 ##################
 # La fonction :func:`publish_teachings_to_web cache` cache beaucoup de choses.
+other_copies = [
+    ('sklearn-onnx', 'sklearn-onnx-jenkins'),
+    ('onnxruntime', 'onnxruntime-jenkins'),
+    ('onnxmltools', 'onnxmltools-jenkins'),
+]
 
 other_projects = []
-for name in ['sklearn-onnx', 'onnxruntime', 'onnxmltools']:
-    folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{0}_37_std/{0}/dist/html".format(name)
+for name, local_name in other_copies:
+    folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{1}_37_std/{0}/dist/html".format(
+        name, local_name)
     if not os.path.exists(folder):
         print("[] Unable to find '{}'.".format(folder))
     root_web = "/www/htdocs/app/%s/helpsphinx" % name
