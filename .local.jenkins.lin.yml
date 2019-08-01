@@ -27,13 +27,11 @@ script:
   # After the first execution, chmod -R 755 * must be run.
   - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0" }
   # sklearn-onnx batch
-  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_040.sh", NAME: "BATCH-skl2onnx-jenkins-ort-040" }
+  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_050.sh", NAME: "BATCH-skl2onnx-jenkins-ort-050" }
   - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_dev.sh", NAME: "BATCH-skl2onnx-jenkins-ort-dev" }
-  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_tpypi.sh", NAME: "BATCH-skl2onnx-jenkins-ort-tpypi" }
   # sklearn-onnx
   - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins" }
-  - { CMD: "bash fork/sklearn-onnx-jenkins-nightly.sh", NAME: "FORK_sklearn-onnx-jenkins-nightly" }
-  - { CMD: "bash fork/sklearn-onnx-master-nightly.sh", NAME: "FORK_sklearn-onnx-master-nightly" }
+  - { CMD: "bash fork/sklearn-onnx-master-dev.sh", NAME: "FORK_sklearn-onnx-master-dev" }
   # keras-onnx
   - { CMD: "bash fork/keras-onnx-jenkins.sh", NAME: "FORK_keras-onnx-jenkins" }
   # onnxmltools

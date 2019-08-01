@@ -4,7 +4,7 @@ cd sklearn-onnx
 
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index https://pypi.org/simple/ --force-reinstall onnx onnxconverter-common || exit 1
-pip3.7 install --no-cache-dir --no-deps --index https://test.pypi.org/simple/ ort-nightly || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
 
 echo --TEST--
 python3.7 -m pytest tests || exit 1
