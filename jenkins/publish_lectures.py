@@ -104,16 +104,19 @@ other_copies = [
     ('onnxmltools', 'onnxmltools-jenkins'),
 ]
 
+# onnx projects
 other_projects = []
 for name, local_name in other_copies:
     folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{1}_37_std/{0}/dist/html".format(
         name, local_name)
     if not os.path.exists(folder):
         print("[] Unable to find '{}'.".format(folder))
+        continue
     root_web = "/www/htdocs/app/%s/helpsphinx" % name
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local=name, root_web=root_web,
                                root_local=folder))
+    print("+ publish '{}'".format(folder)
 
 # benchmark scikit-learn
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
@@ -123,9 +126,11 @@ if os.path.exists(folder):
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local="scikit-learn_benchmarks", root_web=root_web,
                                root_local=folder))
+    print("+ publish '{}'".format(folder)
 else:
     print("[] Unable to find '{}'.".format(folder))
-    
+
+# publish
 publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
                          location=location, rootw=rootw, rootw2=rootw2,
                          modules=modules, password=pwd, suffix=suffix,
