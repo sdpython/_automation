@@ -111,12 +111,11 @@ for name in ['sklearn-onnx', 'onnxruntime', 'onnxmltools']:
 
 # benchmark scikit-learn
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/scikit-learn_benchmarks/dist/html"
-if not os.path.exists(folder):
-    continue
-root_web = "/www/htdocs/app/_benchmarks/helpsphinx/" % name
-other_projects.append(dict(status_file="status_projects_%s.txt" % name,
-                           local="scikit-learn_benchmarks", root_web=root_web,
-                           root_local=folder))
+if os.path.exists(folder):
+    root_web = "/www/htdocs/app/_benchmarks/helpsphinx/" % name
+    other_projects.append(dict(status_file="status_projects_%s.txt" % name,
+                               local="scikit-learn_benchmarks", root_web=root_web,
+                               root_local=folder))
     
 publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
                          location=location, rootw=rootw, rootw2=rootw2,
