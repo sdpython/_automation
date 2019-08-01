@@ -122,7 +122,7 @@ for name, local_name in other_copies:
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
 name = "scikit-learn_benchmarks"
 if os.path.exists(folder):
-    root_web = "/www/htdocs/app/_benchmarks/helpsphinx/"
+    root_web = "/www/htdocs/app/_benchmarks/helpsphinx/sklbench_results"
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local="scikit-learn_benchmarks", root_web=root_web,
                                root_local=folder))
