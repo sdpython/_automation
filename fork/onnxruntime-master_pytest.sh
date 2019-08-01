@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b xadupre/gendoc --single-branch https://github.com/microsoft/onnxruntime.git --recursive
+git clone -b master --single-branch https://github.com/microsoft/onnxruntime.git --recursive
 cd onnxruntime
 
 echo --UPDATE--
@@ -13,15 +13,15 @@ pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ on
 
 echo --BUILD--
 export LD_LIBRARY_PATH=/usr/local/Python-3.7.2
-echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
-python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
+echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test || exit 1
+python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test || exit 1
 
 echo --COPY--
 cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
 
 echo --INSTALL--
 pip3.7 install tf2onnx --no-deps
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnxconverter-common keras2onnx || exit 1
+pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnxconverter-common keras2onnx onnxmltools || exit 1
 
 echo --DOCUMENTATION--
 cd build/debian/Release 

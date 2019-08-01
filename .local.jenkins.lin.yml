@@ -25,23 +25,31 @@ script:
   # jenkins does does have enough permissions by default.
   # It must be manually built and the job can started again.
   # After the first execution, chmod -R 755 * must be run.
-  - { CMD: "bash fork/machinelearning.sh", NAME: "FORK_machinelearning", CLEAN: "0" }
-  # microsoft
-  - { CMD: "bash fork/sklearn-onnx.sh", NAME: "FORK_sklearn-onnx" }
+  - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0" }
+  # sklearn-onnx batch
+  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_040.sh", NAME: "BATCH-skl2onnx-jenkins-ort-040" }
+  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_dev.sh", NAME: "BATCH-skl2onnx-jenkins-ort-dev" }
+  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_tpypi.sh", NAME: "BATCH-skl2onnx-jenkins-ort-tpypi" }
+  # sklearn-onnx
+  - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins" }
+  - { CMD: "bash fork/sklearn-onnx-jenkins-nightly.sh", NAME: "FORK_sklearn-onnx-jenkins-nightly" }
   - { CMD: "bash fork/sklearn-onnx-master-nightly.sh", NAME: "FORK_sklearn-onnx-master-nightly" }
-  - { CMD: "bash fork/sklearn-onnx-nightly.sh", NAME: "FORK_sklearn-onnx-nightly" }
-  - { CMD: "bash fork/keras-onnx.sh", NAME: "FORK_keras-onnx" }
-  - { CMD: "bash fork/onnxmltools.sh", NAME: "FORK_onnxmltools" }
-  - { CMD: "bash fork/onnx_converter_common.sh", NAME: "FORK_onnx_converter_common" }
-  - { CMD: "bash fork/onnx.sh", NAME: "FORK_onnx" }
-  - { CMD: "bash fork/onnxruntime.sh", NAME: "FORK_onnxruntime" }
-  - { CMD: "bash fork/onnxruntime_no_doc.sh", NAME: "FORK_onnxruntime_no_doc" }
-  - { CMD: "bash fork/onnxruntime_master.sh", NAME: "FORK_onnxruntime_master" }
-  - { CMD: "bash fork/onnxruntime_master_pytest.sh", NAME: "FORK_onnxruntime_master_pytest" }
-  - { CMD: "bash fork/scikit-learn.sh", NAME: "FORK_scikit-learn" }
-  - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml" }
-  - { CMD: "bash fork/pythonnet.sh", NAME: "FORK_pythonnet" }
-  # benchmark
-  - { CMD: "bash fork/sklearn-onnx_version_ort_040.sh", NAME: "FORK_sklearn-onnx-ort-040" }
-  - { CMD: "bash fork/sklearn-onnx_version_ort_dev.sh", NAME: "FORK_sklearn-onnx-ort-dev" }
-  - { CMD: "bash fork/sklearn-onnx_version_ort_tpypi.sh", NAME: "FORK_sklearn-onnx-ort-tpypi" }
+  # keras-onnx
+  - { CMD: "bash fork/keras-onnx-jenkins.sh", NAME: "FORK_keras-onnx-jenkins" }
+  # onnxmltools
+  - { CMD: "bash fork/onnxmltools-jenkins.sh", NAME: "FORK_onnxmltools-jenkins" }
+  # onnx_converter_common
+  - { CMD: "bash fork/onnx_converter_common-jenkins.sh", NAME: "FORK_onnx_converter_common-jenkins" }
+  # onnx
+  - { CMD: "bash fork/onnx-master.sh", NAME: "FORK_onnx-master" }
+  # onnxruntime
+  - { CMD: "bash fork/onnxruntime-jenkins.sh", NAME: "FORK_onnxruntime-jenkins" }
+  - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master" }
+  - { CMD: "bash fork/onnxruntime-master_pytest.sh", NAME: "FORK_onnxruntime-master_pytest" }
+  # scikit-learn
+  - { CMD: "bash fork/scikit-learn-master.sh", NAME: "FORK_scikit-learn-master" }
+  # nimbusml
+  - { CMD: "bash fork/nimbusml-py37_11.sh", NAME: "FORK_nimbusml_py37_11" }
+  # pythonnet
+  - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master" }
+  - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat" }
