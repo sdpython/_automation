@@ -51,3 +51,5 @@ script:
   # pythonnet
   - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master" }
   - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat" }
+  # check_install
+  - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install" }
