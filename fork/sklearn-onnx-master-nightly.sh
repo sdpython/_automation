@@ -3,7 +3,7 @@ git clone -b master --single-branch https://github.com/onnx/sklearn-onnx.git --r
 cd sklearn-onnx
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir onnx onnxconverter-common || exit 1
+pip3.7 install --no-cache-dir --index https://pypi.org/simple/ --force-reinstall onnx onnxconverter-common || exit 1
 pip3.7 install --no-cache-dir --no-deps --index https://test.pypi.org/simple/ ort-nightly || exit 1
 
 echo --TEST--
