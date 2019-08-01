@@ -117,6 +117,7 @@ for name, local_name in other_copies:
 
 # benchmark scikit-learn
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
+name = "_benchmarks_SKLBENCH"
 if os.path.exists(folder):
     root_web = "/www/htdocs/app/_benchmarks/helpsphinx/" % name
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
