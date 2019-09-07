@@ -2,8 +2,8 @@ echo --UNINSTALL--
 pip3.7 uninstall -y actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib 
 
 echo --INSTALL--
-pip3.7 install actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper || exit 1
-pip3.7 install wrapclib || exit 1
+pip3.7 install --upgrade actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper || exit 1
+pip3.7 install --upgrade wrapclib || exit 1
 
 echo --TEST--
 python3.7 -c "import code_beatrix" || exit 1
