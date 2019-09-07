@@ -1,11 +1,10 @@
 echo --UNINSTALL--
-pip3.7 uninstall -y actuariat_python botadi code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib 
+pip3.7 uninstall -y actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib 
 
 echo --INSTALL--
-pip3.7 install -y actuariat_python botadi code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib 
+pip3.7 install actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlboard lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib 
 
 echo --TEST--
-python3.7 -c "import botadi" || exit 1
 python3.7 -c "import code_beatrix" || exit 1
 python3.7 -c "import cpyquickhelper" || exit 1
 python3.7 -c "import ensae_projects" || exit 1
