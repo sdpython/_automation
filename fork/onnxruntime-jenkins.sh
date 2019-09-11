@@ -11,12 +11,18 @@ git submodule update --init --recursive
 echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
 
+echo --VERSION--
+gcc --version
+g++ --version
+clang -v
+clang-6.0 -v
+
 echo --BUILD--
 export LD_LIBRARY_PATH=/usr/local/Python-3.7.2
 python3.7 ./tools/ci_build/build.py --help
 echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
 echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
-python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_shared_lib --use_openmp --skip_submodule_sync --build_wheel --use_nuphar --use_mklml --use_tvm --use_llvm --skip_onnx_tests || exit 1
+python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_shared_lib --use_openmp --skip_submodule_sync --build_wheel --use_nuphar --use_mklml --skip_onnx_tests || exit 1
 
 echo --INSTALL--
 pip3.7 install tf2onnx --no-deps
