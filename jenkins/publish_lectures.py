@@ -102,6 +102,8 @@ other_copies = [
     ('sklearn-onnx', 'sklearn-onnx-jenkins'),
     ('onnxruntime', 'onnxruntime-jenkins'),
     ('onnxmltools', 'onnxmltools-jenkins'),
+    ('td1a_unit_test_ci', 'td1a_unit_test_ci'),
+    ('td2a_plotting', 'td2a_plotting'),
 ]
 
 # onnx projects

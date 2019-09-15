@@ -1,6 +1,6 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/sdpython/td1a_unit_test_ci.git --recursive
-cd td1a_unit_test_ci
+git clone -b master --single-branch https://github.com/sdpython/td2a_plotting.git --recursive
+cd td2a_plotting
 
 echo --TEST--
 python3.7 -m coverage run  --omit=tests/test_*.py -m unittest discover tests || exit 1
