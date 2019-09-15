@@ -10,7 +10,7 @@ echo --WHEEL--
 python3.7 -u setup.py bdist_wheel || exit 1
 
 echo --DOC--
-python3.7 -m sphinx build -b html doc dist/html || exit 1
+python3.7 -m sphinx -b html doc dist/html || exit 1
 
 echo --END--
 cd ..
