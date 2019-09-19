@@ -52,7 +52,8 @@ if "2" in sys.argv:
     pwd = keyring.get_password("web", "_automation2,pwd")
     ftpsite = keyring.get_password("web", "_automation2,ftp")
     ftps = "SFTP"
-
+    root_template2 = "/home/ftpuser/ftp/web/app/%s/%s"
+        
     import paramiko
     import socket
     sock = socket.socket()
@@ -73,28 +74,26 @@ if "2" in sys.argv:
     print("pysftp OK")
     print(sftp.listdir())
     sftp.close()
-        
+
 elif "1" in sys.argv:
     user = keyring.get_password("web", "_automation,user")
     pwd = keyring.get_password("web", "_automation,pwd")
     ftpsite = keyring.get_password("web", "_automation,ftp")
     ftps = False
+    root_template2 = "/www/htdocs/app/%s/%s"
 else:
     raise ValueError("1 or 2 must be present in this argument.")
 
+root_template = root_template2 % ('%s', 'helpsphinx')
 code_google = keyring.get_password("web", "_automation,google")
 
 if pwd is None or user is None or ftpsite is None or code_google is None:
     print("ERROR: password or user or ftpsite is empty, you should execute:")
     print([user, pwd, ftpsite, code_google])
-    print(
-        '    keyring.set_password("web", "_automation,user", "..")')
-    print(
-        '    keyring.set_password("web", "_automation,pwd", "..")')
-    print(
-        '    keyring.set_password("web", "_automation,ftp", "..")')
-    print(
-        '    keyring.set_password("web", "_automation,google", "..")')
+    print('    keyring.set_password("web", "_automation,user", "..")')
+    print('    keyring.set_password("web", "_automation,pwd", "..")')
+    print('    keyring.set_password("web", "_automation,ftp", "..")')
+    print('    keyring.set_password("web", "_automation,google", "..")')
     print("Exit")
     sys.exit(0)
 if code_google is None:
@@ -118,7 +117,7 @@ if sys.platform.startswith("win"):
 else:
     location = "/var/lib/jenkins/workspace/%s/%s%s/dist/%s"
 
-rootw = "/www/htdocs/app/%s/%s"                   # destination sur le site FTP
+rootw = root_template2   # destination sur le site FTP
 # seconde destination pour le site lesenfantscodaient.fr
 rootw2 = "/lesenfantscodaient.fr"
 google_id = code_google                         # identifiant google analytics
@@ -148,7 +147,7 @@ for name, local_name in other_copies:
     if not os.path.exists(folder):
         print("[] Unable to find '{}'.".format(folder))
         continue
-    root_web = "/www/htdocs/app/%s/helpsphinx" % name
+    root_web = root_template % name
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local=name, root_web=root_web,
                                root_local=folder))
@@ -158,7 +157,7 @@ for name, local_name in other_copies:
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
 name = "scikit-learn_benchmarks"
 if os.path.exists(folder):
-    root_web = "/www/htdocs/app/_benchmarks/helpsphinx/sklbench_results"
+    root_web = (root_template % '_benchmarks') + "/sklbench_results"
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local="scikit-learn_benchmarks", root_web=root_web,
                                root_local=folder))
