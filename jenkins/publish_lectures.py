@@ -47,12 +47,46 @@ from ensae_teaching_cs.automation.teaching_modules import get_teaching_modules
 
 # on utilise keyring pour stocker les identifiants
 # à commenter ou décommenter au besoin
-user = keyring.get_password("web", "_automation,user")
-pwd = keyring.get_password("web", "_automation,pwd")
-ftpsite = keyring.get_password("web", "_automation,ftp")
+if "2" in sys.argv:
+    user = keyring.get_password("web", "_automation2,user")
+    pwd = keyring.get_password("web", "_automation2,pwd")
+    ftpsite = keyring.get_password("web", "_automation2,ftp")
+    ftps = "SFTP"
+
+    import paramiko
+    import socket
+    sock = socket.socket()
+    sock.connect((ftpsite, 22))
+    trans = paramiko.transport.Transport(sock)
+    trans.start_client()
+    k = trans.get_remote_server_key()
+    
+    hk = paramiko.hostkeys.HostKeys()
+    hk.add(ftpsite, 'ssh-rsa', k)
+    hk.save("ssh.ssh")
+        
+    import pysftp
+    cnopts = pysftp.CnOpts()
+    cnopts.hostkeys = hk
+    sftp = pysftp.Connection(ftpsite, username=user, 
+                             password=pwd, cnopts=cnopts)
+    print("pysftp OK")
+    print(sftp.listdir())
+    sftp.close()
+        
+elif "1" in sys.argv:
+    user = keyring.get_password("web", "_automation,user")
+    pwd = keyring.get_password("web", "_automation,pwd")
+    ftpsite = keyring.get_password("web", "_automation,ftp")
+    ftps = False
+else:
+    raise ValueError("1 or 2 must be present in this argument.")
+
 code_google = keyring.get_password("web", "_automation,google")
+
 if pwd is None or user is None or ftpsite is None or code_google is None:
     print("ERROR: password or user or ftpsite is empty, you should execute:")
+    print([user, pwd, ftpsite, code_google])
     print(
         '    keyring.set_password("web", "_automation,user", "..")')
     print(
@@ -137,4 +171,4 @@ publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
                          location=location, rootw=rootw, rootw2=rootw2,
                          modules=modules, password=pwd, suffix=suffix,
                          force_allow=["xavierdupre"], exc=False,
-                         additional_projects=other_projects)
+                         additional_projects=other_projects, ftps=ftps)
