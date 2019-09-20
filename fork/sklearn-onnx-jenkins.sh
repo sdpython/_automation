@@ -11,11 +11,14 @@ python3.7 -m pytest tests || exit 1
 echo --TEST-ONNXMLTOOLS--
 python3.7 -m pytest tests_onnxmltools || exit 1
 
-echo --TEST-EXAMPLE--
-python3.7 -m pytest docs/tests || exit 1
-
 echo --WHEEL--
 python3.7 -u setup.py bdist_wheel || exit 1
+
+echo --INSTALL-SKL2ONNX--
+python3.7 setup.py install || exit 1
+
+echo --TEST-EXAMPLE--
+python3.7 -m pytest docs/tests || exit 1
 
 echo --COPY--
 cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
