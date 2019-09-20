@@ -9,6 +9,12 @@ pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ on
 echo --TEST--
 python3.7 -m pytest tests || exit 1
 
+echo --TEST-ONNXMLTOOLS--
+python3.7 -m pytest tests_onnxmltools || exit 1
+
+echo --TEST-EXAMPLE--
+python3.7 -m pytest docs/tests || exit 1
+
 echo --WHEEL--
 python3.7 -u setup.py bdist_wheel || exit 1
 

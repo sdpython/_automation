@@ -8,7 +8,6 @@ The script shows how the documentation of this module and others is published.
 user = "LOGIN"
 ftpsite = "ftp.SOMETHING"
 rootw = "/www/htdocs/app/%s/helpsphinx"
-rootw2 = "/lesenfantscodaient.fr"
 
 footer = """
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
@@ -119,7 +118,6 @@ else:
 
 rootw = root_template2   # destination sur le site FTP
 # seconde destination pour le site lesenfantscodaient.fr
-rootw2 = "/lesenfantscodaient.fr"
 google_id = code_google                         # identifiant google analytics
 suffix = ("_UT_%d%d_std" % sys.version_info[:2],)
 
@@ -167,7 +165,7 @@ else:
 
 # publish
 publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
-                         location=location, rootw=rootw, rootw2=rootw2,
+                         location=location, rootw=rootw,
                          modules=modules, password=pwd, suffix=suffix,
                          force_allow=["xavierdupre"], exc=False,
                          additional_projects=other_projects, ftps=ftps)
