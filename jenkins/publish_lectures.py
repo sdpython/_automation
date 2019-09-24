@@ -135,6 +135,7 @@ other_copies = [
     ('onnxmltools', 'onnxmltools-jenkins'),
     ('td1a_unit_test_ci', 'td1a_unit_test_ci'),
     ('td2a_plotting', 'td2a_plotting'),
+    ('pystrat2048', 'pystrat2048'),
 ]
 
 # onnx projects

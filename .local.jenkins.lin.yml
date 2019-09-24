@@ -57,3 +57,4 @@ script:
   # td1a,td2a
   - { CMD: "bash fork/td1a_unit_test_ci.sh", NAME: "FORK_td1a_unit_test_ci", SCHEDULER: "H H(5-6) * * 6" }
   - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(5-6) * * 6" }
+  - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(5-6) * * 6" }
