@@ -152,6 +152,15 @@ for name, local_name in other_copies:
                                root_local=folder))
     print("+ publish '{}'".format(folder))
 
+# benchmark
+name = "mlprodict_bench"
+other_projects.append(
+    dict(status_file="status_projects_%s.txt" % name,
+         local=name,
+         root_web=root_template % name,
+         root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/html/asv/"))
+print("+ publish '{}'".format(folder))
+
 # benchmark scikit-learn
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
 name = "scikit-learn_benchmarks"
