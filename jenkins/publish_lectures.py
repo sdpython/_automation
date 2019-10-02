@@ -158,7 +158,7 @@ other_projects.append(
     dict(status_file="status_projects_%s.txt" % name,
          local=name,
          root_web=root_template % name,
-         root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/html/asv/"))
+         root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/asv/html/"))
 print("+ publish '{}'".format(folder))
 
 # benchmark scikit-learn
