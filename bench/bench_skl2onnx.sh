@@ -1,6 +1,7 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/sdpython/asv-skl2onnx.git --recursiv
+git clone -b master --single-branch https://github.com/sdpython/asv-skl2onnx.git --recursive
 cd asv-skl2onnx
+git pull
 echo --BENCH--
 python3.7 -m asv run --show-stderr --config asv.conf.json
 if [ -d html ]
