@@ -1,3 +1,5 @@
+echo --INSTALL--
+pip3.7 install lightgbm xgboost scikit-learn
 echo --CLONE--
 git clone -b master --single-branch https://github.com/sdpython/asv-skl2onnx.git --recursive
 cd asv-skl2onnx
