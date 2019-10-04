@@ -58,3 +58,5 @@ script:
   - { CMD: "bash fork/td1a_unit_test_ci.sh", NAME: "FORK_td1a_unit_test_ci", SCHEDULER: "H H(5-6) * * 6" }
   - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(5-6) * * 6" }
   - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(5-6) * * 6" }
+  # benchmark
+  - { CMD: "bash bench/bench_skl2onnx.sh", NAME: "BENCH_SKL2ONNX", SCHEDULER: "H H(5-6) * * 0" }

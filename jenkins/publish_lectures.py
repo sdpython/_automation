@@ -159,7 +159,14 @@ other_projects.append(
          local=name,
          root_web=root_template % name,
          root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/asv/html/"))
-print("+ publish '{}'".format(folder))
+print("+ publish '{}'".format(name))
+name = "mlprodict_bench2"
+other_projects.append(
+    dict(status_file="status_projects_%s.txt" % name,
+         local=name,
+         root_web=root_template % name,
+         root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/build/html/"))
+print("+ publish '{}'".format(name))
 
 # benchmark scikit-learn
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
