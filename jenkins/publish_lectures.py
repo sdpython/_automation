@@ -184,7 +184,7 @@ else:
 folder = "/var/lib/jenkins/workspace/_automation/_automation_BENCH_SKL2ONNX_37_std/asv-skl2onnx/html"
 name = "scikit-learn_benchmarks_full"
 if os.path.exists(folder):
-    root_web = (root_template % '_benchmarks') + "/sklbench_results"
+    root_web = (root_template % '_benchmarks') + "/sklbench_results_predict"
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local="scikit-learn_benchmarks_full", root_web=root_web,
                                root_local=folder))
