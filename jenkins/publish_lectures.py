@@ -181,7 +181,7 @@ else:
     print("[] Unable to find '{}'.".format(folder))
 
 # benchmark scikit-learn full
-folder = "/var/lib/jenkins/workspace/_automation/_benchmarks_SKLBENCHONNX_37_std/asv-skl2onnx/html"
+folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_37_std/asv-skl2onnx/html"
 name = "scikit-learn_benchmarks_full"
 if os.path.exists(folder):
     root_web = (root_template % '_benchmarks') + "/sklbench_results_predict"
