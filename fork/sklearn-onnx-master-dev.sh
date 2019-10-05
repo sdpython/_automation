@@ -10,7 +10,7 @@ echo --TEST--
 python3.7 -m pytest tests || exit 1
 
 echo --TEST-ONNXMLTOOLS--
-python3.7 -m pytest tests_onnxmltools || exit 1
+python3.7 -m pytest tests_third_party_skl || exit 1
 
 echo --TEST-EXAMPLE--
 python3.7 -m pytest docs/tests || exit 1
