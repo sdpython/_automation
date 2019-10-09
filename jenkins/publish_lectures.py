@@ -128,7 +128,7 @@ for i, mod in enumerate(sorted(modules)):
     print("  {0}/{1}: {2}".format(i + 1, len(modules), mod))
 
 ##################
-# La fonction :func:`publish_teachings_to_web cache` cache beaucoup de choses.
+# La fonction :func:`publish_teachings_to_web` cache beaucoup de choses.
 other_copies = [
     ('sklearn-onnx', 'sklearn-onnx-jenkins'),
     ('onnxruntime', 'onnxruntime-jenkins'),
@@ -187,6 +187,18 @@ if os.path.exists(folder):
     root_web = (root_template % '_benchmarks') + "/sklbench_results_predict"
     other_projects.append(dict(status_file="status_projects_%s.txt" % name,
                                local="scikit-learn_benchmarks_full", root_web=root_web,
+                               root_local=folder))
+    print("+ publish '{}'".format(folder))
+else:
+    print("[] Unable to find '{}'.".format(folder))
+
+# benchmark onnxruntime
+folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLORT_37_std/scikit-onnx-benchmark/html"
+name = "scikit-onnx-benchmark"
+if os.path.exists(folder):
+    root_web = (root_template % '_benchmarks') + "/scikit-onnx-benchmark"
+    other_projects.append(dict(status_file="status_projects_%s.txt" % name,
+                               local="scikit-onnx-benchmark", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
 else:
