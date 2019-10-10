@@ -182,7 +182,7 @@ else:
 
 # benchmark scikit-learn full
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_37_std/asv-skl2onnx/html"
-name = "asv-onnx"
+name = "asv-skl2onnx"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
     other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
