@@ -155,14 +155,14 @@ for name, local_name in other_copies:
 # benchmark
 name = "mlprodict_bench"
 other_projects.append(
-    dict(status_file="status_projects_%s.txt" % name,
+    dict(status_file="status_projects_benches_%s.txt" % name,
          local=name,
          root_web=root_template2 % ('benches', "mlprodict_bench"),
          root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/asv/html/"))
 print("+ publish '{}'".format(name))
 name = "mlprodict_bench2"
 other_projects.append(
-    dict(status_file="status_projects_%s.txt" % name,
+    dict(status_file="status_projects_benches_%s.txt" % name,
          local=name,
          root_web=root_template2 % ('benches', "mlprodict_bench2"),
          root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/build/html/"))
@@ -172,8 +172,8 @@ print("+ publish '{}'".format(name))
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
 name = "scikit-learn_benchmarks"
 if os.path.exists(folder):
-    root_web = (root_template2 % ('benches', "sklbench_results"))
-    other_projects.append(dict(status_file="status_projects_%s.txt" % name,
+    root_web = (root_template2 % ('benches', name))
+    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
                                local="scikit-learn_benchmarks", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
@@ -182,10 +182,10 @@ else:
 
 # benchmark scikit-learn full
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_37_std/asv-skl2onnx/html"
-name = "scikit-learn_benchmarks_full"
+name = "asv-onnx"
 if os.path.exists(folder):
-    root_web = (root_template2 % ('benches', "sklbench_results_predict"))
-    other_projects.append(dict(status_file="status_projects_%s.txt" % name,
+    root_web = (root_template2 % ('benches', name))
+    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
                                local="scikit-learn_benchmarks_full", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
@@ -196,8 +196,8 @@ else:
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLORT_37_std/scikit-onnx-benchmark/html"
 name = "scikit-onnx-benchmark"
 if os.path.exists(folder):
-    root_web = (root_template2 % ('benches', "scikit-onnx-benchmark"))
-    other_projects.append(dict(status_file="status_projects_%s.txt" % name,
+    root_web = (root_template2 % ('benches', name))
+    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
                                local="scikit-onnx-benchmark", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
