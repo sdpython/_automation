@@ -25,36 +25,38 @@ script:
   - { CMD: "$PYINT -m pip list --outdated", NAME: "LIST"}
   # jenkins does does have enough permissions by default.
   # It must be manually built and the job can started again.
-  # After the first execution, chmod -R 755 * must be run.
-  - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0", SCHEDULER: "H H(4-5) * * 6" }
+  # machinelearning: after the first execution, chmod -R 755 * must be run.
+  - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0", SCHEDULER: "H H(1-2) * * 6" }
+  # asv
+  - { CMD: "bash fork/asv-jenkins.sh", NAME: "FORK_asv-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # sklearn-onnx batch
-  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_050.sh", NAME: "BATCH-skl2onnx-jenkins-ort-050", SCHEDULER: "H H(4-5) * * 6" }
-  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_dev.sh", NAME: "BATCH-skl2onnx-jenkins-ort-dev", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_050.sh", NAME: "BATCH-skl2onnx-jenkins-ort-050", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_dev.sh", NAME: "BATCH-skl2onnx-jenkins-ort-dev", SCHEDULER: "H H(1-2) * * 6" }
   # sklearn-onnx
-  - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins", SCHEDULER: "H H(4-5) * * 6" }
-  - { CMD: "bash fork/sklearn-onnx-master-dev.sh", NAME: "FORK_sklearn-onnx-master-dev", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/sklearn-onnx-master-dev.sh", NAME: "FORK_sklearn-onnx-master-dev", SCHEDULER: "H H(1-2) * * 6" }
   # keras-onnx
-  - { CMD: "bash fork/keras-onnx-jenkins.sh", NAME: "FORK_keras-onnx-jenkins", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/keras-onnx-jenkins.sh", NAME: "FORK_keras-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnxmltools
-  - { CMD: "bash fork/onnxmltools-jenkins.sh", NAME: "FORK_onnxmltools-jenkins", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/onnxmltools-jenkins.sh", NAME: "FORK_onnxmltools-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnx_converter_common
-  - { CMD: "bash fork/onnx_converter_common-jenkins.sh", NAME: "FORK_onnx_converter_common-jenkins", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/onnx_converter_common-jenkins.sh", NAME: "FORK_onnx_converter_common-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnx
-  - { CMD: "bash fork/onnx-jenkins.sh", NAME: "FORK_onnx-jenkins", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/onnx-jenkins.sh", NAME: "FORK_onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnxruntime
-  - { CMD: "bash fork/onnxruntime-jenkins.sh", NAME: "FORK_onnxruntime-jenkins", SCHEDULER: "H H(4-5) * * 6" }
-  - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master", SCHEDULER: "H H(4-5) * * 6" }
-  - { CMD: "bash fork/onnxruntime-master_pytest.sh", NAME: "FORK_onnxruntime-master_pytest", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/onnxruntime-jenkins.sh", NAME: "FORK_onnxruntime-jenkins", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/onnxruntime-master_pytest.sh", NAME: "FORK_onnxruntime-master_pytest", SCHEDULER: "H H(1-2) * * 6" }
   # scikit-learn
-  - { CMD: "bash fork/scikit-learn-master.sh", NAME: "FORK_scikit-learn-master", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/scikit-learn-master.sh", NAME: "FORK_scikit-learn-master", SCHEDULER: "H H(1-2) * * 6" }
   # nimbusml
-  - { CMD: "bash fork/nimbusml-py37_11.sh", NAME: "FORK_nimbusml_py37_11", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/nimbusml-py37_11.sh", NAME: "FORK_nimbusml_py37_11", SCHEDULER: "H H(1-2) * * 6" }
   # pythonnet
-  - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master", SCHEDULER: "H H(4-5) * * 6" }
-  - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat", SCHEDULER: "H H(1-2) * * 6" }
   # check_install
-  - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install", SCHEDULER: "H H(4-5) * * 6" }
+  - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install", SCHEDULER: "H H(1-2) * * 6" }
   # td1a,td2a
-  - { CMD: "bash fork/td1a_unit_test_ci.sh", NAME: "FORK_td1a_unit_test_ci", SCHEDULER: "H H(5-6) * * 6" }
-  - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(5-6) * * 6" }
-  - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(5-6) * * 6" }
+  - { CMD: "bash fork/td1a_unit_test_ci.sh", NAME: "FORK_td1a_unit_test_ci", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(1-2) * * 6" }
