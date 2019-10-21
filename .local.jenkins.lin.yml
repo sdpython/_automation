@@ -13,8 +13,8 @@ virtualenv:
   
 before_script:
     # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
-  -  if [ "PYPI" not in ${NAME} ] then $PYINT - $PYINT -m pip --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs>=0.8.2648 tkinterquickhelper pymlbenchmark --extra-index-url=https://pypi.python.org/simple/ fi
-  -  if [ "PYPI" in ${NAME} ] then $PYINT - $PYINT -m pip --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pypi-server --extra-index-url=https://pypi.python.org/simple/ fi
+  -  if [ "PYPI" not in ${NAME} ] then $PYINT - $PYINT -m pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs>=0.8.2648 tkinterquickhelper pymlbenchmark --extra-index-url=https://pypi.python.org/simple/ fi
+  -  if [ "PYPI" in ${NAME} ] then $PYINT - $PYINT -m pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pypi-server --extra-index-url=https://pypi.python.org/simple/ fi
 
 script:
   - { CMD: "$PYINT -u jenkins/copy_lectures.py", NAME: "COPYDOC", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
