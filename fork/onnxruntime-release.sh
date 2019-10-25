@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b rel-1.0.0 --single-branch https://github.com/microsoft/onnxruntime.git --recursive
+git clone -b xadupre/rel-1.0.0 --single-branch https://github.com/microsoft/onnxruntime.git --recursive
 cd onnxruntime
 
 echo --UPDATE--
