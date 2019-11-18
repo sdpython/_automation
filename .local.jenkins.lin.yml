@@ -29,9 +29,6 @@ script:
   - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0", SCHEDULER: "H H(1-2) * * 6" }
   # asv
   - { CMD: "bash fork/asv-jenkins.sh", NAME: "FORK_asv-jenkins", SCHEDULER: "H H(1-2) * * 6" }
-  # sklearn-onnx batch
-  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_050.sh", NAME: "BATCH-skl2onnx-jenkins-ort-050", SCHEDULER: "H H(1-2) * * 6" }
-  - { CMD: "bash fork/batch-skl2onnx-jenkins_ort_dev.sh", NAME: "BATCH-skl2onnx-jenkins-ort-dev", SCHEDULER: "H H(1-2) * * 6" }
   # sklearn-onnx
   - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/sklearn-onnx-master-dev.sh", NAME: "FORK_sklearn-onnx-master-dev", SCHEDULER: "H H(1-2) * * 6" }
@@ -57,7 +54,7 @@ script:
   - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat", SCHEDULER: "H H(1-2) * * 6" }
   # check_install
   - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install", SCHEDULER: "H H(1-2) * * 6" }
-  # td1a,td2a
+  # td1a, td2a
   - { CMD: "bash fork/td1a_unit_test_ci.sh", NAME: "FORK_td1a_unit_test_ci", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(1-2) * * 6" }
