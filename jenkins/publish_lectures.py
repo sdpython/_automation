@@ -185,7 +185,7 @@ folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_37_std
 name = "asv-skl2onnx"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
-    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
+    other_projects.append(dict(status_file="status_benches_%s.txt" % name,
                                local="scikit-learn_benchmarks_full", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
@@ -197,7 +197,7 @@ folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_CPP_37
 name = "asv-skl2onnx-cpp"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
-    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
+    other_projects.append(dict(status_file="status_benches_%s.txt" % name,
                                local="scikit-learn_benchmarks_full", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
@@ -209,7 +209,7 @@ folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_CPP_SA
 name = "asv-skl2onnx-cpp-same"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
-    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
+    other_projects.append(dict(status_file="status_benches_%s.txt" % name,
                                local="scikit-learn_benchmarks_full", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
@@ -221,7 +221,7 @@ folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLORT_37_std/sciki
 name = "scikit-onnx-benchmark"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
-    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
+    other_projects.append(dict(status_file="status_benches_%s.txt" % name,
                                local="scikit-onnx-benchmark", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
