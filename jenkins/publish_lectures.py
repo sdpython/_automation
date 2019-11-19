@@ -153,27 +153,36 @@ for name, local_name in other_copies:
     print("+ publish '{}'".format(folder))
 
 # benchmark
-name = "mlprodict_bench"
-other_projects.append(
-    dict(status_file="status_projects_benches_%s.txt" % name,
-         local=name,
-         root_web=root_template2 % ('benches', "mlprodict_bench"),
-         root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/asv/html/"))
-print("+ publish '{}'".format(name))
-name = "mlprodict_bench2"
-other_projects.append(
-    dict(status_file="status_projects_benches_%s.txt" % name,
-         local=name,
-         root_web=root_template2 % ('benches', "mlprodict_bench2"),
-         root_local="/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/build/html/"))
-print("+ publish '{}'".format(name))
+folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/asv/html/"
+if os.path.exists(folder):
+    name = "mlprodict_bench"
+    other_projects.append(
+        dict(status_file="status_projects_benches_%s.txt" % name,
+             local=name,
+             root_web=root_template2 % ('benches', "mlprodict_bench"),
+             root_local=folder))
+    print("+ publish '{}'".format(name))
+else:
+    print("[] Unable to find '{}'.".format(folder))
+
+folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/build/html/"
+if os.path.exists(folder):
+    name = "mlprodict_bench2"
+    other_projects.append(
+        dict(status_file="status_projects_benches_%s.txt" % name,
+             local=name,
+             root_web=root_template2 % ('benches', "mlprodict_bench2"),
+             root_local=folder))
+    print("+ publish '{}'".format(name))
+else:
+    print("[] Unable to find '{}'.".format(folder))
 
 # benchmark scikit-learn
 folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
 name = "scikit-learn_benchmarks"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
-    other_projects.append(dict(status_file="status_projects_benches_%s.txt" % name,
+    other_projects.append(dict(status_file="status_benches_%s.txt" % name,
                                local="scikit-learn_benchmarks", root_web=root_web,
                                root_local=folder))
     print("+ publish '{}'".format(folder))
