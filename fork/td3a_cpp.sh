@@ -17,6 +17,7 @@ echo --SPEED--
 python -m td3a_cpp check || exit 1
 
 echo --DOC--
+python setup.py install || exit 1
 python -m sphinx -b html doc dist/html || exit 1
 
 echo --END--
