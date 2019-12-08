@@ -10,6 +10,9 @@ python3.7 -m flake8 . || exit 1
 echo --WHEEL--
 python3.7 -u setup.py bdist_wheel || exit 1
 
+echo --SPEED--
+python3.7 -m td3a_cpp check || exit 1
+
 echo --DOC--
 python3.7 -m sphinx -b html doc dist/html || exit 1
 
