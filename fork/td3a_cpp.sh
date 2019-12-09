@@ -6,8 +6,8 @@ echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
 
 echo --TEST--
-# python -m coverage run  --omit=tests/test_*.py -m unittest discover tests -v -v || exit 1
 # python -m pytest || exit 1
+python -m coverage run  --omit=tests/test_*.py -m unittest discover tests -v -v || exit 1
 python -m coverage html -d dist/html/coverage.html --include **/td3a_cpp/** || exit 1
 python -m flake8 . || exit 1
 
