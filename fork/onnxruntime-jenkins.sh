@@ -21,8 +21,8 @@ echo --BUILD--
 export LD_LIBRARY_PATH=/usr/local/Python-3.7.2
 python3.7 ./tools/ci_build/build.py --help
 echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
-echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
-python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --numpy_version= --use_openmp --use_mklml --use_dnnl --skip_onnx_tests || exit 1
+python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --use_mklml --skip-keras-test --skip_onnx_tests || exit 1
+echo python3.7 ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --use_mklml --use_dnnl --skip-keras-test --skip_onnx_tests || exit 1
 
 echo --COPY--
 cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
