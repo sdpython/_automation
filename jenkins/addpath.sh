@@ -33,3 +33,7 @@ export PYTHONPATH=/home/dupre/github/botadi/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/_benchmarks/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/pymlbenchmark/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/wrapclib/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/xadupre/sklearn-onnx:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/xadupre/onnxconverter-common:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/xadupre/sklearn-onnx:${PYTHONPATH}
+export PYTHONPATH=/home/dupre//xadupre/onnxruntime/build/debian/Release:${PYTHONPATH}
