@@ -166,7 +166,7 @@ if os.path.exists(folder):
 else:
     print("[] Unable to find '{}'.".format(folder))
 
-folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/build/html/"
+folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/_benches/build/html/"
 if os.path.exists(folder):
     name = "mlprodict_bench2"
     other_projects.append(
