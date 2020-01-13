@@ -6,7 +6,7 @@ echo --INSTALL--
 pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx onnxconverter-common onnxmltools || exit 1
 
 echo --TEST--
-python3.7 -m pytest tests pytest --durations=0 || exit 1
+python3.7 -m pytest --durations=0 tests pytest || exit 1
 
 echo --TEST-ONNXMLTOOLS--
 python3.7 -m pytest tests_third_party_skl || exit 1
