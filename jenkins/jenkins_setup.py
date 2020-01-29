@@ -48,6 +48,8 @@ user = keyring.get_password("jenkins", "_automation,user")
 pwd = keyring.get_password("jenkins", "_automation,pwd")
 host = keyring.get_password("jenkins", "_automation,host")
 platform = "linux"
+if pwd is None:
+    raise RuntimeError("Password is missing (None).")
 
 #########################################
 # instantiation d'une classe faisant l'interface avec le service
