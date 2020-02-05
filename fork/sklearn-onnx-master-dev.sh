@@ -3,26 +3,26 @@ git clone -b master --single-branch https://github.com/onnx/sklearn-onnx.git --r
 cd sklearn-onnx
 
 echo --INSTALL--
-pip3.7 install --no-cache-dir --no-deps --index https://pypi.org/simple/ --force-reinstall onnx onnxconverter-common onnxmltools || exit 1
-pip3.7 install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
+pip install --no-cache-dir --no-deps --index https://pypi.org/simple/ --force-reinstall onnx onnxconverter-common onnxmltools || exit 1
+pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl || exit 1
 
 echo --TEST--
-python3.7 -m pytest tests || exit 1
+python -m pytest tests || exit 1
 
 echo --TEST-ONNXMLTOOLS--
-python3.7 -m pytest tests_third_party_skl || exit 1
+python -m pytest tests_third_party_skl || exit 1
 
 echo --TEST-EXAMPLE--
-python3.7 -m pytest docs/tests || exit 1
+python -m pytest docs/tests || exit 1
 
 echo --WHEEL--
-python3.7 -u setup.py bdist_wheel || exit 1
+python -u setup.py bdist_wheel || exit 1
 
 echo --COVERAGE--
 cd tests
 export PYTHONPATH=..
-python3.7 -m coverage run benchmark.py || exit 1
-python3.7 -m coverage html -d ../dist/html/coverage_html --include **/skl2onnx/** || exit 1
+python -m coverage run benchmark.py || exit 1
+python -m coverage html -d ../dist/html/coverage_html --include **/skl2onnx/** || exit 1
 export PYTHONPATH=
 cd ..
 
