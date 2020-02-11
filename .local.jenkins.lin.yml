@@ -15,7 +15,10 @@ python:
   
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("$NAME_JENKINS", project_name + "_$VERSION_$DIST_$NAME"), "_venv")}}
-  
+
+install:
+  - $PYINT -m pip install --upgrade pip
+
 before_script:
     # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
   -  if [ "PYPI" not in ${NAME} ] then $PYINT -m pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal tkinterquickhelper pymlbenchmark --extra-index-url=https://pypi.python.org/simple/ fi

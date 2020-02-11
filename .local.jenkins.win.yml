@@ -3,6 +3,8 @@ python:
   - { PATH: "{{replace(Python37, '\\', '\\\\')}}", VERSION: 3.7, DIST: std }
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("%NAME_JENKINS%", project_name + "_%VERSION%_%DIST%_%NAME%"), "_venv")}}
+install:
+  - $PYINT -m pip install --upgrade pip
 before_script:
     # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
   -  if [ "PYPI" not in ${NAME} ] then pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal ensae_teaching_cs tkinterquickhelper fi
