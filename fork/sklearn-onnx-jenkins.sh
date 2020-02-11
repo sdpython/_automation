@@ -3,7 +3,16 @@ git clone -b jenkins --single-branch https://github.com/xadupre/sklearn-onnx.git
 cd sklearn-onnx
 
 echo --INSTALL--
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl onnx onnxconverter-common onnxmltools || exit 1
+pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
+
+if [ ${VERSION} = "3.7" ]
+then
+    pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
+fi
+if [ ${VERSION} = "3.8" ]
+then
+    pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ ort_nightly
+fi
 
 echo --TEST--
 python -m pytest --durations=0 tests || exit 1

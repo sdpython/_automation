@@ -4,7 +4,15 @@ cd sklearn-onnx
 
 echo --INSTALL--
 pip install --no-cache-dir --no-deps --index https://pypi.org/simple/ --force-reinstall onnx onnxconverter-common onnxmltools || exit 1
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl || exit 1
+
+if [ ${VERSION} = "3.7" ]
+then
+    pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
+fi
+if [ ${VERSION} = "3.8" ]
+then
+    pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ ort_nightly
+fi
 
 echo --TEST--
 python -m pytest tests || exit 1
