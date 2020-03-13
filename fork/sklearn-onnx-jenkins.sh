@@ -5,6 +5,7 @@ cd sklearn-onnx
 echo --INSTALL--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
+pip freeze
 
 echo --TEST--
 python -m pytest --durations=0 tests || exit 1
