@@ -5,7 +5,8 @@ cd sklearn-onnx
 echo --INSTALL--
 pip install scikit-learn==0.22.0 flake8
 pip install -i https://test.pypi.org/simple/ onnx
-pip install onnxconverter-common onnxmltools  onnxruntime
+pip install --upgrade onnxconverter-common onnxmltools onnxruntime
+pip freeze
 
 echo --TEST--
 python -m pytest --durations=0 tests || exit 1
