@@ -1,8 +1,9 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
+git clone -b master --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
 cd sklearn-onnx
 
 echo --INSTALL--
+pip install scikit-learn==0.22.0
 pip install -i https://test.pypi.org/simple/ onnx
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxconverter-common onnxmltools || exit 1
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
