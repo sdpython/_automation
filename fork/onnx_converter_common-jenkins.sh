@@ -5,15 +5,7 @@ cd onnxconverter-common
 echo --INSTALL--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx --no-deps || exit 1
-
-if [ ${VERSION} = "3.7" ]
-then
-    pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
-fi
-if [ ${VERSION} = "3.8" ]
-then
-    pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ ort_nightly
-fi
+pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
 
 echo --TEST--
 python -m pytest tests || exit 1
