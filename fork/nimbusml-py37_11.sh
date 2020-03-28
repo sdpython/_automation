@@ -6,7 +6,7 @@ echo --INSTALL--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
 
 echo --BUILD--
-./build.sh --configuration RlsLinPy$(VERSION) --runTests || exit 1
+./build.sh --configuration RlsLinPy${VERSION} --runTests || exit 1
 
 echo --COPY--
 cp target/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1

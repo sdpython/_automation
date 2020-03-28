@@ -11,8 +11,8 @@ git submodule update --init --recursive
 echo --WHEEL--
 python -u setup.py bdist_wheel --xplat || exit 1
 
-# echo --COPY--
-# cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
+echo --COPY--
+cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
 
 echo --TESTPY--
 python -m pytest
