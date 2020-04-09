@@ -44,6 +44,7 @@ script:
   - { CMD: "bash fork/sklearn-onnx-master-dev.sh", NAME: "FORK_sklearn-onnx-master-dev", SCHEDULER: "H H(1-2) * * 6" }
   # keras-onnx
   - { CMD: "bash fork/keras-onnx-jenkins.sh", NAME: "FORK_keras-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/tensorflow-onnx-jenkins.sh", NAME: "FORK_tensforflow-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnxmltools
   - { CMD: "bash fork/onnxmltools-jenkins.sh", NAME: "FORK_onnxmltools-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnx_converter_common
