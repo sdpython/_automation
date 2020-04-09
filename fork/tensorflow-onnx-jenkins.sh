@@ -9,7 +9,7 @@ echo --WHEEL--
 python -u setup.py bdist_wheel || exit 1
 
 echo --TEST--
-rm -y setup.cfg
+rm setup.cfg
 python -m pytest tests || exit 1
 
 echo --COPY--
