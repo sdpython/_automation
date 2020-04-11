@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b xplat --single-branch https://github.com/sdpython/pythonnet.git --recursive
+git clone -b master2 --single-branch https://github.com/sdpython/pythonnet.git --recursive
 cd pythonnet
 
 echo --UPDATE--
