@@ -131,6 +131,7 @@ for i, mod in enumerate(sorted(modules)):
 # La fonction :func:`publish_teachings_to_web` cache beaucoup de choses.
 other_copies = [
     ('sklearn-onnx', 'sklearn-onnx-jenkins'),
+    ('keras-onnx', 'keras-onnx-jenkins'),
     ('onnxruntime', 'onnxruntime-jenkins'),
     ('onnxmltools', 'onnxmltools-jenkins'),
     ('td1a_unit_test_ci', 'td1a_unit_test_ci'),
