@@ -53,8 +53,6 @@ script:
   # onnxruntime
   - { CMD: "bash fork/onnxruntime-jenkins.sh", NAME: "FORK_onnxruntime-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master", SCHEDULER: "H H(7-8) * * 6" }
-  - { CMD: "bash fork/onnxruntime-master_pytest.sh", NAME: "FORK_onnxruntime-master_pytest", SCHEDULER: "H H(5-6) * * 6" }
-  - { CMD: "bash fork/onnxruntime-release-v120.sh", NAME: "FORK_onnxruntime-release-v120", SCHEDULER: "FIXED 1 1 1 1 *" }
   # scikit-learn
   - { CMD: "bash fork/scikit-learn-master.sh", NAME: "FORK_scikit-learn-master", SCHEDULER: "H H(1-2) * * 6" }
   # nimbusml
