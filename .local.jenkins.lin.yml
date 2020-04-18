@@ -67,3 +67,4 @@ script:
   - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/td3a_cpp.sh", NAME: "FORK_td3a_cpp", SCHEDULER: "H H(3-4) * * 6" }
   - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/aftercovid.sh", NAME: "FORK_aftercovid", SCHEDULER: "H H(1-2) * * 6" }

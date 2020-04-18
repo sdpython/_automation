@@ -138,6 +138,7 @@ other_copies = [
     ('td2a_plotting', 'td2a_plotting'),
     ('td3a_cpp', 'td3a_cpp'),
     ('pystrat2048', 'pystrat2048'),
+    ('aftercovid', 'aftercovid'),
 ]
 
 # onnx projects
