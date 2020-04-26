@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b master --single-branch https://github.com/sdpython/aftercovid.git --recursive
 cd aftercovid
 
+echo --PIP--
+python -m pip install -r requirements.txt || exit 1
+python -m pip install -r requirements-dev.txt || exit 1
+
 echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
 
