@@ -4,7 +4,7 @@ cd onnxmltools
 
 echo --INSTALL--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxconverter-common || exit 1
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime_dnnl
+pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
 
 echo --INSTALL-KERAS--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ keras2onnx || exit 1
