@@ -56,7 +56,7 @@ script:
   # scikit-learn
   - { CMD: "bash fork/scikit-learn-master.sh", NAME: "FORK_scikit-learn-master", SCHEDULER: "H H(1-2) * * 6" }
   # nimbusml
-  - { CMD: "bash fork/nimbusml-py37_11.sh", NAME: "FORK_nimbusml_py37_11", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml", SCHEDULER: "H H(1-2) * * 6" }
   # pythonnet
   - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat", SCHEDULER: "H H(1-2) * * 6" }

@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/microsoft/nimbusml.git --recursive
+git clone -b jenkins --single-branch https://github.com/xadupre/nimbusml.git --recursive
 cd nimbusml
 
 echo --INSTALL--
