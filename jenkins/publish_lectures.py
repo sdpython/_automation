@@ -174,7 +174,21 @@ if os.path.exists(folder):
     other_projects.append(
         dict(status_file="status_projects_benches_%s.txt" % name,
              local=name,
-             root_web=root_template2 % ('benches', "mlprodict_bench2"),
+             root_web=root_template2 % (name, helpsphinx),
+             root_local=folder))
+    print("+ publish '{}'".format(name))
+else:
+    print("[] Unable to find '{}'.".format(folder))
+
+# nimbusml
+folder = "/var/lib/jenkins/workspace/_automation_FORK_nimbusml_37_std/ws/nimbusml/target/html/"
+
+if os.path.exists(folder):
+    name = "nimbusml"
+    other_projects.append(
+        dict(status_file="status_projects_%s.txt" % name,
+             local=name,
+             root_web=root_template2 % ('benches', "nimbusml"),
              root_local=folder))
     print("+ publish '{}'".format(name))
 else:
