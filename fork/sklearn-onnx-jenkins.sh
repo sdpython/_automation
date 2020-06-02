@@ -7,6 +7,7 @@ pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx 
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
 pip freeze
 
+export TEST_TARGET_OPSET=12
 echo --TEST--
 python -m pytest --durations=0 tests || exit 1
 
@@ -38,7 +39,6 @@ mkdir docs/coverage_html || exit 1
 cp tests/TESTDUMP/*.xlsx docs || exit 1
 cp -r dist/html/coverage_html docs/coverage_html || exit 1
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxmltools || exit 1
-python -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-N','-T','-b','html','-d','build/doctrees','docs','dist/html'])" || exit 1
 python -c "from sphinx.cmd.build import build_main;build_main(['-j2','-v','-N','-T','-b','html','-d','build/doctrees','docs','dist/html'])" || exit 1
 
 echo --END--
