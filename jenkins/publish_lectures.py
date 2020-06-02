@@ -181,7 +181,7 @@ else:
     print("[] Unable to find '{}'.".format(folder))
 
 # nimbusml
-folder = "/var/lib/jenkins/workspace/_automation_FORK_nimbusml_37_std/ws/nimbusml/target/html/"
+folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_nimbusml_37_std/nimbusml/target/html/"
 
 if os.path.exists(folder):
     name = "nimbusml"
