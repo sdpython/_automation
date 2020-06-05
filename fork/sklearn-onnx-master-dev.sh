@@ -12,7 +12,7 @@ echo --TEST--
 python -m pytest tests || exit 1
 
 echo --TEST-ONNXMLTOOLS--
-python -m pytest tests_third_party_skl || exit 1
+python -m pytest tests_onnxmltools || exit 1
 
 echo --TEST-EXAMPLE--
 python -m pytest docs/tests || exit 1
