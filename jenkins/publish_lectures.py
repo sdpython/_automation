@@ -174,7 +174,7 @@ if os.path.exists(folder):
     other_projects.append(
         dict(status_file="status_projects_benches_%s.txt" % name,
              local=name,
-             root_web=root_template2 % (name, helpsphinx),
+             root_web=root_template2 % (name, 'helpsphinx'),
              root_local=folder))
     print("+ publish '{}'".format(name))
 else:
