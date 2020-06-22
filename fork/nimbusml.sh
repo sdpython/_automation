@@ -3,7 +3,7 @@ git clone -b jenkins --single-branch https://github.com/xadupre/nimbusml.git --r
 cd nimbusml
 
 echo --INSTALL--
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
 
 echo --BUILD--
 ./build.sh --configuration RlsLinPy${VERSION} --runTests || exit 1

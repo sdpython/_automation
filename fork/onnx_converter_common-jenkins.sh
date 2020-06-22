@@ -3,9 +3,9 @@ git clone -b jenkins --single-branch https://github.com/xadupre/onnxconverter-co
 cd onnxconverter-common
 
 echo --INSTALL--
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx --no-deps || exit 1
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx --no-deps || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
 
 echo --TEST--
 python -m pytest tests || exit 1
