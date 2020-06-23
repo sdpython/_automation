@@ -1,5 +1,6 @@
 echo --INSTALL--
-pip install numpydoc
+pip install --upgrade numpydoc
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper || exit 1
 
 echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/sdpython/scikit-learn.git --recursive
