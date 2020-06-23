@@ -13,7 +13,7 @@ python -u setup.py bdist_wheel || exit 1
 
 echo --doc--
 cd doc
-make
+make || exit 1
 cd ..
 
 echo --COPY--
