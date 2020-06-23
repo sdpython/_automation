@@ -1,3 +1,6 @@
+echo --INSTALL--
+pip install numpydoc
+
 echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/sdpython/scikit-learn.git --recursive
 cd scikit-learn
