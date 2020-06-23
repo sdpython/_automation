@@ -12,9 +12,9 @@ python -u setup.py build_ext --inplace || exit 1
 echo --WHEEL--
 python -u setup.py bdist_wheel || exit 1
 
-echo --doc--
+echo --DOC--
 cd doc
-make || exit 1
+python -m sphinx -D plot_gallery=0 -b html -T -d _build/doctrees  -j auto  . _build/html/stable || exit 1
 cd ..
 
 echo --COPY--
