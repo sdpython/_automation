@@ -55,6 +55,7 @@ script:
   - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master", SCHEDULER: "H H(7-8) * * 6" }
   # scikit-learn
   - { CMD: "bash fork/scikit-learn-master.sh", NAME: "FORK_scikit-learn-master", SCHEDULER: "H H(1-2) * * 6" }
+  - { CMD: "bash fork/scikit-learn-documentation.sh", NAME: "FORK_scikit-learn-documentation", SCHEDULER: , SCHEDULER: "0 0 1 * *" }
   # nimbusml
   - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml", SCHEDULER: "H H(1-2) * * 6" }
   # pythonnet
