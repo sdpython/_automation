@@ -270,3 +270,44 @@ if [ -d scikit-learn_benchmarks ]; then
     cd ..
 fi
 
+if [ -d aftercovid ]; then
+    echo *** aftercovid
+    cd aftercovid
+    git pull
+    cd ..
+fi
+
+if [ -d onnxcustom ]; then
+    echo *** onnxcustom
+    cd onnxcustom
+    git pull
+    cd ..
+fi
+
+if [ -d td3a_cpp ]; then
+    echo *** td3a_cpp
+    cd td3a_cpp
+    git pull
+    cd ..
+fi
+
+if [ -d td2a_plotting ]; then
+    echo *** td2a_plotting
+    cd td2a_plotting
+    git pull
+    cd ..
+fi
+
+if [ -d td1a_unit_test_ci ]; then
+    echo *** td1a_unit_test_ci
+    cd td1a_unit_test_ci
+    git pull
+    cd ..
+fi
+
+if [ -d pystrat2048 ]; then
+    echo *** pystrat2048
+    cd pystrat2048
+    git pull
+    cd ..
+fi
