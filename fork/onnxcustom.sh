@@ -14,6 +14,9 @@ python -m pip install -r requirements-dev.txt || exit 1
 echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
 
+echo --INSTALL--
+python -u setup.py install || exit 1
+
 echo --TEST--
 python -m pytest -v -v || exit 1
 python -m coverage run  --omit=tests/test_*.py -m unittest discover tests -v -v || exit 1
