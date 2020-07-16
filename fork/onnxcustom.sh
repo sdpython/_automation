@@ -4,7 +4,7 @@ cd onnxcustom
 
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn || exit 1
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common skl2onnx onnx onnxruntime mlprodict || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common skl2onnx onnx onnxruntime mlprodict mlinsights pandas_streaming pyquickhelper || exit 1
 pip freeze
 
 echo --PIP--
