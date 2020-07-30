@@ -12,7 +12,7 @@ echo --OPSET--
 export CI_ONNX_OPSET=12
 
 echo --TEST--
-python -m tests/test_backend.py || exit 1
+python -u tests/test_backend.py || exit 1
 
 echo --TEST--
 python -m pytest tests || exit 1
