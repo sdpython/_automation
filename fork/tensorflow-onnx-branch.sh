@@ -12,14 +12,8 @@ echo --OPSET--
 export CI_ONNX_OPSET=12
 rm setup.cfg
 
-echo --INSTALL--
-python setup.py install
-
 echo --TEST--
-python -u tests/test_backend.py || exit 1
-
-echo --TEST--
-python -m pytest tests || exit 1
+python -m pytest -v tests || exit 1
 
 echo --COPY--
 cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
