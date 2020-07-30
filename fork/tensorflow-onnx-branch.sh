@@ -12,6 +12,9 @@ echo --OPSET--
 export CI_ONNX_OPSET=12
 rm setup.cfg
 
+echo --INSTALL--
+python setup.py install
+
 echo --TEST--
 python -u tests/test_backend.py || exit 1
 
