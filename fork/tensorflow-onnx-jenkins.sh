@@ -10,6 +10,7 @@ python -u setup.py bdist_wheel || exit 1
 
 echo --OPSET--
 export CI_ONNX_OPSET=12
+rm setup.cfg
 
 echo --TEST--
 python -m pytest tests || exit 1
