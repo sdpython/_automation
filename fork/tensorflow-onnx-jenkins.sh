@@ -8,8 +8,10 @@ pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/sim
 echo --WHEEL--
 python -u setup.py bdist_wheel || exit 1
 
+echo --OPSET--
+export CI_ONNX_OPSET=12
+
 echo --TEST--
-rm setup.cfg
 python -m pytest tests || exit 1
 
 echo --COPY--
