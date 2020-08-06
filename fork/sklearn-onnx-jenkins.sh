@@ -24,9 +24,6 @@ python setup.py install || exit 1
 echo --TEST-EXAMPLE--
 python -m pytest docs/tests || exit 1
 
-echo --TEST-TUTORIAL--
-python -m pytest docs/tutorial || exit 1
-
 echo --COPY--
 cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
 

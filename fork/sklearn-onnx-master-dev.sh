@@ -17,9 +17,6 @@ python -m pytest tests_onnxmltools || exit 1
 echo --TEST-EXAMPLE--
 python -m pytest docs/tests || exit 1
 
-echo --TEST-TUTORIAL--
-python -m pytest docs/tutorial || exit 1
-
 echo --WHEEL--
 python -u setup.py bdist_wheel || exit 1
 
