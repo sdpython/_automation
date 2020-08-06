@@ -6,6 +6,8 @@ echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ mlinsights mlprodict
+pip install -r docs/requirements.txt
 pip freeze
 
 export TEST_TARGET_OPSET=12

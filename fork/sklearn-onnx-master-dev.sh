@@ -5,6 +5,8 @@ cd sklearn-onnx
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index https://pypi.org/simple/ --force-reinstall onnx onnxconverter-common onnxmltools || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ mlinsights mlprodict
+pip install -r docs/requirements.txt
 
 export TEST_TARGET_OPSET=12
 
