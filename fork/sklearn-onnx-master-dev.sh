@@ -7,6 +7,7 @@ pip install --upgrade --no-cache-dir --no-deps --index https://pypi.org/simple/ 
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ mlinsights mlprodict
 pip install -r docs/requirements.txt
+pip uninstall -y skl2onnx
 
 export TEST_TARGET_OPSET=12
 
