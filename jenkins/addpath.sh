@@ -43,3 +43,6 @@ export PYTHONPATH=/home/dupre/github/aftercovid/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/td2a_plotting/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/td1a_unit_test_ci/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/pystrat2048/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/onnxcustom:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/aftercovid:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github_fork/scikit-learn:${PYTHONPATH}
