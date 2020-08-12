@@ -4,7 +4,7 @@ cd keras-onnx
 
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxruntime onnxconverter-common tf2onnx || exit 1
-pip install --upgrade --no-cache-dir --no-deps tensorflow keras || exit 1
+pip install --upgrade --no-deps tensorflow keras || exit 1
 
 echo --TEST--
 python -m pytest tests || exit 1
