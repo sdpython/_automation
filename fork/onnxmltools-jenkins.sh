@@ -5,7 +5,7 @@ cd onnxmltools
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxconverter-common scikit-learn || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
-pip install --upgrade h2o tensorflow || exit 1
+pip install --upgrade h2o tensorflow py4j || exit 1
 
 echo --INSTALL-KERAS--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ keras2onnx || exit 1
