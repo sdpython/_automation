@@ -4,9 +4,9 @@ cd sklearn-onnx
 
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ mlinsights mlprodict
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ mlinsights mlprodict || exit 1
 pip install -r docs/requirements.txt
 pip uninstall -y skl2onnx
 pip freeze
