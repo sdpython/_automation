@@ -20,7 +20,7 @@ export PYTHONPATH=$PYTHONPATH:libsvm/python
 python -c "import svmutil"
 
 echo --TEST--
-python -m pytest tests --ignore-glob="*cml*" --ignore-glob="*spark*" || exit 1
+python -m pytest tests --ignore="tests/coreml" --ignore-glob="tests/sparkml" || exit 1
 
 if [ ${VERSION} = "3.7" ]
 then
