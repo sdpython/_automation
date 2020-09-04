@@ -22,17 +22,6 @@ python -c "import svmutil"
 echo --TEST--
 python -m pytest tests --ignore="tests/coreml" --ignore-glob="tests/sparkml" || exit 1
 
-if [ ${VERSION} = "3.7" ]
-then
-    echo --COVERAGE--
-    cd tests
-    export PYTHONPATH=..
-    python -m coverage run main.py || exit 1
-    python -m coverage html -d ../dist/html/coverage_html --include **/onnxmltools/onnx*/** || exit 1
-    export PYTHONPATH=
-    cd ..
-fi
-
 echo --WHEEL--
 python -u setup.py bdist_wheel || exit 1
 
