@@ -46,3 +46,6 @@ export PYTHONPATH=/home/dupre/github/pystrat2048/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/onnxcustom:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/aftercovid:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github_fork/scikit-learn:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github_xadupre/sklearn-onnx:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github_xadupre/tensorflow-onnx:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github_xadupre/onnxconverter-common:${PYTHONPATH}
