@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/xadupre/sklearn-onnx.git --recursive
 cd sklearn-onnx
 
+echo --CONTENT--
+ls
+ls benchmarks
+
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
