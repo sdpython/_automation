@@ -25,6 +25,12 @@ python ./tools/ci_build/build.py --help
 # python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --use_mklml --use_dnnl --skip-keras-test --skip_onnx_tests || exit 1
 python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip_tests || exit 1
 
+echo --BUILD-VALGRIND--
+python ./tools/ci_build/build.py --build_dir ./build/debian --config RelWithDebInfo --numpy_version= --skip_tests || exit 1
+
+echo --VALGRIND--
+valgrind ./build/debian/Release/onnxruntime_test_all  --gtest_filter=ReductionOpTest.ReduceDimWithZero || exit 1
+
 echo --COPY--
 cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
 
