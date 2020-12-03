@@ -31,6 +31,7 @@ python ./tools/ci_build/build.py --build_dir ./build/debian --config RelWithDebI
 echo --VALGRIND--
 valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*ReductionOpTest*" || exit 1
 valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Reduce*" || exit 1
+valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Transpose*" || exit 1
 valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Einsum*" || exit 1
 valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Tree*" || exit 1
 
