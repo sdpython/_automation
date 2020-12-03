@@ -29,7 +29,10 @@ echo --BUILD-VALGRIND--
 python ./tools/ci_build/build.py --build_dir ./build/debian --config RelWithDebInfo --numpy_version= --skip_tests || exit 1
 
 echo --VALGRIND--
-valgrind ./build/debian/Release/onnxruntime_test_all || exit 1
+valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*ReductionOpTest*" || exit 1
+valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Reduce*" || exit 1
+valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Einsum*" || exit 1
+valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Tree*" || exit 1
 
 echo --COPY--
 cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
