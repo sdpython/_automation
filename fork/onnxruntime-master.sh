@@ -20,13 +20,5 @@ echo --INSTALL--
 pip install tf2onnx --no-deps
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnxconverter-common keras2onnx || exit 1
 
-echo --DOCUMENTATION--
-cd build/debian/Release 
-python -m sphinx -j1 -v -T -b html -d ../../../dist/_doctrees ../../../docs/python ../../../dist/html || exit 1
-if [ $? -ne 0 ]; then exit $?; fi
-cd ..
-cd ..
-cd ..
-
 echo --END--
 cd ..
