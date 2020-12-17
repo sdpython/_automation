@@ -31,6 +31,17 @@ python setup.py install || exit 1
 echo --TEST-EXAMPLE--
 python -m pytest docs/tests || exit 1
 
+echo --TEST-BENCHMARK--
+cd benchmarks
+python -u bench_plot_onnxruntime_linreg.py  || exit 1
+python -u bench_plot_onnxruntime_logreg.py  || exit 1
+python -u bench_plot_onnxruntime_random_forest_reg.py  || exit 1
+python -u bench_plot_onnxruntime_svm_reg.py  || exit 1
+python -u bench_plot_onnxruntime_hgb.py  || exit 1
+echo --FINAL-GRAPH--
+python -u post_graph.py  || exit 1
+cd ..
+
 echo --COPY--
 cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
 
