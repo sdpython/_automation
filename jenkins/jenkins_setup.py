@@ -17,7 +17,7 @@ Use then ``addpath.sh`` and:
 
 ::
 
-    python3.7 -u jenkins_setup.py
+    python3.9 -u jenkins_setup.py
 """
 
 #########################################

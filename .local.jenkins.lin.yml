@@ -2,16 +2,11 @@
 language: python
 
 python:
-  - { PATH: "{{Python37}}",
-      VERSION: 3.7,
+  - { PATH: "{{Python39}}",
+      VERSION: 3.9,
       DIST: std,
-      PYINT: python3.7,
-      LD_LIBRARY_PATH: /usr/local/Python-3.7.2 }
-  - { PATH: "{{Python38}}",
-      VERSION: 3.8,
-      DIST: std,
-      PYINT: python3.8,
-      LD_LIBRARY_PATH: /usr/local/Python-3.8.1 }
+      PYINT: python3.9,
+      LD_LIBRARY_PATH: /usr/local/Python-3.7.1 }
   
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("$NAME_JENKINS", project_name + "_$VERSION_$DIST_$NAME"), "_venv")}}
@@ -20,7 +15,7 @@ install:
   - $PYINT -m pip install --upgrade pip
 
 before_script:
-    # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*37.*.*((std)|(STD)).*)
+    # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*39.*.*((std)|(STD)).*)
   -  if [ "PYPI" not in ${NAME} ] then $PYINT -m pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper jyquickhelper pyensae pymmails pymyinstall pyrsslocal tkinterquickhelper pymlbenchmark --extra-index-url=https://pypi.python.org/simple/ fi
   -  if [ "PYPI" not in ${NAME} ] then $PYINT -m pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ ensae_teaching_cs --extra-index-url=https://pypi.python.org/simple/ fi
   -  if [ "PYPI" in ${NAME} ] then $PYINT -m pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pypi-server --extra-index-url=https://pypi.python.org/simple/ fi
