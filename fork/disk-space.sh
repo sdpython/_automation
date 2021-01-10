@@ -6,3 +6,5 @@ echo "---------------"
 ps aux | grep "jenkins"
 echo "---------------"
 ps aux | grep "python"
+echo "---------------"
+python3.9 check_keyring.py
