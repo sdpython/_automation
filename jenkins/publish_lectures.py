@@ -24,9 +24,8 @@ import sys
 import os
 import random
 import warnings
-with warnings.catch_warnings():
-    warnings.simplefilter('ignore', DeprecationWarning)
-    import keyring
+from os import getenv
+from pyquickhelper.loghelper import get_password
 
 #########################################
 # logging
@@ -47,9 +46,9 @@ from ensae_teaching_cs.automation.teaching_modules import get_teaching_modules
 # on utilise keyring pour stocker les identifiants
 # à commenter ou décommenter au besoin
 if "2" in sys.argv:
-    user = keyring.get_password("web", "_automation2,user")
-    pwd = keyring.get_password("web", "_automation2,pwd")
-    ftpsite = keyring.get_password("web", "_automation2,ftp")
+    user = get_password("web", "_automation,user", ask=False)
+    pwd = get_password("web", "_automation,pwd", ask=False)
+    ftpsite = get_password("web", "_automation,ftp", ask=False)
     ftps = "SFTP"
     root_template2 = "/home/ftpuser/ftp/web/app/%s/%s"
         
@@ -75,16 +74,16 @@ if "2" in sys.argv:
     sftp.close()
 
 elif "1" in sys.argv:
-    user = keyring.get_password("web", "_automation,user")
-    pwd = keyring.get_password("web", "_automation,pwd")
-    ftpsite = keyring.get_password("web", "_automation,ftp")
+    user = get_password("web", "_automation,user", ask=False)
+    pwd = get_password("web", "_automation,pwd", ask=False)
+    ftpsite = get_password("web", "_automation,ftp", ask=False)
     ftps = False
     root_template2 = "/www/htdocs/app/%s/%s"
 else:
     raise ValueError("1 or 2 must be present in this argument.")
 
 root_template = root_template2 % ('%s', 'helpsphinx')
-code_google = keyring.get_password("web", "_automation,google")
+code_google = get_password("web", "_automation,google")
 
 if pwd is None or user is None or ftpsite is None or code_google is None:
     print("ERROR: password or user or ftpsite is empty, you should execute:")
