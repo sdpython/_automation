@@ -10,15 +10,6 @@ pip install --upgrade h2o py4j pyspark pytest-spark || exit 1
 echo --INSTALL-KERAS--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ keras2onnx || exit 1
 
-echo --INSTALL-libsvm--
-git clone --recursive https://github.com/cjlin1/libsvm libsvm
-cd libsvm
-make lib
-cp *.so* python
-cd ..
-export PYTHONPATH=$PYTHONPATH:libsvm/python
-python -c "import svmutil"
-
 echo --TEST--
 python -m pytest tests --ignore="tests/coreml" --ignore-glob="tests/sparkml" || exit 1
 
