@@ -17,6 +17,7 @@ pip freeze
 
 echo --TEST-BENCHMARK--
 cd benchmarks
+export PYTHONPATH=./..
 python -u bench_plot_onnxruntime_linreg.py  || exit 1
 python -u bench_plot_onnxruntime_logreg.py  || exit 1
 python -u bench_plot_onnxruntime_random_forest_reg.py  || exit 1
