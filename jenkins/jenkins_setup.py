@@ -26,27 +26,21 @@ Use then ``addpath.sh`` and:
 import sys
 import os
 import warnings
-with warnings.catch_warnings():
-    warnings.simplefilter('ignore', DeprecationWarning)
-    import keyring
+from pyquickhelper.loghelper import get_password, fLOG  # publish_lectures
+from pyquickhelper.jenkinshelper import JenkinsExt
+from ensae_teaching_cs.automation.jenkins_helper import (
+    setup_jenkins_server, engines_default)
 
 #########################################
 # logging
-from pyquickhelper.loghelper import fLOG  # publish_lectures
 fLOG(OutputPrint=True)
-
-#########################################
-# import des fonctions dont on a besoin
-
-from pyquickhelper.jenkinshelper import JenkinsExt
-from ensae_teaching_cs.automation.jenkins_helper import setup_jenkins_server, engines_default
 
 #########################################
 # récupération des identifiants Jenkins
 
-user = keyring.get_password("jenkins", "_automation,user")
-pwd = keyring.get_password("jenkins", "_automation,pwd")
-host = keyring.get_password("jenkins", "_automation,host")
+user = get_password("jenkins", "_automation,user")
+pwd = get_password("jenkins", "_automation,pwd")
+host = get_password("jenkins", "_automation,host")
 platform = "linux"
 if pwd is None:
     raise RuntimeError("Password is missing (None).")
