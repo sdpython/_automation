@@ -7,7 +7,7 @@ ls -l
 
 echo --INSTALL-LOCAL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx tensorflow-onnx skl2onnx || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx t2onnx skl2onnx || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn || exit 1
 echo --INSTALL-REQUIREMENTS--
 pip install -r requirements.txt
