@@ -54,7 +54,6 @@ script:
   - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml", SCHEDULER: "H H(1-2) * * 6" }
   # pythonnet
   - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master", SCHEDULER: "H H(1-2) * * 6" }
-  - { CMD: "bash fork/pythonnet-xplat.sh", NAME: "FORK_pythonnet-xplat", SCHEDULER: "H H(1-2) * * 6" }
   # check_install
   - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install", SCHEDULER: "H H(1-2) * * 6" }
   # td1a, td2a, td3a, aftercovid, pystrat2048, onnxcustom
