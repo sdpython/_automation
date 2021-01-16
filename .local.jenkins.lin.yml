@@ -38,7 +38,6 @@ script:
   # keras-onnx
   - { CMD: "bash fork/keras-onnx-jenkins.sh", NAME: "FORK_keras-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/tensorflow-onnx-jenkins.sh", NAME: "FORK_tensorflow-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6" }
-  - { CMD: "bash fork/tensorflow-onnx-branch.sh", NAME: "FORK_tensorflow-onnx-branch", SCHEDULER: "H H(1-2) * * 6" }
   # onnxmltools
   - { CMD: "bash fork/onnxmltools-jenkins.sh", NAME: "FORK_onnxmltools-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   # onnx_converter_common
