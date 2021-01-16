@@ -144,7 +144,7 @@ other_copies = [
 # onnx projects
 other_projects = []
 for name, local_name in other_copies:
-    folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{1}_37_std/{0}/dist/html".format(
+    folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_{1}_39_std/{0}/dist/html".format(
         name, local_name)
     if not os.path.exists(folder):
         print("[] Unable to find '{}'.".format(folder))
@@ -156,7 +156,7 @@ for name, local_name in other_copies:
     print("+ publish '{}'".format(folder))
 
 # benchmark
-folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_37_std/dist/asv/html/"
+folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_39_std/dist/asv/html/"
 if os.path.exists(folder):
     name = "mlprodict_bench"
     other_projects.append(
@@ -168,7 +168,7 @@ if os.path.exists(folder):
 else:
     print("[] Unable to find '{}'.".format(folder))
 
-folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_37_std/_benches/build/html/"
+folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH2_39_std/_benches/build/html/"
 if os.path.exists(folder):
     name = "mlprodict_bench2"
     other_projects.append(
@@ -181,7 +181,7 @@ else:
     print("[] Unable to find '{}'.".format(folder))
 
 # nimbusml
-folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_nimbusml_37_std/nimbusml/target/html/"
+folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_nimbusml_39_std/nimbusml/target/html/"
 
 if os.path.exists(folder):
     name = "nimbusml"
@@ -195,7 +195,7 @@ else:
     print("[] Unable to find '{}'.".format(folder))
 
 # benchmark scikit-learn
-folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_37_std/dist/html/sklbench_results"
+folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCH_39_std/dist/html/sklbench_results"
 name = "scikit-learn_benchmarks"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
@@ -207,7 +207,7 @@ else:
     print("[] Unable to find '{}'.".format(folder))
 
 # benchmark scikit-learn full
-folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_37_std/asv-skl2onnx/html"
+folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_39_std/asv-skl2onnx/html"
 name = "asv-skl2onnx"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
@@ -219,7 +219,7 @@ else:
     print("[] Unable to find '{}'.".format(folder))
 
 # benchmark scikit-learn CPP
-folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_CPP_37_std/asv-skl2onnx/html"
+folder = "/var/lib/jenkins/workspace/_benchmarks/_benchmarks_SKLBENCHONNX_CPP_39_std/asv-skl2onnx/html"
 name = "asv-skl2onnx-cpp"
 if os.path.exists(folder):
     root_web = (root_template2 % ('benches', name))
