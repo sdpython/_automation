@@ -3,15 +3,17 @@ git clone -b jenkins --single-branch https://github.com/xadupre/ort-customops.gi
 cd sklearn-onnx
 
 echo --CONTENT--
-ls
-ls benchmarks
+ls -l
 
-echo --INSTALL--
+echo --INSTALL-LOCAL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common onnxmltools || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime onnx tensorflow-onnx skl2onnx || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn || exit 1
+echo --INSTALL-REQUIREMENTS--
 pip install -r requirements.txt
+echo --INSTALL-REQUIREMENTS-DEV--
 pip install -r requirements-dev.txt
+echo --FREEZE--
 pip freeze
 
 echo --BUILD--
