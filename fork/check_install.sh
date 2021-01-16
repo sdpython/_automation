@@ -13,7 +13,6 @@ python -c "import ensae_teaching_cs;print(ensae_teaching_cs)" || exit 1
 python -c "import ensae_teaching_dl;print(ensae_teaching_dl)" || exit 1
 python -c "import jupytalk;print(jupytalk)" || exit 1
 python -c "import jyquickhelper;print(jyquickhelper)" || exit 1
-python -c "import lightmlboard;print(lightmlboard)" || exit 1
 python -c "import lightmlrestapi;print(lightmlrestapi)" || exit 1
 python -c "import manydataapi;print(manydataapi)" || exit 1
 python -c "import mathenjeu;print(mathenjeu)" || exit 1
