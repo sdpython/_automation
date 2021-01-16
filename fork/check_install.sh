@@ -2,7 +2,7 @@ echo --UNINSTALL--
 pip uninstall -y actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib
 
 echo --INSTALL--
-pip install --upgrade actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper wrapclib || exit 1
+pip install --upgrade actuariat_python code_beatrix cpyquickhelper ensae_projects ensae_teaching_cs ensae_teaching_dl jupytalk jyquickhelper lightmlrestapi manydataapi mathenjeu mlinsights mlprodict mlstatpy pandas_streaming papierstat pyenbc pyensae pymlbenchmark pymmails pymyinstall pyquickhelper pyrsslocal pysqllike sparkouille teachpyx tkinterquickhelper || exit 1
 
 echo --TEST--
 python -c "import code_beatrix;print(code_beatrix)" || exit 1
@@ -31,4 +31,3 @@ python -c "import pysqllike;print(pysqllike)" || exit 1
 python -c "import sparkouille;print(sparkouille)" || exit 1
 python -c "import teachpyx;print(teachpyx)" || exit 1
 python -c "import tkinterquickhelper;print(tkinterquickhelper)" || exit 1
-python -c "import wrapclib;print(wrapclib)" || exit 1
