@@ -18,6 +18,7 @@ pip freeze
 
 echo --BUILD--
 cd ort-customops
+export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH || exit 1
 bash build.sh || exit 1
 
 export TEST_TARGET_OPSET=12
