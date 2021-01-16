@@ -22,12 +22,15 @@ cd ort-customops
 export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH || exit 1
 bash build.sh || exit 1
 
+echo --BUILD-PY--
+python setup.py build_ext --inplace || exit 1
+python setup.py bdist_wheel || exit 1
+
 export TEST_TARGET_OPSET=12
 echo --TEST--
 python -m pytest --durations=0 test || exit 1
 
 echo --WHEEL--
-cd ort-customops
 python setup.py bdist_wheel || exit 1
 
 echo --COPY--
