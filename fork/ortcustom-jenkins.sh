@@ -23,7 +23,7 @@ bash build.sh || exit 1
 
 export TEST_TARGET_OPSET=12
 echo --TEST--
-python -m pytest --durations=0 tests || exit 1
+python -m pytest --durations=0 test || exit 1
 
 echo --WHEEL--
 cd ort-customops
