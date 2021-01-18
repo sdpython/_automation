@@ -27,6 +27,12 @@ echo --BUILD-PY--
 python setup.py build_ext --inplace || exit 1
 python setup.py bdist_wheel || exit 1
 
+echo --INVESTIGATION--
+export PYTHONPATH=.
+python -u -X faulthandler test/test_string_ops.py --verbose -k test_string_equal_cc
+python -u -X faulthandler test/test_string_ops.py --verbose -k test_string_upper_cc
+python -u -X faulthandler test/test_string_ops.py --verbose -k test_string_replace_cc
+
 export TEST_TARGET_OPSET=12
 echo --TEST--
 python -m pytest --durations=0 test || exit 1
