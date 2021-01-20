@@ -38,9 +38,9 @@ fLOG(OutputPrint=True)
 #########################################
 # récupération des identifiants Jenkins
 
-user = get_password("jenkins", "_automation,user")
-pwd = get_password("jenkins", "_automation,pwd")
-host = get_password("jenkins", "_automation,host")
+user = get_password("jenkins", "_automation,user", ask=False)
+pwd = get_password("jenkins", "_automation,pwd", ask=False)
+host = get_password("jenkins", "_automation,host", ask=False)
 platform = "linux"
 if pwd is None:
     raise RuntimeError("Password is missing (None).")
