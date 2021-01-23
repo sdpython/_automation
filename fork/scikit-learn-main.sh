@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/scikit-learn/scikit-learn.git --recursive
+git clone -b main --single-branch https://github.com/scikit-learn/scikit-learn.git --recursive
 cd scikit-learn
 
 echo --BUILD--
