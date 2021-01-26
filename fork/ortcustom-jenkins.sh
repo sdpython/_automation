@@ -14,8 +14,6 @@ echo --INSTALL-REQUIREMENTS--
 pip install -r requirements.txt
 echo --INSTALL-REQUIREMENTS-DEV--
 pip install -r requirements-dev.txt
-echo --INSTALL-ONNXMLTOOLS--
-pip install git+https://github.com/xadupre/onnxmltools.git@jenkins --no-deps
 echo --FREEZE--
 pip freeze
 
