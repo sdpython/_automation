@@ -3,7 +3,7 @@ git clone -b jenkins --single-branch https://github.com/xadupre/tensorflow-onnx.
 cd tensorflow-onnx
 
 echo --INSTALL--
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxruntime onnxconverter-common || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxruntime onnxconverter-common onnxruntime_customops || exit 1
 pip install --upgrade --no-deps keras || exit 1
 
 echo --WHEEL--
