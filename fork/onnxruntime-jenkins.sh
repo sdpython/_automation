@@ -34,7 +34,7 @@ python ./tools/ci_build/build.py --build_dir ./build/debian --config RelWithDebI
 # valgrind ./build/debian/Release/onnxruntime_test_all "--gtest_filter=*Tree*" || exit 1
 
 echo --COPY--
-cp build/debian/Release/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
+cp build/debian/RelWithDebInfo/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server || exit 1
 
 echo --INSTALL--
 pip install tf2onnx --no-deps
