@@ -65,5 +65,6 @@ script:
   - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/aftercovid.sh", NAME: "FORK_aftercovid", SCHEDULER: "H H(1-2) * * *", TIMEOUT: 7200 }
   - { CMD: "bash fork/onnxcustom.sh", NAME: "FORK_onnxcustom", SCHEDULER: "H H(1-2) * * 6" }
-  # disk-status
+  # disk-status, update
   - { CMD: "bash fork/disk-space.sh", NAME: "DISK", SCHEDULER: "H H(1-2) * * 0" }
+  - { CMD: "bash jenkins/check_update.sh", NAME: "UPDATE", SCHEDULER: "H H(1-2) * * 0" }
