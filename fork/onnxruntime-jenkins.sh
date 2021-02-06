@@ -22,7 +22,7 @@ python ./tools/ci_build/build.py --help
 # echo python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
 # echo python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --use_dnnl --skip-keras-test --skip_onnx_tests || exit 1
 # python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --use_mklml --use_dnnl --skip-keras-test --skip_onnx_tests || exit 1
-python ./tools/ci_build/build.py --build_dir ./build/debian --config RelWithDebInfo --build_wheel --use_openmp --numpy_version= --skip_tests || exit 1
+python ./tools/ci_build/build.py --build_dir ./build/debian --config RelWithDebInfo --build_wheel --use_openmp --numpy_version= --skip_tests --build_shared_lib || exit 1
 
 # too long
 # echo --BUILD-VALGRIND--
