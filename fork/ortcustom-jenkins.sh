@@ -25,6 +25,7 @@ python -c "import onnxruntime;f=open('temp_ortver.txt','w');f.write('export VERO
 export $(cat temp_ortver.txt) || exit 1
 export ORTLIB=../../../_automation/_automation_FORK_onnxruntime-jenkins_39_std/onnxruntime/build/debian/RelWithDebInfo
 ls $ORTLIB -l || exit 1
+export ONNXRUNTIME_LIB_DIR=$ORTLIB/onnxruntime-linux-x64-$VERORT/lib
 export 
 echo build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB/onnxruntime-linux-x64-$VERORT/lib
 bash build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB/onnxruntime-linux-x64-$VERORT/lib || exit 1
