@@ -23,8 +23,11 @@ export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH || exit 1
 cmake --version || exit 1
 python -c "import onnxruntime;f=open('temp_ortver.txt','w');f.write('export VERORT=%s'%onnxruntime.__version__);f.close()" || exit 1
 export $(cat temp_ortver.txt) || exit 1
-export
-bash build.sh -DONNXRUNTIME_LIB_DIR=onnxruntime-linux-x64-$VERORT/lib || exit 1
+export ORTLIB=../../../_automation/_automation_FORK_onnxruntime-jenkins_39_std/onnxruntime/build/debian/RelWithDebInfo
+ls $ORTLIB -l || exit 1
+export 
+echo build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB/onnxruntime-linux-x64-$VERORT/lib
+bash build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB/onnxruntime-linux-x64-$VERORT/lib || exit 1
 
 echo --TEST--
 cd out/Linux
