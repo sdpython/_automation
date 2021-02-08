@@ -34,7 +34,7 @@ bash build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB || exit 1
 echo --TEST--
 cd out/Linux
 ctest -C RelWithDebInfo
-cd ..
+cd ../..
 
 echo --BUILD-PY--
 python setup.py build_ext --inplace || exit 1
