@@ -31,14 +31,14 @@ export
 echo build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB
 bash build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB || exit 1
 
+echo --BUILD-PY--
+python setup.py build_ext --inplace || exit 1
+python setup.py bdist_wheel || exit 1
+
 echo --TEST--
 cd out/Linux
 ctest -C RelWithDebInfo
 cd ../..
-
-echo --BUILD-PY--
-python setup.py build_ext --inplace || exit 1
-python setup.py bdist_wheel || exit 1
 
 echo --TEST--
 export PYTHONPATH=.
