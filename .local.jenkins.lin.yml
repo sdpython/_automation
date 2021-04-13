@@ -50,8 +50,6 @@ script:
   - { CMD: "bash fork/ortcustom-jenkins.sh", NAME: "FORK_ortcustom-jenkins", SCHEDULER: "H H(10-11) * * 6" }
   # scikit-learn
   - { CMD: "bash fork/scikit-learn-main.sh", NAME: "FORK_scikit-learn-main", SCHEDULER: "H H(1-2) 11 * *" }
-  # nimbusml
-  - { CMD: "bash fork/nimbusml.sh", NAME: "FORK_nimbusml", SCHEDULER: "H H(1-2) 12 * *" }
   # pythonnet
   - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master", SCHEDULER: "H H(1-2) 19 * *" }
   # check_install
