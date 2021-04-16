@@ -22,7 +22,7 @@ def mkapp(prefix='', local_path='.'):
         path = '/(.*)'
 
     application = tornado.web.Application([
-        (path, Handler, {'path':local_path}),
+        (path, Handler, {'path': local_path}),
     ], debug=True)
 
     return application

@@ -27,7 +27,7 @@ export $(cat temp_ortver.txt) || exit 1
 export ORTLIB=$PWD/../../../_automation/_automation_FORK_onnxruntime-jenkins_39_std/onnxruntime/build/debian/RelWithDebInfo
 ls $ORTLIB -l || exit 1
 export ONNXRUNTIME_LIB_DIR=$ORTLIB
-export 
+export
 echo build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB
 bash build.sh -DONNXRUNTIME_LIB_DIR=$ORTLIB || exit 1
 

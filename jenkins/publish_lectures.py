@@ -51,7 +51,7 @@ if "2" in sys.argv:
     ftpsite = get_password("web", "_automation,ftp", ask=False)
     ftps = "SFTP"
     root_template2 = "/home/ftpuser/ftp/web/app/%s/%s"
-        
+
     import paramiko
     import socket
     sock = socket.socket()
@@ -59,15 +59,15 @@ if "2" in sys.argv:
     trans = paramiko.transport.Transport(sock)
     trans.start_client()
     k = trans.get_remote_server_key()
-    
+
     hk = paramiko.hostkeys.HostKeys()
     hk.add(ftpsite, 'ssh-rsa', k)
     hk.save("ssh.ssh")
-        
+
     import pysftp
     cnopts = pysftp.CnOpts()
     cnopts.hostkeys = hk
-    sftp = pysftp.Connection(ftpsite, username=user, 
+    sftp = pysftp.Connection(ftpsite, username=user,
                              password=pwd, cnopts=cnopts)
     print("pysftp OK")
     print(sftp.listdir())

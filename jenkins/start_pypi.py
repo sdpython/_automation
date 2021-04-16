@@ -23,7 +23,8 @@ from pyquickhelper.loghelper import run_cmd
 pypis = [sys.executable.replace("pythonw", "python")]
 pypi = list(filter(lambda p: os.path.exists(p), pypis))
 if len(pypi) == 0:
-    raise FileNotFoundError("Unable to find any of\n'{0}'".format("\n".join(pypis)))
+    raise FileNotFoundError(
+        "Unable to find any of\n'{0}'".format("\n".join(pypis)))
 pypi = pypi[0]
 
 #########################################
@@ -32,7 +33,7 @@ if sys.platform.startswith("win"):
     cmd = '{0} -c "from pypiserver.__main__ import main;main(r\'--port={1} --root={2}\'.split())"'
 else:
     cmd = "pypi-server --port {1} --root {2}"
-    
+
 #########################################
 # parameters
 port = "8067"
@@ -57,4 +58,3 @@ if any(path):
     run_cmd(cmd, wait=False, fLOG=print)
 else:
     print("Unable to find any of\n{0}.".format("\n".join(paths)))
-    
