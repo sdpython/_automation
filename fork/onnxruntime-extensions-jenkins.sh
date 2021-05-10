@@ -1,6 +1,6 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/xadupre/ort-customops.git --recursive
-cd sklearn-onnx
+git clone -b jenkins --single-branch https://github.com/xadupre/onnxruntime-extensions.git --recursive
+cd onnxruntime-extensions
 
 echo --CONTENT--
 ls -l

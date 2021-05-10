@@ -47,8 +47,8 @@ script:
   - { CMD: "bash fork/onnxruntime-jenkins.sh", NAME: "FORK_onnxruntime-jenkins", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/onnxruntime-jenkins-docker.sh", NAME: "FORK_onnxruntime-jenkins-docker", SCHEDULER: "H H(1-2) * * 8" }
   - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master", SCHEDULER: "H H(7-8) 16 * *" }
-  # ortcustom
-  - { CMD: "bash fork/ortcustom-jenkins.sh", NAME: "FORK_ortcustom-jenkins", SCHEDULER: "H H(10-11) * * 6" }
+  # onnxruntime-extensions
+  - { CMD: "bash fork/onnxruntime-extensions-jenkins.sh", NAME: "FORK_onnxrtext-jenkins", SCHEDULER: "H H(10-11) * * 6" }
   # scikit-learn
   - { CMD: "bash fork/scikit-learn-main.sh", NAME: "FORK_scikit-learn-main", SCHEDULER: "H H(1-2) 11 * *" }
   # pythonnet
