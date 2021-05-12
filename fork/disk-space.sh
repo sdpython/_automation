@@ -1,7 +1,13 @@
 echo "---------------"
 df --local --human-readable -T
-echo "---------------"
+echo "--------------- JENKINS"
 du -shc /var/lib/jenkins/workspace/*
+echo "--------------- LIB"
+du -shc /var/lib/*
+echo "--------------- HOME"
+du -shc /home/*
+echo "--------------- USR"
+du -shc /usr/*
 echo "---------------"
 ps aux | grep "jenkins"
 echo "---------------"
