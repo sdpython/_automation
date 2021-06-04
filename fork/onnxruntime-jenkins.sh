@@ -17,6 +17,10 @@ g++ --version
 clang -v
 clang-6.0 -v
 
+echo --PATH--
+export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH
+cmake --version
+
 echo --BUILD--
 python ./tools/ci_build/build.py --help
 # echo python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
