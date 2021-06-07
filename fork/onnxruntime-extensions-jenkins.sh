@@ -24,7 +24,7 @@ cmake --version || exit 1
 python -c "import onnxruntime;f=open('temp_ortver.txt','w');f.write('export VERORT=%s'%onnxruntime.__version__);f.close()" || exit 1
 echo $PWD
 export $(cat temp_ortver.txt) || exit 1
-export ORTLIB=$PWD/../../../_automation/_automation_FORK_onnxruntime-jenkins_39_std/onnxruntime/build/debian/RelWithDebInfo
+export ORTLIB=$PWD/../../../_automation/_automation_FORK_onnxruntime-jenkins_39_std/onnxruntime/build/debian/Release
 ls $ORTLIB -l || exit 1
 export ONNXRUNTIME_LIB_DIR=$ORTLIB
 export
