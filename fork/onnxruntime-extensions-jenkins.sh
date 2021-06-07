@@ -13,7 +13,7 @@ pip install transformers
 echo --INSTALL-REQUIREMENTS--
 pip install -r requirements.txt
 echo --INSTALL-REQUIREMENTS-DEV--
-pip install -r requirements-dev.txt
+pip install -r requirements-dev.txt --no-deps
 echo --FREEZE--
 pip freeze
 
