@@ -5,7 +5,7 @@ cd onnxmltools
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxconverter-common scikit-learn || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
-pip install --upgrade h2o py4j pyspark pytest-spark dask distributed || exit 1
+pip install --upgrade h2o py4j pyspark pytest-spark dask distributed dask_ml || exit 1
 
 echo --INSTALL-KERAS--
 pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ keras2onnx || exit 1
