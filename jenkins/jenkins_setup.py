@@ -44,6 +44,7 @@ host = get_password("jenkins", "_automation,host", ask=False)
 platform = "linux"
 if pwd is None:
     raise RuntimeError("Password is missing (None).")
+fLOG('password has been recovered.')
 
 #########################################
 # instantiation d'une classe faisant l'interface avec le service
