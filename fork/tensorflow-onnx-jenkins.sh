@@ -14,7 +14,7 @@ export CI_ONNX_OPSET=12
 rm setup.cfg
 
 echo --TEST--
-python -m pytest tests -v -v || exit 1
+python -m pytest tests -v -v --ignore-glob="*keras*" || exit 1
 
 echo --COPY--
 cp dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
