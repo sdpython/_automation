@@ -10,9 +10,7 @@ pip freeze
 echo --PIP--
 python -m pip install -r requirements.txt || exit 1
 python -m pip install -r requirements-dev.txt || exit 1
-
-echo --INSTALL-ONNXMLTOOLS--
-pip install git+https://github.com/xadupre/onnxmltools.git@jenkins --no-deps || exit 1
+python -m pip install onnxruntime-training || exit 1
 
 echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
