@@ -4,13 +4,14 @@ cd onnxcustom
 
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ scikit-learn || exit 1
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common skl2onnx onnx onnxruntime mlprodict mlinsights pandas_streaming pyquickhelper || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime-training || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx onnxconverter-common skl2onnx onnx mlprodict mlinsights pandas_streaming pyquickhelper || exit 1
 pip freeze
 
 echo --PIP--
 python -m pip install -r requirements.txt || exit 1
 python -m pip install -r requirements-dev.txt || exit 1
-python -m pip install onnxruntime-training || exit 1
 
 echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
