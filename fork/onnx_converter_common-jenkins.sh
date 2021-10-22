@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/xadupre/onnxconverter-common.git --recursive
+git clone -b jenkins --single-branch https://github.com/sdpython/onnxconverter-common.git --recursive
 cd onnxconverter-common
 
 echo --INSTALL--
