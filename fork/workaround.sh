@@ -18,8 +18,8 @@ python setup.py bdist_wheel
 
 echo --COPY--
 cd ../../../..
-cp ort/torch_cpp_extensions/cpu/aten_op_executor/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
-cp ort/torch_cpp_extensions/cpu/torch_interop_utils/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
+cp ort/torch_cpp_extensions/cpu/aten_op_executor/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
+cp ort/torch_cpp_extensions/cpu/torch_interop_utils/dist/*.whl /var/lib/jenkins/workspace/local_pypi/local_pypi_server
 
 echo --END--
 cd ..
