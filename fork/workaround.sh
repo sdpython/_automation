@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/sdpython/workaround.git --recursive
+git clone -b main --single-branch https://github.com/sdpython/workaround.git --recursive
 cd workaround
 
 echo --CONTENT--
