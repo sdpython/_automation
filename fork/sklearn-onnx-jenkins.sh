@@ -15,7 +15,7 @@ pip install -r docs/requirements.txt
 pip uninstall -y skl2onnx
 pip freeze
 
-export TEST_TARGET_OPSET=12
+export TEST_TARGET_OPSET=15
 echo --TEST--
 python -m pytest --durations=0 tests || exit 1
 
