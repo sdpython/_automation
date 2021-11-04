@@ -39,6 +39,7 @@ export PYTHONPATH=/home/dupre/xadupre/sklearn-onnx:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/xadupre/onnxruntime/build/debian/Release:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/onnxcustom/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/td3a_cpp/src:${PYTHONPATH}
+export PYTHONPATH=/home/dupre/github/td3a_cpp_deep/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/aftercovid/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/td2a_plotting/src:${PYTHONPATH}
 export PYTHONPATH=/home/dupre/github/td1a_unit_test_ci/src:${PYTHONPATH}

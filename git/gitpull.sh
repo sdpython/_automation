@@ -291,6 +291,13 @@ if [ -d td3a_cpp ]; then
     cd ..
 fi
 
+if [ -d td3a_cpp_deep ]; then
+    echo *** td3a_cpp_deep
+    cd td3a_cpp_deep
+    git pull
+    cd ..
+fi
+
 if [ -d td2a_plotting ]; then
     echo *** td2a_plotting
     cd td2a_plotting

@@ -136,6 +136,7 @@ other_copies = [
     ('td1a_unit_test_ci', 'td1a_unit_test_ci'),
     ('td2a_plotting', 'td2a_plotting'),
     ('td3a_cpp', 'td3a_cpp'),
+    ('td3a_cpp_deep', 'td3a_cpp_deep'),
     ('pystrat2048', 'pystrat2048'),
     ('aftercovid', 'aftercovid'),
 ]
