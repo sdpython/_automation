@@ -3,6 +3,7 @@ git clone -b main --single-branch https://github.com/sdpython/td3a_cpp_deep.git 
 cd td3a_cpp_deep
 
 echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
 python -m pip freeze
 
 echo --WHEEL--
