@@ -2,6 +2,9 @@ echo --CLONE--
 git clone -b main --single-branch https://github.com/sdpython/td3a_cpp_deep.git --recursive
 cd td3a_cpp_deep
 
+echo --PIP--
+python -m pip freeze
+
 echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
 
