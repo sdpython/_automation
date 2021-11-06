@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b master --single-branch https://github.com/sdpython/pystrat2048.git --recursive
 cd pystrat2048
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --TEST--
 python -m coverage run  --omit=tests/test_*.py -m unittest discover tests || exit 1
 python -m coverage html -d dist/html/coverage.html --include **/pystrat2048/** || exit 1

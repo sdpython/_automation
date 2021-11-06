@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/sdpython/asv.git --recursive
 cd asv
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --BUILD--
 python -u setup.py build_ext --inplace || exit 1
 

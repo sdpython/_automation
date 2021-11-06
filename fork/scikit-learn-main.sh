@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b main --single-branch https://github.com/scikit-learn/scikit-learn.git --recursive
 cd scikit-learn
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --BUILD--
 python -u setup.py build_ext --inplace || exit 1
 

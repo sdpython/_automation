@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/xadupre/onnxruntime-extensions.git --recursive
 cd onnxruntime-extensions
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --CONTENT--
 ls -l
 

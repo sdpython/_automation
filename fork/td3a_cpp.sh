@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b master --single-branch https://github.com/sdpython/td3a_cpp.git --recursive
 cd td3a_cpp
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --WHEEL--
 python -u setup.py build_ext --inplace || exit 1
 

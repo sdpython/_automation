@@ -2,6 +2,10 @@ echo --INSTALL--
 pip install --upgrade numpydoc
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper || exit 1
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/sdpython/scikit-learn.git --recursive
 cd scikit-learn

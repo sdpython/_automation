@@ -9,6 +9,10 @@ cd machinelearning
 git pull
 git submodule update --init --recursive
 
+echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
 echo --LS--
 ls
 

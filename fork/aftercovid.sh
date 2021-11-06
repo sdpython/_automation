@@ -3,6 +3,10 @@ git clone -b master --single-branch https://github.com/sdpython/aftercovid.git -
 cd aftercovid
 
 echo --PIP--
+python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip freeze
+
+echo --PIP--
 python -m pip install -r requirements.txt || exit 1
 python -m pip install -r requirements-dev.txt || exit 1
 
