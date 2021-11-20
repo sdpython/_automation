@@ -7,7 +7,7 @@ python -m pip install --upgrade sphinx sphinx-gallery
 python -m pip freeze
 
 echo --TEST--
-python -m coverage run  --omit=tests/test_*.py -m unittest discover tests || exit 1
+python -m coverage run  --omit=tests/test_*.py -m unittest discover ./tests || exit 1
 python -m coverage html -d dist/html/coverage.html --include **/td2a_plotting/** || exit 1
 python -m flake8 . || exit 1
 
