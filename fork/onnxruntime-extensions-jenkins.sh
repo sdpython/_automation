@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b jenkins --single-branch https://github.com/xadupre/onnxruntime-extensions.git --recursive
+git clone -b jenkins --single-branch https://github.com/sdpython/onnxruntime-extensions.git --recursive
 cd onnxruntime-extensions
 
 echo --PIP--
