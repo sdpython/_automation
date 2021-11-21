@@ -46,9 +46,9 @@ from ensae_teaching_cs.automation.teaching_modules import get_teaching_modules
 # on utilise keyring pour stocker les identifiants
 # à commenter ou décommenter au besoin
 if "2" in sys.argv:
-    user = get_password("web", "_automation,user", ask=False)
-    pwd = get_password("web", "_automation,pwd", ask=False)
-    ftpsite = get_password("web", "_automation,ftp", ask=False)
+    user = get_password("web", "_automation2,user", ask=False)
+    pwd = get_password("web", "_automation2,pwd", ask=False)
+    ftpsite = get_password("web", "_automation2,ftp", ask=False)
     ftps = "SFTP"
     root_template2 = "/home/ftpuser/ftp/web/app/%s/%s"
 
