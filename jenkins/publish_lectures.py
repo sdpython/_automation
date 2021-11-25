@@ -155,6 +155,19 @@ for name, local_name in other_copies:
                                root_local=folder))
     print("+ publish '{}'".format(folder))
 
+# onnxruntime-training
+folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_onnxruntime-jenkins/dist/html_training/"
+if os.path.exists(folder):
+    name = "onnxruntime_training"
+    other_projects.append(
+        dict(status_file="status_onnxruntime_training_%s.txt" % name,
+             local=name,
+             root_web=root_template2 % ('helpsphinx', "onnxruntime_training"),
+             root_local=folder))
+    print("+ publish '{}'".format(name))
+else:
+    print("[] Unable to find '{}'.".format(folder))
+
 # benchmark
 folder = "/var/lib/jenkins/workspace/mlprodict/mlprodict_UT_BENCH_39_std/dist/asv/html/"
 if os.path.exists(folder):
