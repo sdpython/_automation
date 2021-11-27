@@ -156,7 +156,7 @@ for name, local_name in other_copies:
     print("+ publish '{}'".format(folder))
 
 # onnxruntime-training
-folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_onnxruntime-jenkins/onnxruntime/dist/html_training/"
+folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_onnxruntime-jenkins_39_std/onnxruntime/dist/html_training/"
 if os.path.exists(folder):
     name = "onnxruntime_training"
     other_projects.append(
