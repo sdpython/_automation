@@ -162,7 +162,7 @@ if os.path.exists(folder):
     other_projects.append(
         dict(status_file="status_onnxruntime_training_%s.txt" % name,
              local=name,
-             root_web=root_template2 % ('helpsphinx', "onnxruntime_training"),
+             root_web=root_template2 % ("onnxruntime_training", 'helpsphinx'),
              root_local=folder))
     print("+ publish '{}'".format(name))
 else:
