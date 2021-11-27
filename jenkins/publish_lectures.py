@@ -160,7 +160,7 @@ folder = "/var/lib/jenkins/workspace/_automation/_automation_FORK_onnxruntime-je
 if os.path.exists(folder):
     name = "onnxruntime_training"
     other_projects.append(
-        dict(status_file="status_onnxruntime_training_%s.txt" % name,
+        dict(status_file="status_%s.txt" % name,
              local=name,
              root_web=root_template2 % ("onnxruntime_training", 'helpsphinx'),
              root_local=folder))
