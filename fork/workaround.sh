@@ -2,6 +2,9 @@ echo --CLONE--
 git clone -b main --single-branch https://github.com/sdpython/workaround.git --recursive
 cd workaround
 
+echo --FREEZE--
+python -m pip freeze
+
 echo --CONTENT--
 ls
 
