@@ -9,7 +9,7 @@ echo --CONTENT--
 ls
 
 echo --INSTALL--
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime-training || exit 1
 
 echo --aten_op_executor--
 cd ort/torch_cpp_extensions/cpu/aten_op_executor
