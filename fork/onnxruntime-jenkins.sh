@@ -3,7 +3,7 @@ git clone -b jenkins --single-branch https://github.com/sdpython/onnxruntime.git
 cd onnxruntime
 
 echo --PIP--
-python -m pip install --upgrade sphinx sphinx-gallery
+python -m pip install --upgrade sphinx sphinx-gallery scikit-learn
 python -m pip freeze
 
 echo --UPDATE--
