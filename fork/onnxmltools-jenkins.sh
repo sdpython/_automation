@@ -7,7 +7,7 @@ python -m pip install --upgrade sphinx sphinx-gallery
 python -m pip freeze
 
 echo --INSTALL--
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxconverter-common scikit-learn || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnx onnxconverter-common || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
 pip install --upgrade h2o py4j pyspark pytest-spark dask distributed dask_ml || exit 1
 

@@ -14,6 +14,7 @@ virtualenv:
 
 install:
   - $PYINT -m pip install --upgrade pip
+  - $PYINT -m pip install fastjsonschema nbformat
 
 before_script:
     # regular expression for Jenkins view: ((.*PUBLISH.*)|(.*PYPI.*))|(.*39.*.*((std)|(STD)).*)
