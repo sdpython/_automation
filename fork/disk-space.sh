@@ -13,4 +13,9 @@ ps aux | grep "jenkins"
 echo "---------------"
 ps aux | grep "python"
 echo "---------------"
+last -100
+echo "---------------"
+lastb -100
+echo "---------------"
+
 python3.9 fork/check_keyring.py
