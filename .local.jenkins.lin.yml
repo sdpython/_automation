@@ -24,15 +24,15 @@ before_script:
 
 script:
   - { CMD: "$PYINT -u jenkins/copy_lectures.py", NAME: "COPYDOC", TIMEOUT: 3600, SCHEDULER: "FIXED H 4 * * *", CLEAN: "0" }
-  - { CMD: "$PYINT -u jenkins/start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
-  - { CMD: "$PYINT -u doc/server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
+  # - { CMD: "$PYINT -u jenkins/start_pypi.py", NAME: "PYPI", SCHEDULER: "STARTUP", CLEAN: "0" }
+  # - { CMD: "$PYINT -u doc/server_lectures.py", NAME: "DOCSERVER", SCHEDULER: "STARTUP", CLEAN: "0" }
   # - { CMD: "$PYINT -u jenkins/publish_lectures.py 1", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
   - { CMD: "$PYINT -u jenkins/publish_lectures.py 2", NAME: "PUBLISH2", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
   - { CMD: "$PYINT -m pip list --outdated", NAME: "LIST"}
   # jenkins does does have enough permissions by default.
   # It must be manually built and the job can started again.
   # machinelearning: after the first execution, chmod -R 755 * must be run.
-  - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0", SCHEDULER: "H H(1-2) 20 * *" }
+  # - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0", SCHEDULER: "H H(1-2) 20 * *" }
   # asv
   - { CMD: "bash fork/asv-jenkins.sh", NAME: "FORK_asv-jenkins", SCHEDULER: "H H(1-2) 17 * *" }
   # sklearn-onnx
