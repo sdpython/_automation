@@ -17,7 +17,7 @@ pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/sim
 
 echo --BUILD--
 export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH
-echo python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --gen_doc validate --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
+echo python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --gen_doc 1 --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests || exit 1
 python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --gen_doc validate --build_wheel --use_openmp --numpy_version= --skip-keras-test --skip_onnx_tests --build_shared_lib || exit 1
 
 echo --INSTALL--
