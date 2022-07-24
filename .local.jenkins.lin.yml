@@ -33,8 +33,6 @@ script:
   # It must be manually built and the job can started again.
   # machinelearning: after the first execution, chmod -R 755 * must be run.
   # - { CMD: "bash fork/machinelearning-master.sh", NAME: "FORK_machinelearning_master", CLEAN: "0", SCHEDULER: "H H(1-2) 20 * *" }
-  # asv
-  - { CMD: "bash fork/asv-jenkins.sh", NAME: "FORK_asv-jenkins", SCHEDULER: "H H(1-2) 17 * *" }
   # sklearn-onnx
   - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6", TIMEOUT: 7200 }
   # onnxmltools
@@ -48,10 +46,6 @@ script:
   - { CMD: "bash fork/workaround.sh", NAME: "FORK_workaround", SCHEDULER: "H H(10-11) * * 6" }
   # onnxruntime-extensions
   - { CMD: "bash fork/onnxruntime-extensions-jenkins.sh", NAME: "FORK_onnxruntime-extensions-jenkins", SCHEDULER: "H H(10-11) * * 6" }
-  # scikit-learn
-  - { CMD: "bash fork/scikit-learn-main.sh", NAME: "FORK_scikit-learn-main", SCHEDULER: "H H(1-2) 11 * *" }
-  # pythonnet
-  - { CMD: "bash fork/pythonnet-master.sh", NAME: "FORK_pythonnet-master", SCHEDULER: "H H(1-2) 19 * *" }
   # check_install
   - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install", SCHEDULER: "H H(1-2) 1 * *" }
   # td1a, td2a, td3a, aftercovid, pystrat2048
