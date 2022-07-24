@@ -8,7 +8,7 @@ python -m pip freeze
 
 echo --INSTALL--
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnx || exit 1
-pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx --no-deps || exit 1
+pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ skl2onnx onnxmltools --no-deps || exit 1
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime
 
 echo --TEST--
