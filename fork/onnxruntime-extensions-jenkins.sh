@@ -22,7 +22,7 @@ echo --FREEZE--
 pip freeze
 
 echo --BUILD-CPP--
-cd ort-customops
+cd onnxruntime-extensions
 export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH || exit 1
 cmake --version || exit 1
 python -c "import onnxruntime;f=open('temp_ortver.txt','w');f.write('export VERORT=%s'%onnxruntime.__version__);f.close()" || exit 1
