@@ -22,7 +22,7 @@ clang -v
 clang-6.0 -v
 
 echo --PATH--
-export PATH=/home/install/cmake-3.19.3-Linux-x86_64/bin:$PATH
+export PATH=/home/install/cmake-3.25.0-Linux-x86_64/bin:$PATH
 cmake --version
 
 echo --BUILD--
