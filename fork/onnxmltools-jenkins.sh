@@ -11,9 +11,6 @@ pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/sim
 pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime || exit 1
 pip install --upgrade h2o pyspark pytest-spark dask dask-ml || exit 1
 
-echo --INSTALL-KERAS--
-pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ keras2onnx || exit 1
-
 echo --TEST--
 python -m pytest tests --ignore="tests/coreml" --ignore-glob="tests/sparkml" || exit 1
 
