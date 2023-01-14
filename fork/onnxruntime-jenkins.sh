@@ -31,7 +31,7 @@ python ./tools/ci_build/build.py --help
 # echo python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --numpy_version= --use_dnnl --skip-keras-test --skip_onnx_tests || exit 1
 # python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --numpy_version= --use_mklml --use_dnnl --skip-keras-test --skip_onnx_tests || exit 1
 # rem python ./tools/ci_build/build.py --build_dir ./build/debian --config Release --build_wheel --numpy_version= --skip_tests --build_shared_lib || exit 1
-python ./tools/ci_build/build.py --gen_doc 1 --build_dir ./build/debian --config Release --build_wheel --numpy_version= --skip_tests --build_shared_lib --enable_training --enable_training_ops --enable_training_torch_interop --parallel 4 || exit 1
+python ./tools/ci_build/build.py --gen_doc 1 --build_dir ./build/debian --config Release --build_wheel --numpy_version= --skip_tests --build_shared_lib --enable_training --enable_training_ops --parallel 3 || exit 1
 
 # too long
 # echo --BUILD-VALGRIND--
