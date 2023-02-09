@@ -2,6 +2,10 @@ echo --CLONE--
 git clone -b jenkins --single-branch https://github.com/sdpython/onnxruntime.git --recursive
 cd onnxruntime
 
+echo --SETUP-GCC--
+# https://gist.github.com/s3rvac/76ac07f21d5635209accc11fa56bd3fb
+export PATH=/opt/gcc-10/bin/:$PATH
+
 echo --PIP--
 python -m pip install --upgrade sphinx sphinx-gallery scikit-learn
 python -m pip freeze
