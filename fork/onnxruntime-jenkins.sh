@@ -4,6 +4,7 @@ cd onnxruntime
 
 echo --SETUP-GCC--
 # https://gist.github.com/s3rvac/76ac07f21d5635209accc11fa56bd3fb
+export CC=/opt/gcc-10/bin/gcc CXX=/opt/gcc-10/bin/g++
 export PATH=/opt/gcc-10/bin/:$PATH
 
 echo --PIP--
