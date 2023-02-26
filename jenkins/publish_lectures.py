@@ -244,7 +244,7 @@ if False:
         print("[] Unable to find '{}'.".format(folder))
 
 # publish
-publish_teachings_to_web(login=user, ftpsite=ftpsite, google_id=google_id,
+publish_teachings_to_web(login=user, ftpsite=ftpsite,
                          location=location, rootw=rootw,
                          modules=modules, password=pwd, suffix=suffix,
                          force_allow=["xavierdupre"], exc=False,
