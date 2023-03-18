@@ -1,5 +1,5 @@
 echo --CLONE--
-git clone -b master --single-branch https://github.com/sdpython/onnx-array-api.git --recursive
+git clone -b main --single-branch https://github.com/sdpython/onnx-array-api.git --recursive
 cd onnx-array-api
 
 echo --PIP--
