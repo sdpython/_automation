@@ -9,14 +9,6 @@ user = "LOGIN"
 ftpsite = "ftp.SOMETHING"
 rootw = "/www/htdocs/app/%s/helpsphinx"
 
-footer = """
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-<script type="text/javascript">
-_uacct = "GOOGLE_ANALYTICS_CODE";
-urchinTracker();
-</script>
-"""
-
 #########################################
 # import
 
@@ -138,6 +130,7 @@ other_copies = [
     ('td3a_cpp_deep', 'td3a_cpp_deep'),
     ('pystrat2048', 'pystrat2048'),
     ('aftercovid', 'aftercovid'),
+    ('onnx-array-api', 'onnx-array-api'),
 ]
 
 # onnx projects

@@ -47,6 +47,7 @@ script:
   - { CMD: "bash fork/td3a_cpp_deep.sh", NAME: "FORK_td3a_cpp_deep", SCHEDULER: "H H(3-4) * * 6" }
   - { CMD: "bash fork/pystrat2048.sh", NAME: "FORK_pystrat2048", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/aftercovid.sh", NAME: "FORK_aftercovid", SCHEDULER: "H H(1-2) * * *", TIMEOUT: 9600 }
+  - { CMD: "bash fork/onnx-array-api.sh", NAME: "FORK_onnx-array-api", SCHEDULER: "H H(1-2) * * *", TIMEOUT: 3600 }
   # disk-status, update
   - { CMD: "bash fork/disk-space.sh", NAME: "DISK", SCHEDULER: "H H(1-2) * * 0" }
   - { CMD: "bash jenkins/check_update.sh", NAME: "UPDATE", SCHEDULER: "H H(1-2) * * 0" }
