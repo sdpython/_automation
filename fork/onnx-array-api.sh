@@ -14,9 +14,9 @@ echo --RUFF--
 ruff .
 
 echo --TEST--
-python -m pytest -v -v || exit 1
-python -m coverage run  --omit=tests/test_*.py -m unittest discover _unittests -v -v || exit 1
-python -m coverage html -d dist/html/coverage.html --include **/onnx-array-api/** || exit 1
+python -m pytest -v -v --cov-report html:dist/html/cov_html || exit 1
+# python -m coverage run  --omit=tests/test_*.py -m unittest discover _unittests -v -v || exit 1
+# python -m coverage html -d dist/html/coverage.html --include **/onnx-array-api/** || exit 1
 
 echo --WHEEL--
 python -u setup.py bdist_wheel || exit 1
