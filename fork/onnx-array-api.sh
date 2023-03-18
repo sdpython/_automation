@@ -24,6 +24,8 @@ python -u setup.py bdist_wheel || exit 1
 echo --DOC--
 python setup.py install || exit 1
 python -m sphinx -b html _doc dist/html || exit 1
+mkdir dist/html/cov
+cp dist/cov_html/* dist/html/cov
 
 echo --END--
 cd ..
