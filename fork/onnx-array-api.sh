@@ -15,7 +15,7 @@ ruff .
 
 echo --TEST--
 python -m pytest -v -v || exit 1
-python -m coverage run  --omit=tests/test_*.py -m unittest discover tests -v -v || exit 1
+python -m coverage run  --omit=tests/test_*.py -m unittest discover _unittests -v -v || exit 1
 python -m coverage html -d dist/html/coverage.html --include **/onnx-array-api/** || exit 1
 
 echo --WHEEL--
