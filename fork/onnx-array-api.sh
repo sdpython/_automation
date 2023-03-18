@@ -8,7 +8,7 @@ python -m pip install -r requirements-dev.txt || exit 1
 python -m pip freeze
 
 echo --BLACK--
-black --check .
+black --diff .
 
 echo --RUFF--
 ruff .
