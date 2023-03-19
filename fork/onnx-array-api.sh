@@ -14,6 +14,7 @@ echo --RUFF--
 ruff .
 
 echo --TEST--
+export PYTHONPATH=.
 python -m pytest -v -v --cov-report html:dist/cov_html || exit 1
 # python -m coverage run  --omit=tests/test_*.py -m unittest discover _unittests -v -v || exit 1
 # python -m coverage html -d dist/html/coverage.html --include **/onnx-array-api/** || exit 1
