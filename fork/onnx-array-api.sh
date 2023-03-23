@@ -5,6 +5,7 @@ cd onnx-array-api
 echo --PIP--
 python -m pip install -r requirements.txt || exit 1
 python -m pip install -r requirements-dev.txt || exit 1
+python -m pip install onnxmltools --no-deps || exit 1
 python -m pip freeze
 
 echo --BLACK--
