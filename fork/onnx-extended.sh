@@ -14,6 +14,7 @@ echo --RUFF--
 ruff .
 
 echo --BUILD--
+export PATH=/home/install/cmake-3.25.0-linux-x86_64/bin:$PATH
 python -m pip install -e .
 
 echo --TEST--
