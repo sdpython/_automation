@@ -131,6 +131,7 @@ other_copies = [
     ('pystrat2048', 'pystrat2048'),
     ('aftercovid', 'aftercovid'),
     ('onnx-array-api', 'onnx-array-api'),
+    ('onnx-extended', 'onnx-extended'),
 ]
 
 # onnx projects
