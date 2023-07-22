@@ -29,17 +29,9 @@ script:
   # - { CMD: "$PYINT -u jenkins/publish_lectures.py 1", NAME: "PUBLISH", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
   - { CMD: "$PYINT -u jenkins/publish_lectures.py 2", NAME: "PUBLISH2", SCHEDULER: "FIXED H 5 * * *", CLEAN: "0" }
   - { CMD: "$PYINT -m pip list --outdated", NAME: "LIST"}
-  # sklearn-onnx
-  - { CMD: "bash fork/sklearn-onnx-jenkins.sh", NAME: "FORK_sklearn-onnx-jenkins", SCHEDULER: "H H(1-2) * * 6", TIMEOUT: 7200 }
   # onnxruntime
   - { CMD: "bash fork/onnxruntime-jenkins.sh", NAME: "FORK_onnxruntime-jenkins", SCHEDULER: "H H(1-2) * * 6" }
-  - { CMD: "bash fork/onnxruntime-jenkins-docker.sh", NAME: "FORK_onnxruntime-jenkins-docker", SCHEDULER: "H H(1-2) * * 8" }
-  - { CMD: "bash fork/onnxruntime-master.sh", NAME: "FORK_onnxruntime-master", SCHEDULER: "H H(7-8) 16 * *" }
   - { CMD: "bash fork/workaround.sh", NAME: "FORK_workaround", SCHEDULER: "H H(10-11) * * 6" }
-  # onnxruntime-extensions
-  - { CMD: "bash fork/onnxruntime-extensions-jenkins.sh", NAME: "FORK_onnxruntime-extensions-jenkins", SCHEDULER: "H H(10-11) * * 6" }
-  # check_install
-  - { CMD: "bash fork/check_install.sh", NAME: "CHECK_install", SCHEDULER: "H H(1-2) 1 * *" }
   # td1a, td2a, td3a, aftercovid, pystrat2048
   - { CMD: "bash fork/td1a_unit_test_ci.sh", NAME: "FORK_td1a_unit_test_ci", SCHEDULER: "H H(1-2) * * 6" }
   - { CMD: "bash fork/td2a_plotting.sh", NAME: "FORK_td2a_plotting", SCHEDULER: "H H(1-2) * * 6" }
