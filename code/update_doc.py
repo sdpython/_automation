@@ -5,10 +5,12 @@ import sys
 from argparse import ArgumentParser
 from sphinx_runpython.runpython import run_cmd
 
+
 def filter_err(err):
     lines = err.split("\n")
     lines = [line for line in lines if "[gdot] viz.js" not in line]
     return ("\n".join(lines)).strip("\n\r ")
+
 
 def generate_doc(module, root=None, dest=None):
     this = os.path.abspath(os.path.dirname(__file__))
@@ -24,7 +26,10 @@ def generate_doc(module, root=None, dest=None):
     path = os.path.join(root, module)
     print()
     print("-------------------------------------")
+    print("-------------------------------------")
     print(f"Generate documentation for {module!r}")
+    print("-------------------------------------")
+    print("-------------------------------------")
     name = module.replace("-", "_")
     mod = __import__(name)
     version = mod.__version__
@@ -72,12 +77,22 @@ def generate_doc(module, root=None, dest=None):
                 copied += 1
             print(f"COPIED: {copied}")
         else:
-            out, err = run_cmd(c, wait=True, logf=print, log_error=print, communicate=False, shell="*" in c)
+            out, err = run_cmd(
+                c,
+                wait=True,
+                logf=print,
+                log_error=print,
+                communicate=False,
+                shell="*" in c,
+            )
             if filter_err(err):
                 print("-- STDOUT --")
                 print(out)
                 print("-- STDERR --")
                 print(err)
+                print("##################################################")
+                print("ERROR")
+                print("##################################################")
                 os.chdir(cwd)
                 sys.exit(1)
     os.chdir(cwd)
