@@ -6,9 +6,15 @@ from argparse import ArgumentParser
 from sphinx_runpython.runpython import run_cmd
 
 
+def filter_line(line):
+    if "viz.js" in line:
+        return False
+    return True
+
+
 def filter_err(err):
     lines = err.split("\n")
-    lines = [line for line in lines if "[gdot] viz.js" not in line]
+    lines = [line for line in lines if filter_line(line)]
     return ("\n".join(lines)).strip("\n\r ")
 
 
@@ -23,7 +29,6 @@ def generate_doc(module, root=None, dest=None):
         )
 
     cwd = os.getcwd()
-    path = os.path.join(root, module)
     print()
     print("-------------------------------------")
     print("-------------------------------------")
@@ -35,16 +40,17 @@ def generate_doc(module, root=None, dest=None):
     version = mod.__version__
 
     dev = os.path.join(dest, module, "dev")
+    if "dev/v" in dev:
+        raise RuntimeError(f"Wrong folder {dev!r}.")
     if not os.path.exists(dev):
+        print(f"create folder (1) {dev!r}")
         os.makedirs(dev)
-    vers = os.path.join(dest, "dev", f"v{version}")
-    if not os.path.exists(vers):
-        os.makedirs(vers)
     print(f"PATH: {root_module}")
     print(f"DEST: {dest}")
     print(f"MODULE: {name!r}")
     print(f"VERSION: {version!r}")
     module_path = os.path.join(dest, module)
+    print(f"module_path: {module_path!r}")
 
     cmds = [
         "cp LICENSE.txt _doc",
@@ -63,7 +69,10 @@ def generate_doc(module, root=None, dest=None):
         if isinstance(c, list):
             # copy
             copied = 0
+            if "dev/v" in c[2]:
+                raise RuntimeError(f"Wrong folder {c[2]!r}.")
             if not os.path.exists(c[2]):
+                print(f"create folder (3) {c[2]!r}")
                 os.makedirs(c[2])
             for name in glob.glob(f"{c[1]}/**", root_dir=c[1], recursive=True):
                 if os.path.isdir(name):
@@ -71,7 +80,10 @@ def generate_doc(module, root=None, dest=None):
                 rel = os.path.relpath(name, c[1])
                 to = os.path.join(c[2], rel)
                 d = os.path.dirname(to)
+                if "dev/v" in d:
+                    raise RuntimeError(f"Wrong folder {d!r}.")
                 if not os.path.exists(d):
+                    print(f"create folder (4) {d!r}")
                     os.makedirs(d)
                 shutil.copy(name, d)
                 copied += 1
