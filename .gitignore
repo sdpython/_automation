@@ -6,3 +6,4 @@ _notebooks/images.csv
 jenkins/jenkins_setup.py
 _notebooks/.ipynb_checkpoints/download_images-checkpoint.ipynb
 code/data_sklearn.txt
+code/*.log

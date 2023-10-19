@@ -10,6 +10,12 @@ from sphinx_runpython.runpython import run_cmd
 def filter_line(line):
     if "viz.js" in line:
         return False
+    if "pandoc" in line or "Your version must be at least" in line:
+        return False
+    if "Continuing with doubts..." in line:
+        return False
+    if "nbconvert.utils.pandoc.check_pandoc_version()" in line:
+        return False
     return True
 
 
@@ -64,6 +70,15 @@ def generate_doc(module, root=None, dest=None):
     ]
 
     for c in cmds:
+        for name in [
+            "matplotlib.font_manager",
+            "PIL.PngImagePlugin",
+            "matplotlib",
+            "matplotlib.pyplot",
+            "blib2to3.pgen2.driver",
+        ]:
+            logging.getLogger(name).setLevel(logging.ERROR)
+
         os.chdir(root_module)
         print()
         print(f"RUN: {c}")
@@ -81,7 +96,7 @@ def generate_doc(module, root=None, dest=None):
                 rel = os.path.relpath(name, c[1])
                 to = os.path.join(c[2], rel)
                 d = os.path.dirname(to)
-                if "dev/v" in d and not "dev/varie" in d:
+                if "dev/v" in d and "dev/varie" not in d:
                     raise RuntimeError(f"Wrong folder {d!r}.")
                 if not os.path.exists(d):
                     print(f"create folder (4) {d!r}")
@@ -112,18 +127,6 @@ def generate_doc(module, root=None, dest=None):
 
 
 if __name__ == "__main__":
-    import logging
-
-    for name in [
-        "matplotlib.font_manager",
-        "PIL.PngImagePlugin",
-        "matplotlib",
-        "matplotlib.pyplot",
-        "blib2to3.pgen2.driver",
-    ]:
-        log = logging.getLogger(name)
-        log.setLevel(logging.ERROR)
-        
     parser = ArgumentParser(
         prog="update_doc.py", description="Generate the documentation for a module"
     )
