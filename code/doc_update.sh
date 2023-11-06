@@ -53,6 +53,12 @@ then
     python3 update_doc.py mlinsights 2>&1 > mlinsights.log || exit 1
 fi
 
+if [ ! -e "teachcompute.log" ]
+then
+    echo "teachcompute"
+    python3 update_doc.py teachcompute 2>&1 > teachcompute.log || exit 1
+fi
+
 echo "done"
 
 # python3 update_doc.py teachpyx
