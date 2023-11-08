@@ -12,9 +12,15 @@ def filter_line(line):
         return False
     if "pandoc" in line or "Your version must be at least" in line:
         return False
+    if "You are using an unsupported version of pandoc" in line:
+        return False
     if "Continuing with doubts..." in line:
         return False
     if "nbconvert.utils.pandoc.check_pandoc_version()" in line:
+        return False
+    if "ONNX Runtime only *guarantees* support for models" in line:
+        return False
+    if ".ipynb" in line and "Title level inconsistent" in line:
         return False
     return True
 
