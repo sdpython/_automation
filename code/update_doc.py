@@ -22,6 +22,8 @@ def filter_line(line):
         return False
     if ".ipynb" in line and "Title level inconsistent" in line:
         return False
+    if "MissingIDFieldWarning: Code cell is missing an id field" in line:
+        return False
     return True
 
 
