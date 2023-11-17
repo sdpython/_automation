@@ -24,6 +24,12 @@ def filter_line(line):
         return False
     if "MissingIDFieldWarning: Code cell is missing an id field" in line:
         return False
+    if "error CUPTI_ERROR_NOT_INITIALIZED" in line:
+        return False
+    if "CUPTI initialization failed" in line:
+        return False
+    if "If you see CUPTI_ERROR_INSUFFICIENT_PRIVILEGES" in line:
+        return False
     return True
 
 
