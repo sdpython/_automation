@@ -30,6 +30,8 @@ def filter_line(line):
         return False
     if "If you see CUPTI_ERROR_INSUFFICIENT_PRIVILEGES" in line:
         return False
+    if "Memcpy nodes are added to the graph" in line:
+        return False
     return True
 
 
