@@ -59,6 +59,12 @@ then
     python3 update_doc.py teachcompute 2>&1 > teachcompute.log || exit 1
 fi
 
+if [ ! -e "experimental-experiment.log" ]
+then
+    echo "experimental-experiment"
+    python3 update_doc.py experimental-experiment 2>&1 > experimental-experiment.log || exit 1
+fi
+
 echo "done"
 
 # python3 update_doc.py teachpyx
