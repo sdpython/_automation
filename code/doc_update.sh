@@ -1,6 +1,7 @@
 clear
 
 # update sphinx
+export GENDOCDEFAULT="middle"
 echo "pypi update"
 python3 -m pip install --upgrade "sphinx<7.2" sphinx-gallery furo pydata-sphinx-theme > pypi-update.log
 

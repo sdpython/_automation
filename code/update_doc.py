@@ -32,6 +32,8 @@ def filter_line(line):
         return False
     if "Memcpy nodes are added to the graph" in line:
         return False
+    if "Graph Optimization level greater than ORT_ENABLE_EXTENDED" in line:
+        return False
     return True
 
 
