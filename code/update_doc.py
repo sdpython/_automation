@@ -34,6 +34,10 @@ def filter_line(line):
         return False
     if "Graph Optimization level greater than ORT_ENABLE_EXTENDED" in line:
         return False
+    if "Memcpy nodes are added to the graph a for CUDAExecutionProvider." in line:
+        return False
+    if "Could not write a profile because no model was loaded" in line:
+        return False
     return True
 
 
