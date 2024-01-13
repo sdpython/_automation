@@ -1,1 +1,0 @@
-ln -s /var/lib/jenkins/workspace/mlprodict/mlprodict_UT_37_std/_venv/bin/python pyonx

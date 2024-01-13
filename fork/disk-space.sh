@@ -18,4 +18,4 @@ echo "---------------"
 lastb -100
 echo "---------------"
 
-python3.9 fork/check_keyring.py
+python3 fork/check_keyring.py
