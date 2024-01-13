@@ -3,7 +3,9 @@ clear
 # update sphinx
 export GENDOCDEFAULT="middle"
 echo "pypi update"
-python3 -m pip install --upgrade "sphinx<7.2" sphinx-gallery furo pydata-sphinx-theme > pypi-update.log
+python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme > pypi-update.log
+echo "pypi freeze"
+python3 -m pip freeze > pypi-freeze.log
 
 # documentations
 if [ ! -e "lecture_citation.log" ]
