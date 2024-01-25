@@ -38,6 +38,11 @@ def filter_line(line):
         return False
     if "Could not write a profile because no model was loaded" in line:
         return False
+    if "torch.utils._pytree._register_pytree_node is deprecated" in line:
+        return False
+    if "  _torch_pytree._register_pytree_node(" in line:
+        return False
+    print(f"VALID-ERROR: {line!r}")
     return True
 
 
