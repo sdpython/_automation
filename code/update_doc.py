@@ -42,6 +42,8 @@ def filter_line(line):
         return False
     if "  _torch_pytree._register_pytree_node(" in line:
         return False
+    if "cannot cache unpickable configuration value" in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
