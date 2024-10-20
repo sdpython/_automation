@@ -44,6 +44,10 @@ def filter_line(line):
         return False
     if "cannot cache unpickable configuration value" in line:
         return False
+    if "role 'cve' is already registered, it will be overridden" in line:
+        return False
+    if "role 'cwe' is already registered, it will be overridden" in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
