@@ -3,7 +3,7 @@ import logging
 import os
 import shutil
 import sys
-from argparse import ArgumentParser
+from argparse import ArgumentParser, BooleanOptionalAction
 from sphinx_runpython.runpython import run_cmd
 
 
@@ -58,7 +58,7 @@ def filter_err(err):
     return ("\n".join(lines)).strip("\n\r ")
 
 
-def generate_doc(module, root=None, dest=None):
+def generate_doc(module, root=None, dest=None, copy_only=False):
     this = os.path.abspath(os.path.dirname(__file__))
     if root is None:
         root = os.path.normpath(os.path.join(this, "..", ".."))
@@ -101,6 +101,8 @@ def generate_doc(module, root=None, dest=None):
         f"rm -rf {module_path}/v{version}/",
         ["cp", f"{root_module}/dist/html/", f"{module_path}/v{version}/"],
     ]
+    if copy_only:
+        cmds = cmds[3:]
 
     for c in cmds:
         for name in [
@@ -164,6 +166,12 @@ if __name__ == "__main__":
         prog="update_doc.py", description="Generate the documentation for a module"
     )
     parser.add_argument("module", help="module name")
+    parser.add_argument(
+        "--copy-only",
+        default=False,
+        action=BooleanOptionalAction,
+        help="copy only",
+    )
     args = parser.parse_args()
 
-    generate_doc(args.module)
+    generate_doc(args.module, copy_only=args.copy_only)
