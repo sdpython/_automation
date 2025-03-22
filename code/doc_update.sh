@@ -32,6 +32,12 @@ then
     python3 update_doc.py onnx-array-api 2>&1 > onnx-array-api.log || exit 1
 fi
 
+if [ ! -e "onnx-diagnostic.log" ]
+then
+    echo "onnx-diagnostic"
+    python3 update_doc.py onnx-diagnostic 2>&1 > onnx-diagnostic.log || exit 1
+fi
+
 if [ ! -e "onnx-extended.log" ]
 then
     echo "onnx-extended"

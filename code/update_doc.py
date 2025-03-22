@@ -48,9 +48,15 @@ def filter_line(line):
         return False
     if "role 'cwe' is already registered, it will be overridden" in line:
         return False
-    if "The config value `linkcode_resolve' has type `partial'; expected `NoneType' or `function'." in line:
+    if (
+        "The config value `linkcode_resolve' has type `partial'; expected `NoneType' or `function'."
+        in line
+    ):
         return False
-    if "search index couldn't be loaded, but not all documents will be built: the index will be incomplete." in line:
+    if (
+        "search index couldn't be loaded, but not all documents will be built: the index will be incomplete."
+        in line
+    ):
         return False
     print(f"VALID-ERROR: {line!r}")
     return True
