@@ -46,6 +46,8 @@ def filter_line(line):
         return False
     if "role 'cve' is already registered, it will be overridden" in line:
         return False
+    if "Numba needs NumPy 2.1 or less" in line:
+        return False
     if "role 'cwe' is already registered, it will be overridden" in line:
         return False
     if (
@@ -106,6 +108,7 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
         "cp LICENSE.txt _doc",
         "cp CHANGELOGS.rst _doc",
         "python3 -m sphinx _doc dist/html",
+        "python3 ../_automation/code/replacements.py dist/html",
         f"rm -rf {module_path}/dev/",
         ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
         f"rm -rf {module_path}/v{version}/",
