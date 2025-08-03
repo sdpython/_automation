@@ -60,6 +60,8 @@ def filter_line(line):
         in line
     ):
         return False
+    if "pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1" in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
