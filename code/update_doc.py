@@ -8,6 +8,8 @@ from sphinx_runpython.runpython import run_cmd
 
 
 def filter_line(line):
+    if "RemovedInSphinx90Warning" in line:
+        return False
     if "viz.js" in line:
         return False
     if "pandoc" in line or "Your version must be at least" in line:
