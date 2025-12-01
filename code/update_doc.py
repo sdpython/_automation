@@ -64,6 +64,14 @@ def filter_line(line):
         return False
     if "pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1" in line:
         return False
+    if "exported_program_dynamic.rst" in line:
+        return False
+    if "torch/_guards.py" in line:
+        return False
+    if "torch/fx/experimental" in line:
+        return False
+    if "[gdot] use 'https:" in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
