@@ -72,6 +72,8 @@ def filter_line(line):
         return False
     if "[gdot] use 'https:" in line:
         return False
+    if "Glyph 9 (\t) missing from font(s) DejaVu Sans." in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
