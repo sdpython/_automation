@@ -74,6 +74,8 @@ def filter_line(line):
         return False
     if "Glyph 9 (\t) missing from font(s) DejaVu Sans." in line:
         return False
+    if "use_kernel_func_from_hub is not available in the installed kernels version. Please upgrade kernels to use this feature." in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
