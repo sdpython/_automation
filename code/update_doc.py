@@ -8,6 +8,8 @@ from sphinx_runpython.runpython import run_cmd
 
 
 def filter_line(line):
+    if "INFO gdot" in line:
+        return False
     if "RemovedInSphinx90Warning" in line:
         return False
     if "viz.js" in line:
@@ -62,7 +64,10 @@ def filter_line(line):
         in line
     ):
         return False
-    if "pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1" in line:
+    if (
+        "pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1"
+        in line
+    ):
         return False
     if "exported_program_dynamic.rst" in line:
         return False
@@ -74,7 +79,10 @@ def filter_line(line):
         return False
     if "Glyph 9 (\t) missing from font(s) DejaVu Sans." in line:
         return False
-    if "use_kernel_func_from_hub is not available in the installed kernels version. Please upgrade kernels to use this feature." in line:
+    if (
+        "use_kernel_func_from_hub is not available in the installed kernels version. Please upgrade kernels to use this feature."
+        in line
+    ):
         return False
     print(f"VALID-ERROR: {line!r}")
     return True
@@ -103,7 +111,7 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
     print(f"Generate documentation for {module!r}")
     print("-------------------------------------")
     print("-------------------------------------")
-    name = module.replace("-", "_")
+    name = module.replace("-", "_") if not module.startswith("yet") else "yobx"
     mod = __import__(name)
     version = mod.__version__
 
@@ -120,16 +128,26 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
     module_path = os.path.join(dest, module)
     print(f"module_path: {module_path!r}")
 
-    cmds = [
-        "cp LICENSE.txt _doc",
-        "cp CHANGELOGS.rst _doc",
-        "python3 -m sphinx _doc dist/html",
-        "python3 ../_automation/code/replacements.py dist/html",
-        f"rm -rf {module_path}/dev/",
-        ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
-        f"rm -rf {module_path}/v{version}/",
-        ["cp", f"{root_module}/dist/html/", f"{module_path}/v{version}/"],
-    ]
+    if module == "yet-another-onnx-builder":
+        cmds = [
+            "python3 -m sphinx docs dist/html",
+            "python3 ../_automation/code/replacements.py dist/html",
+            f"rm -rf {module_path}/dev/",
+            ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
+            f"rm -rf {module_path}/v{version}/",
+            ["cp", f"{root_module}/dist/html/", f"{module_path}/v{version}/"],
+        ]
+    else:
+        cmds = [
+            "cp LICENSE.txt _doc",
+            "cp CHANGELOGS.rst _doc",
+            "python3 -m sphinx _doc dist/html",
+            "python3 ../_automation/code/replacements.py dist/html",
+            f"rm -rf {module_path}/dev/",
+            ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
+            f"rm -rf {module_path}/v{version}/",
+            ["cp", f"{root_module}/dist/html/", f"{module_path}/v{version}/"],
+        ]
     if copy_only:
         cmds = cmds[3:]
 

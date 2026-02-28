@@ -3,7 +3,7 @@ clear
 # update sphinx
 export GENDOCDEFAULT="middle"
 echo "pypi update"
-python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme nbsphinx numpy pandas seaborn matplotlib statsmodels Pillow black ruff isort scikit-learn cython pybind11 nanobind pytest jupyter notebook xgboost lightgbm wheel ujson ijson xlsxwriter openpyxl typing_extensions tabulate sphinxcontrib-jsmath setuptools scipy requests rich networkx nbconvert jupyter-black > pypi-update.log
+python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme nbsphinx numpy pandas seaborn matplotlib statsmodels Pillow black ruff isort scikit-learn cython pybind11 nanobind pytest jupyter notebook xgboost lightgbm wheel ujson ijson xlsxwriter openpyxl typing_extensions tabulate sphinxcontrib-jsmath setuptools scipy requests rich networkx nbconvert jupyter-black dill skrub > pypi-update.log
 echo "pypi freeze"
 python3 -m pip freeze > pypi-freeze.log
 
@@ -73,6 +73,13 @@ then
     echo "experimental-experiment"
     python3 update_doc.py experimental-experiment 2>&1 > experimental-experiment.log || exit 1
 fi
+
+if [ ! -e "yet-another-onnx-builder.log" ]
+then
+    echo "yet-another-onnx-builder"
+    python3 update_doc.py yet-another-onnx-builder 2>&1 > yet-another-onnx-builder.log || exit 1
+fi
+
 
 echo "done"
 
