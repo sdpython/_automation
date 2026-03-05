@@ -130,7 +130,7 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
 
     if module == "yet-another-onnx-builder":
         cmds = [
-            "python3 -m sphinx docs dist/html",
+            "python3 -m sphinx docs dist/html -j auto",
             "python3 ../_automation/code/replacements.py dist/html",
             f"rm -rf {module_path}/dev/",
             ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
@@ -141,7 +141,7 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
         cmds = [
             "cp LICENSE.txt _doc",
             "cp CHANGELOGS.rst _doc",
-            "python3 -m sphinx _doc dist/html",
+            "python3 -m sphinx _doc dist/html -j auto",
             "python3 ../_automation/code/replacements.py dist/html",
             f"rm -rf {module_path}/dev/",
             ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
