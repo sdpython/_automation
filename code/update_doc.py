@@ -8,6 +8,10 @@ from sphinx_runpython.runpython import run_cmd
 
 
 def filter_line(line):
+    if "failed to reach any of the inventories with the following issues" in line:
+        return False
+    if "https://pandas.pydata.org/pandas-docs/stable/objects.inv" in line:
+        return False
     if "INFO gdot" in line:
         return False
     if "RemovedInSphinx90Warning" in line:
@@ -83,6 +87,10 @@ def filter_line(line):
         "use_kernel_func_from_hub is not available in the installed kernels version. Please upgrade kernels to use this feature."
         in line
     ):
+        return False
+    if "tensorflow/" in line:
+        return False
+    if "To enable the following instructions" in line:
         return False
     print(f"VALID-ERROR: {line!r}")
     return True
@@ -195,11 +203,14 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
                 communicate=False,
                 shell="*" in c,
             )
-            if filter_err(err):
+            filtered_err = filter_err(err)
+            if filtered_err:
                 print("-- STDOUT --")
                 print(out)
                 print("-- STDERR --")
                 print(err)
+                print("-- STDERR FILTERED --")
+                print(filtered_err)
                 print("##################################################")
                 print("ERROR")
                 print("##################################################")
