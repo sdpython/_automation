@@ -138,7 +138,7 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
 
     if module == "yet-another-onnx-builder":
         cmds = [
-            "python3 -m sphinx docs dist/html -j auto",
+            "python3 -m sphinx docs dist/html ", #-j auto",
             "python3 ../_automation/code/replacements.py dist/html",
             f"rm -rf {module_path}/dev/",
             ["cp", f"{root_module}/dist/html/", f"{module_path}/dev/"],
@@ -158,6 +158,10 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
         ]
     if copy_only:
         cmds = cmds[3:]
+
+    for c in cmds:
+        cs = c if isinstance(c, str) else ' '.join(c)
+        print(f"+ will run {cs}")
 
     for c in cmds:
         for name in [
