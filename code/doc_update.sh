@@ -2,8 +2,8 @@ clear
 
 # update sphinx
 export GENDOCDEFAULT="middle"
-#echo "pypi update"
-#python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme nbsphinx numpy pandas seaborn matplotlib statsmodels Pillow black ruff isort scikit-learn cython pybind11 nanobind pytest jupyter notebook xgboost lightgbm wheel ujson ijson xlsxwriter openpyxl typing_extensions tabulate sphinxcontrib-jsmath setuptools scipy requests rich networkx nbconvert jupyter-black dill skrub > pypi-update.log
+echo "pypi update"
+python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme nbsphinx numpy pandas seaborn matplotlib statsmodels Pillow black ruff isort scikit-learn cython pybind11 nanobind pytest jupyter notebook xgboost lightgbm wheel ujson ijson xlsxwriter openpyxl typing_extensions tabulate sphinxcontrib-jsmath setuptools scipy requests rich networkx nbconvert jupyter-black dill skrub > pypi-update.log
 echo "pypi freeze"
 python3 -m pip freeze > pypi-freeze.log
 
@@ -80,6 +80,23 @@ then
     python3 update_doc.py yet-another-onnx-builder 2>&1 > yet-another-onnx-builder.log || exit 1
 fi
 
+if [ ! -e "yet-another-onnxruntime-extensions.log" ]
+then
+    echo "yet-another-onnxruntime-extensions"
+    python3 update_doc.py yet-another-onnxruntime-extensions 2>&1 > yet-another-onnxruntime-extensions.log || exit 1
+fi
+
+if [ ! -e "onnx-light.log" ]
+then
+    echo "onnx-light"
+    python3 update_doc.py onnx-light 2>&1 > onnx-light.log || exit 1
+fi
+
+if [ ! -e "my-own-accelerator.log" ]
+then
+    echo "my-own-accelerator"
+    python3 update_doc.py my-own-accelerator 2>&1 > my-own-accelerator.log || exit 1
+fi
 
 echo "done"
 

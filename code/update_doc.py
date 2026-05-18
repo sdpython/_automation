@@ -16,6 +16,8 @@ def filter_line(line):
         return False
     if "RemovedInSphinx90Warning" in line:
         return False
+    if "RemovedInSphinx10Warning" in line:
+        return False
     if "viz.js" in line:
         return False
     if "pandoc" in line or "Your version must be at least" in line:
@@ -136,7 +138,11 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
     module_path = os.path.join(dest, module)
     print(f"module_path: {module_path!r}")
 
-    if module == "yet-another-onnx-builder":
+    if module in {
+        "onnx-light",
+        "yet-another-onnx-builder",
+        "yet-another-onnxruntime-extensions",
+    }:
         cmds = [
             "python3 -m sphinx docs dist/html ", #-j auto",
             "python3 ../_automation/code/replacements.py dist/html",
