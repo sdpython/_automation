@@ -1,11 +1,14 @@
 clear
 
-# update sphinx
-export GENDOCDEFAULT="middle"
-echo "pypi update"
-python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme nbsphinx numpy pandas seaborn matplotlib statsmodels Pillow black ruff isort scikit-learn cython pybind11 nanobind pytest jupyter notebook xgboost lightgbm wheel ujson ijson xlsxwriter openpyxl typing_extensions tabulate sphinxcontrib-jsmath setuptools scipy requests rich networkx nbconvert jupyter-black dill skrub > pypi-update.log
-echo "pypi freeze"
-python3 -m pip freeze > pypi-freeze.log
+if find "pypi-freeze.log" -mtime +0 -print -quit | grep -q .
+then
+    # update sphinx
+    export GENDOCDEFAULT="middle"
+    echo "pypi update"
+    python3 -m pip install --upgrade sphinx sphinx-gallery furo pydata-sphinx-theme nbsphinx numpy pandas seaborn matplotlib statsmodels Pillow black ruff isort scikit-learn cython pybind11 nanobind pytest jupyter notebook xgboost lightgbm wheel ujson ijson xlsxwriter openpyxl typing_extensions tabulate sphinxcontrib-jsmath setuptools scipy requests rich networkx nbconvert jupyter-black dill skrub > pypi-update.log
+    echo "pypi freeze"
+    python3 -m pip freeze > pypi-freeze.log
+fi
 
 # documentations
 if [ ! -e "lecture_citation.log" ]

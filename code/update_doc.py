@@ -94,6 +94,14 @@ def filter_line(line):
         return False
     if "To enable the following instructions" in line:
         return False
+    if "onnx-light/docs/operators" in line:
+        return False
+    if "docs/Doxyfile" in line:
+        return False
+    if "for \\ref command" in line:
+        return False
+    if "@copybrief" in line:
+        return False
     print(f"VALID-ERROR: {line!r}")
     return True
 
@@ -121,7 +129,10 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
     print(f"Generate documentation for {module!r}")
     print("-------------------------------------")
     print("-------------------------------------")
-    name = module.replace("-", "_") if not module.startswith("yet") else "yobx"
+    if module == "my-own-accelerator":
+        name = "moa"
+    else:
+        name = module.replace("-", "_") if not module.startswith("yet") else "yobx"
     mod = __import__(name)
     version = mod.__version__
 
@@ -139,6 +150,7 @@ def generate_doc(module, root=None, dest=None, copy_only=False):
     print(f"module_path: {module_path!r}")
 
     if module in {
+        "my-own-accelerator",
         "onnx-light",
         "yet-another-onnx-builder",
         "yet-another-onnxruntime-extensions",
